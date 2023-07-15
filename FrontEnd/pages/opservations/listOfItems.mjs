@@ -6,10 +6,6 @@ const specialContainer = document.querySelector('.man__singleImgContainer--speci
 const pagePrevBtn = document.querySelectorAll('.main__pageBtnPrev');
 const pageNextBtn = document.querySelectorAll('.main__pageBtnNext');
 
-window.addEventListener('load', () => {
-    toastr.success("Login Succesful!")
-},{once:true})
-
 // Function for cloning 'first' original item 
 function listTemplate(){
     let copySingleCont = singleContainer.cloneNode(true); 

@@ -11,6 +11,7 @@ getData().then(loginInfo => {
     
   for(let i = 0; i < loginInfo.length; i++){
       if(loginName === loginInfo[i].names && loginEmail === loginInfo[i].email && loginPw === loginInfo[i].password){
+        toastr.success("Login Succesful!")
         window.location = '../opservations/opservations.html';
         return true;
         
