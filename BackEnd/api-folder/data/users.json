@@ -1,0 +1,29 @@
+[{
+  "id":1,
+  "name":"Marko",
+  "email":"warriorpronb55@gmail.com",
+  "ogranicenje":"Ne",
+  "status":"online"
+},
+{
+  "id":2,
+  "name":"Nikola",
+  "email":"aligatormoma1@gmail.com",
+  "ogranicenje":"Da",
+  "status":"offline"
+
+},
+{
+  "id":3,
+  "name":"Maja",
+  "email":"avrakadabra22@yahoo.com",
+  "ogranicenje":"Ne",
+  "status":"online"
+},
+{
+  "id":4,
+  "name":"Abraham",
+  "email":"abrahara23@yahoo.com",
+  "ogranicenje":"Da",
+  "status":"offline"
+}]

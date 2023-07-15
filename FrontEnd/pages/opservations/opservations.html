@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../../shared/style.css" rel="stylesheet">
+    <link href="./opservations.css" rel="stylesheet">
+    <link href="../../shared/mquery/mediaq.css" rel="stylesheet">
+    <link href="../../../node_modules/toastr/build/toastr.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../../../node_modules/toastr/build/toastr.min.js"></script>
+    <title>Opservacije</title>
+</head>
+<body>
+  <nav class="nav">
+    <img class="nav__icon" src="../../assets/Icon.png" alt="Bs-icon.png">
+    <div class="nav__links inactive">
+    <div class="nav__group1">
+  <ul class="nav__ul">
+      <li class="nav__li"><a class="nav__link tertiaryBtn" href="../opservations/opservations.html">Opservatori</a><button aria-expanded ="false" class="nav__link-button material-icons disabled2">expand_more</button></li>
+      <li class="nav__li"><a class="nav__link tertiaryBtn disabled" href="#/">Lokacije</a><button aria-expanded ="false" class="nav__link-button material-icons disabled2">expand_more</button></li>
+      <li class="nav__li"><a class="nav__link tertiaryBtn" href="../request-page/request.html">Zahtevi</a><button aria-expanded ="false" class="nav__link-button material-icons disabled2">expand_more</button></li>
+      <li class="nav__li--special"><div class="nav__li nav__li--Container"><a class="nav__link tertiaryBtn" href="../users-page/users.html">Korisnici</a><button aria-expanded ="false" class="nav__link-button material-icons">expand_more</button></div>
+          <ul class="nav__second">
+            <li class="nav__li"><a class="nav__link tertiaryBtn" href="../activityDiary/activity.html">Dnevnik aktivnosti</a>
+          </li>
+         </ul>
+        </li>
+      <li class="nav__li"><a class="nav__link tertiaryBtn disabled" href="#/">Statistika</a><button aria-expanded ="false" class="nav__link-button material-icons disabled2">expand_more</button></li>
+  </ul>
+</div>
+<div class="nav__group2">
+  <div id ="nav__user" class="nav__li nav__user">BSC Admin<button aria-expanded ="false" class="nav__link-button material-icons">expand_more</button>
+  </div>
+    <ul class="nav__second nav__second--type2">
+      <li class="nav__li"><a class="nav__link tertiaryBtn" href ="../login/login.html">Log-out</a></li>
+    </ul>
+</div>
+</div>
+  <button class="nav__toggleBtn">
+    <span class="nav__spanLine"></span>
+    <span class="nav__spanLine"></span>
+    <span class="nav__spanLine"></span>
+  </button>
+</nav>
+<nav>
+  <ul class="nav2">
+    <li class="nav2__list">Opservacije</li>
+  </ul>
+</nav>
+<section class="main">
+  <a class="main__createBtn primaryBtn" href="../newOpservation/new-opservation.html">KREIRAJ ZAHTEV</a>
+    <h2 class="main__search">Pretraga</h2>
+    <hr class="main__h2-hr">
+    <div class="main__form">
+        <div class="main__inputContainer">
+          <form class="main__inputForm">
+            <label for ="lokacija">Lokacija:</label>
+        <input name="lokacija" id="lokacija" class="main__input" type="text" list="cities" placeholder="Lokacija">
+            <datalist id="cities">
+              <option value="Banatsko Višnjićevo"></option>
+              <option value="Novi Sad"></option>
+              <option value="Zrenjanin"></option>
+              <option value="Beograd"></option>
+              <option value="Subotica"></option>
+              <option value="Niš"></option>
+              <option value="Kragujevac"></option>
+            </datalist>
+            </form>
+            <form class="main__inputForm">
+          <label for ="vrstaOpservacije">Vrsta opservacije:</label>
+        <input name="vrsta-opservacije" id="vrstaOpservacije" class="main__input" type="text" placeholder="Vrsta opservacije">
+        </form>
+        <form class="main__inputForm">
+          <label for ="datumOd-opserv">Datum od:</label>
+        <input name="datumOd-opserv" id="datumOd-opserv" class="main__input" type="text" placeholder="Datum od" onfocus="(this.type='date')">
+        </form>
+        <form class="main__inputForm">
+          <label for ="datumDo-opserv">Datum do:</label>
+        <input name="datumDo-opserv" id="datumDo-opserv" class="main__input" type="text" placeholder="Datum do" onfocus="(this.type='date')">
+        </form>
+        <form class="main__inputForm">
+          <label for ="brojSlika">Broj slika:</label>
+        <input name="brojSlika" id="brojSlika" class="main__input" type="text" list="number-of-pictures" placeholder="Broj slika">
+        <datalist id="number-of-pictures">
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5"></option>
+            <option value="6"></option>
+            <option value="7"></option>
+            <option value="8"></option>
+            <option value="9"></option>
+          </datalist>
+          </form>
+          <form class="main__inputForm">
+            <label for ="sortiraj">Sortiraj:</label>
+        <input name="sortiraj" id="sortiraj" class="main__input" type="text" placeholder="Sortiraj po">
+     </form>
+      </div>
+        <button class="main__btnSearch primaryBtn">PRETRAŽI</button>
+        <button class="main__btnDismiss">PONIŠTI</button>
+    </div>
+    <div class="main__view">
+      <div class="main__viewWrap-1">
+      <div class="main__btn-wrap">
+        <button class="main__viewBtn main__viewBtn--1 "><img id="main__View1" class="main__viewImg " src="../../assets/grid-blue.png" alt="gridView-icon.png" onclick="changeImage1()"></button>
+        <button class="main__viewBtn main__viewBtn--2 "><img id="main__View2" class="main__viewImg" src="../../assets/menu.png" alt="menuView-icon.png" onclick="changeImage2()"></button>
+        <button class="main__viewBtn main__viewBtn--3 "><img id="main__View3" class="main__viewImg" src="../../assets/list.png" alt="listView-icon.png" onclick="changeImage3()"></button>
+      </div>
+      <p id="numberOfItems--1" class="main__pageItemNum"></p>
+    </div>
+    <div class="main__viewWrap-2">
+      <button class="main__page main__pageBtnPrev disabled"><img class="main__pageImg" src="../../assets/back.png" alt="previous.png"></button>
+      <div class="main__pagesNumCont main__pagesNumCont--1">
+           <p id ="viewPageNum--1" class="main__viewPageNum current-slideNumber">1</p>
+      </div>
+      <button class="main__page main__pageBtnNext"><img class="main__pageImg" src="../../assets/next.png" alt="next.png"></button>
+    </div>
+  </div>
+    <!--POST_1-->
+   <div class="main__imagesContainer">
+    <button class="add-item">+</button>
+    <div class="man__singleImgContainer--special">
+      <ul class="main__description">
+       <li class="main__primaryText">Slika:</li>
+       <li class="main__primaryText">Lokacija:</li>
+       <li class="main__primaryText">Vrsta:</li>
+       <li class="main__primaryText">Uslikano:</li>
+       <li class="main__primaryText">Veličina slike:</li>
+       </ul>
+    </div>
+    <div class="main__singleImgContainer mainContainer">
+        <div class="main__image">
+          <img class="main__fruit" src="../../assets/Fruit.jpg" alt="fruit.png">
+        </div>
+        <div class="main__info">
+          <form class ="main__comment-box">
+              <label class="main__commentLabel">Comment:</label>
+              <input class="main__commentBox" name ="comment" type="text" placeholder="Ostavi komentar">
+            <div class="main__commentBtnWrap">
+              <button class="primaryBtn main__commentButton" type="submit">Post</button>
+              <button class="quarterBtn main__commentCancel">X</button>
+            </div>
+          </form>
+        <div class="main__picBtns">
+          <button class="main__chatBox"><img class="main__chatImg" src="../../assets/chat.png" alt="chat.png"></button>
+          <button class="main__delete"><img class="main__deleteImg" src="../../assets/close.png" alt="delete.png"></button>
+        </div>
+         <dl class="main__description">
+           <dt class="main__text">Lokacija:</dt>
+            <dd >BBTT146 Zrenjanin</dd>
+           <dt class="main__text">Vrsta:</dt>
+            <dd>Voće i povrće</dd>
+           <dt class="main__text">Uslikano:</dt>
+            <dd>2022-11-09 7:05:18</dd>
+           <dt class="main__text">Veličina slike:</dt>
+            <dd>110.72KB</dd>
+      </dl>
+    </div>
+  </div>
+  </div>
+  <div class="main__view main__view2">
+    <div class="main__viewWrap-1">
+    <p class="main__pageItemNum main__pageItemNum2"></p>
+  </div>
+  <div class="main__viewWrap-2">
+    <button class="main__page main__pageBtnPrev disabled"><img class="main__pageImg" src="../../assets/back.png" alt="previous.png"></button>
+    <div class="main__pagesNumCont main__pagesNumCont--2">
+      <p class="main__viewPageNum current-slideNumber">1</p>
+  </div>
+    <button class="main__page main__pageBtnNext"><img class="main__pageImg" src="../../assets/next.png" alt="next.png"></button>
+  </div>
+</div>
+</section>
+<footer class="footer">
+  <p class="footer__text">CopyRight: @BS-Computer</p>
+</footer>
+<script src="../../shared/mquery/secondaryNav.js"></script>
+<script src="./listOfItems.mjs"></script>
+<script src="../../shared/mquery/navigation.js"></script>
+<!-- <script type="module" src="../JS/opservation-functions.js"></script> -->
+</body>
+</html>

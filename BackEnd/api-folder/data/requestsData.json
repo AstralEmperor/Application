@@ -1,0 +1,54 @@
+[{
+    "status":"Otvoren",
+    "lokacija":"Zrenjanin",
+    "opservator":"M.Marko",
+    "vrstaOpservacije":"Personalna",
+    "datumKreiranja":"1/5/2023",
+    "datumOdgovora":"/",
+    "opservacija":"Žalba"
+},
+{
+    "status":"Zatvoren",
+    "lokacija":"Zrenjanin",
+    "opservator":"O.Stefan",
+    "vrstaOpservacije":"Personalna",
+    "datumKreiranja":"6/11/2022",
+    "datumOdgovora":"13/11/2023",
+    "opservacija":"Potražnja"
+},
+{
+    "status":"Zatvoren",
+    "lokacija":"Zrenjanin",
+    "opservator":"Anonymous",
+    "vrstaOpservacije":"Personalna",
+    "datumKreiranja":"25/1/2023",
+    "datumOdgovora":"1/2/2023",
+    "opservacija":"Kupovina"
+},
+{
+    "status":"Zatvoren",
+    "lokacija":"Zrenjanin",
+    "opservator":"N.Milica",
+    "vrstaOpservacije":"Personalna",
+    "datumKreiranja":"23/9/2022",
+    "datumOdgovora":"27/10/2022",
+    "opservacija":"Kupovina"
+},
+{
+    "status":"Otvoren",
+    "lokacija":"Novi Sad",
+    "opservator":"S.Nenad",
+    "vrstaOpservacije":"Personalna",
+    "datumKreiranja":"3/4/2022",
+    "datumOdgovora":"7/4/2022",
+    "opservacija":"Prodaja"
+},
+{
+    "status":"Zatvoren",
+    "lokacija":"Zrenjanin",
+    "opservator":"Anonymous",
+    "vrstaOpservacije":"Personalna",
+    "datumKreiranja":"13/9/2022",
+    "datumOdgovora":"17/9/2022",
+    "opservacija":"Ponuda"
+}]

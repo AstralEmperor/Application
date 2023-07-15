@@ -1,0 +1,87 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    align-items:center;
+}
+.login{
+    display:flex;
+    flex-direction:column;
+    background-color:var(--lightGray);
+    margin:0 auto;
+    height:520px;
+    width:338px;
+    align-items:center;
+    padding:0px 15px 0 15px;
+    border-radius:20px;
+    box-shadow: 1px 3px 6px rgb(0 0 0 / 0.16);
+}
+.login__icon{
+    height:81px;
+    width:81px;
+    margin-top:24px;
+    margin-bottom:12px;
+}
+.login__label{
+    margin-bottom:42px;
+    font-size:20px;
+    font-weight:400;
+}
+.login__email{
+    margin-bottom:25px;
+}
+.login__name{
+    margin-bottom:25px;
+}
+.login__input{
+    width:100%;
+   height:38px;
+   font-size:15px;
+   letter-spacing:0.14px;
+   padding:0 14px;
+   border:1px solid var(--line);
+   border-radius:4px;
+}
+::placeholder{
+    color:var(--line);
+}
+.login__loginBtn{
+width:97px;
+height:32px;
+margin-bottom:27px;
+}
+.login__rememberMe{
+    margin-top:14px;
+    margin-bottom:5px;
+}
+.login__forgottenBtn{
+ margin:0 auto;
+ border-top:1px solid var(--line);
+ cursor:pointer;
+ padding:10px 0;
+}
+
+/* FORM EMAIL */
+.login__link{
+    text-decoration:none;
+    color:var(--textGray);
+}
+.login__wrong{
+    display:none;
+    justify-content:center;
+    color:var(--wrong);
+    margin-top:2px;
+    margin-bottom:10px;
+}
+.login__nonExistent{
+    display:none;
+    justify-content:center;
+    color:var(--wrong);
+    margin-top:2px;
+    margin-bottom:10px;
+}

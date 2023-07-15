@@ -1,0 +1,22 @@
+ [{
+    "names":"Marko",
+    "email":"warriorpronb55@gmail.com",
+    "password":"123",
+    "id":"1256",
+    "roles":"ADMIN"
+  },
+  {
+   "names":"Nikola",
+   "email":"dzoni007@yahoo.com",
+   "password":"234",
+   "id":"5126",
+   "roles":"GUEST"
+  },
+  {
+    "names":"Mareti",
+    "email":"spagetti22@gmail.com",
+    "password":"tomatto",
+    "id":"1258",
+    "roles":"EDITOR"
+  }]
+ 

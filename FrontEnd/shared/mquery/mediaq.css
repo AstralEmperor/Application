@@ -1,0 +1,97 @@
+
+.nav__toggleBtn{
+position:relative;
+background-color:transparent;
+width:50px;
+aspect-ratio:1;
+justify-content: center;
+align-items:center;
+flex-direction:column;
+gap:10px;
+border:none;
+margin-right:26px;
+cursor: pointer;
+display:none;
+}
+.nav__spanLine{
+    position:relative;
+    height:2px;
+    width:30px;
+    background-color:var(--black);
+}
+/* MEDIA QUERY FOR TABLET */
+@media only screen and (max-width:768px) {
+    .nav{
+        position:relative;
+    }
+    .nav__toggleBtn{
+        display:flex;
+    }
+    .nav__icon{
+        z-index:200;
+    }
+    .nav__links{
+        position:absolute;
+        display:flex;
+        flex-direction:column;
+        text-align:center;
+        z-index:9999;
+        background-color:var(--white);
+        top:100%;
+        width:100%;
+        padding:10px;
+    }
+    .nav__user{
+        width:100%;
+        margin-right:0px;
+    }
+    .nav__ul{
+        display:flex;
+        flex:1;
+        flex-direction:column;
+    }
+    .nav__li{
+        border-bottom:solid var(--line) 1px;
+        justify-content: space-between;
+        width:100%;
+    }
+    .nav__li--special{
+        display:flex;
+        justify-content:space-between;
+        flex-direction:column;
+        border-bottom:none;
+    }
+    .nav__li--Container{
+        width:100%;
+        display:flex;
+        justify-content:space-between;
+    }
+    .nav__second{
+        position:relative;
+        border-bottom:solid var(--line) 1px;
+        padding:10px 0;
+        width:100%;
+        bottom:0;
+    }
+    .nav__second::before{
+        display:none;
+    }
+    .nav__second--type2{
+        width:100%;
+    }
+    .nav__user{
+       padding:15px 0; 
+    }
+    .inactive{
+        display:none;
+    }
+    .main{
+        margin:0;
+        padding:20px 5px;
+        border-radius: 0;
+    }
+    .main__form{
+        display:flex;
+        flex-direction:column;
+    }
+}
