@@ -129,9 +129,9 @@ function changeImage3(){
         applyStyles(del,"width:18px;height:18px");
         applyStyles(singleCont,"display:flex;flex-direction:row;border-top:1px solid gray;max-height:82px;justify-content:space-between;padding:12px 0 12px 0;max-width:100%;margin-top:0px");
         applyStyles(infoCont,"display:flex;flex-direction:row-reverse;flex-basis:80%");
-        applyStyles(buttons,"height:41px;flex-basis:10%;border:none;");
+        applyStyles(buttons,"height:41px;max-width:120px;border:none;");
         applyStyles(searchText,"display:flex;justify-content:flex-start;border:none");
-        applyStyles(searchDescr,"display:flex");
+        applyStyles(searchDescr,"display:flex;justify-content:flex-start");
 
         document.getElementById("main__View1").src="../../assets/grid.png";
         document.getElementById("main__View2").src="../../assets/menu.png";
@@ -185,6 +185,9 @@ function changePageNum(){
                 clonePageNum.textContent = j;
                 clonePageNum.classList.remove('current-slideNumber');
                 numCont[i].appendChild(clonePageNum);
+                if(totalPages > 3){
+                    console.log(currentNumPages[j])
+                }
             }
             // if theres more pages then number of elements need, removes last one = [1,2,3,4]
         }else if (currentNumPages > totalPages && totalPages >= 1){

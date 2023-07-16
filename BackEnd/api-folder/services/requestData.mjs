@@ -1,6 +1,8 @@
 // made with help from https://www.section.io/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-express/
 
-import zahteviData from "./api.js";
+import { requests} from "../api.mjs";
+
+requests().then(zahteviData => zahteviData);
 
 export class RequestDataControl{
     async getZahteviData(){

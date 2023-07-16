@@ -1,4 +1,4 @@
-import  { getKorisnici }  from "../../../BackEnd/server/api-folder/api.js";
+import  { getKorisnici }  from "../../../BackEnd/api-folder/api.mjs";
 // async await funkcija poziva podataka iz JSON-a
 
 // updates number of items constantly, at the bottom of the page
@@ -6,7 +6,7 @@ function updateNumberOfItems(){
     let rows = document.querySelectorAll('tbody tr');
     const itemNum = document.querySelector('.main__pageItemNum2');
 
-    itemNum.textContent = 'Prikaz ' + 0 + '-' + rows.length + ' od ukupno ' + rows.length + ' elemenata'
+    itemNum.textContent = 'Prikaz ' + 0 + '-' + rows.length + ' od ukupno ' + rows.length + ' korisnika'
 
     for(let i = 0; i < rows.length;i++){
           if(i % 2 !== 0){

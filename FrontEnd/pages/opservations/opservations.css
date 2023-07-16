@@ -1,9 +1,4 @@
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
 body{
     background-color:var(--lightGray);
     z-index:-1;
@@ -12,6 +7,7 @@ body{
     margin:0 26px;
     padding:30px 27px;
     background-color:var(--white);
+    min-height:100%;
     border-radius:20px;
     box-shadow:1px 3px 6px rgba(0,0,0,0.16);
     position:relative;
@@ -63,6 +59,7 @@ body{
     color:var(--textGray);
     flex-wrap:wrap;
     width:100%;
+    justify-content:center;
 }
 ::placeholder{
     color:var(--line);
@@ -150,7 +147,14 @@ margin-right:5px;
     display:flex;
     flex-direction:column;
     flex:1;
+    text-align:left;
+    max-width:15rem;
     color:var(--textGray);
+}
+.main__btnWrap{
+    display: flex;
+    align-items:center;
+    justify-content:center;
 }
 .main__pageBtnPrev{
     margin-right:10px;
@@ -162,10 +166,14 @@ margin-right:5px;
     color:var(--blueVariant);
 }
 .main__primaryText{
-    flex:1;
-}
-.main__primaryText{
+    width:100%;
     list-style:none;
+}
+.main__description--special{
+    display:flex;
+    gap:10%;
+    text-align:left;
+ 
 }
 .main__imagesContainer{
     display:grid;
@@ -181,7 +189,6 @@ margin-right:5px;
 }
 .man__singleImgContainer--special{
     width:100%;
-    justify-content:space-between;
     display:none;
 }
 .main__image{
@@ -244,7 +251,7 @@ margin-right:5px;
 .main__description{
     flex: 1;
     display:grid;
-    grid-template-columns:1fr 1.2fr;
+    grid-template-columns:1fr 1fr;
     max-width:100%;
 }
 .main__topDescription{
@@ -291,6 +298,7 @@ cursor: pointer;
     display:flex;
     align-items:center;
     justify-content:center;
+    text-align: center;
     min-height:50px;
     background-color:var(--white);
     color:var(--blueVariant);

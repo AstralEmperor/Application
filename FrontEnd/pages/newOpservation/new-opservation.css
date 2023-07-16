@@ -3,7 +3,7 @@
     margin:0;
     box-sizing:border-box;
 }
-.body{
+body{
     background-color:var(--lightGray);
     z-index:-1;
     min-height:100vh;

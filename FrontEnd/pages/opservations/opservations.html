@@ -8,6 +8,7 @@
     <link href="../../shared/style.css" rel="stylesheet">
     <link href="./opservations.css" rel="stylesheet">
     <link href="../../shared/mquery/mediaq.css" rel="stylesheet">
+    <link href="./opervation-mquery.css" rel="stylesheet">
     <link href="../../../node_modules/toastr/build/toastr.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="../../../node_modules/toastr/build/toastr.min.js"></script>
@@ -55,8 +56,8 @@
     <h2 class="main__search">Pretraga</h2>
     <hr class="main__h2-hr">
     <div class="main__form">
-        <div class="main__inputContainer">
-          <form class="main__inputForm">
+        <form class="main__inputContainer">
+          <div class="main__inputForm">
             <label for ="lokacija">Lokacija:</label>
         <input name="lokacija" id="lokacija" class="main__input" type="text" list="cities" placeholder="Lokacija">
             <datalist id="cities">
@@ -68,20 +69,21 @@
               <option value="Niš"></option>
               <option value="Kragujevac"></option>
             </datalist>
-            </form>
-            <form class="main__inputForm">
+          </div>
+
+            <div class="main__inputForm">
           <label for ="vrstaOpservacije">Vrsta opservacije:</label>
         <input name="vrsta-opservacije" id="vrstaOpservacije" class="main__input" type="text" placeholder="Vrsta opservacije">
-        </form>
-        <form class="main__inputForm">
+            </div>
+        <div class="main__inputForm">
           <label for ="datumOd-opserv">Datum od:</label>
         <input name="datumOd-opserv" id="datumOd-opserv" class="main__input" type="text" placeholder="Datum od" onfocus="(this.type='date')">
-        </form>
-        <form class="main__inputForm">
+      </div>
+        <div class="main__inputForm">
           <label for ="datumDo-opserv">Datum do:</label>
         <input name="datumDo-opserv" id="datumDo-opserv" class="main__input" type="text" placeholder="Datum do" onfocus="(this.type='date')">
-        </form>
-        <form class="main__inputForm">
+      </div>
+        <div class="main__inputForm">
           <label for ="brojSlika">Broj slika:</label>
         <input name="brojSlika" id="brojSlika" class="main__input" type="text" list="number-of-pictures" placeholder="Broj slika">
         <datalist id="number-of-pictures">
@@ -95,15 +97,17 @@
             <option value="8"></option>
             <option value="9"></option>
           </datalist>
-          </form>
-          <form class="main__inputForm">
+        </div>
+          <div class="main__inputForm">
             <label for ="sortiraj">Sortiraj:</label>
         <input name="sortiraj" id="sortiraj" class="main__input" type="text" placeholder="Sortiraj po">
-     </form>
       </div>
+      <div class="main__btnWrap main-inputForm">
         <button class="main__btnSearch primaryBtn">PRETRAŽI</button>
         <button class="main__btnDismiss">PONIŠTI</button>
+      </div>
     </div>
+  </form>
     <div class="main__view">
       <div class="main__viewWrap-1">
       <div class="main__btn-wrap">
@@ -125,7 +129,7 @@
    <div class="main__imagesContainer">
     <button class="add-item">+</button>
     <div class="man__singleImgContainer--special">
-      <ul class="main__description">
+      <ul class="main__description main__description--special">
        <li class="main__primaryText">Slika:</li>
        <li class="main__primaryText">Lokacija:</li>
        <li class="main__primaryText">Vrsta:</li>
@@ -177,7 +181,8 @@
 </div>
 </section>
 <footer class="footer">
-  <p class="footer__text">CopyRight: @BS-Computer</p>
+  <p class="footer__text">Design CopyRight: @BS-Computer<br> 
+                          App created by: Marko K.</p>
 </footer>
 <script src="../../shared/mquery/secondaryNav.js"></script>
 <script src="./listOfItems.mjs"></script>

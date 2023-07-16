@@ -1,0 +1,28 @@
+@media only screen and (max-width:768px) {
+    .main__inputForm {
+        margin: 0.25rem 1rem;
+    }
+    .main__singleImgContainer{
+        margin:0 0.5rem;
+        font-size: 12px;
+    }
+    .add-item{
+        margin:30px 0.5rem 0;
+    }
+    .main__pageItemNum{
+        margin-left:5px;
+    }
+}
+@media only screen and (max-width:420px){
+    .main__viewWrap-1{
+        display:flex;
+        justify-content:center;
+    }
+    .main__view{
+        display:flex;
+        gap:0.5rem;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+    }
+}
