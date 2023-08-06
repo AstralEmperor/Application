@@ -185,9 +185,6 @@ function changePageNum(){
                 clonePageNum.textContent = j;
                 clonePageNum.classList.remove('current-slideNumber');
                 numCont[i].appendChild(clonePageNum);
-                if(totalPages > 3){
-                    console.log(currentNumPages[j])
-                }
             }
             // if theres more pages then number of elements need, removes last one = [1,2,3,4]
         }else if (currentNumPages > totalPages && totalPages >= 1){
@@ -214,11 +211,12 @@ function btnSupport(totalPages,currentNumPages){
     pageNextBtn.forEach((pageNextButton) =>{
         if(totalPages <= 1){
             pageNextButton.classList.add('disabled');
-            console.log('1 page')
+            return console.log('1 page');
+           
         }
     else if(totalPages > 1 && currentNumPages < totalPages){
-        console.log('more than 1')
-            pageNextButton.classList.remove('disabled');        
+            pageNextButton.classList.remove('disabled');   
+            return console.log('more than 1');    
         }
     })
 }
@@ -367,3 +365,4 @@ function changingPage(){
     })
  }
 changingPage();
+
