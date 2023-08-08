@@ -326,44 +326,68 @@ const disabledBtn = (targetIndex, numCount) =>{
     }
 }
 
+function goToPreviousPage(){
+    const numCount = document.querySelector('.main__pagesNumCont');
+
+    const numbers = Array.from(numCount.children);
+
+    const currentPage = document.querySelector('.current-slideNumber');
+    const prevPage = currentPage.previousElementSibling;
+    const prevIndex = numbers.findIndex(number => number === prevPage);
+    currentPageNum = currentPageNum - 1;
+
+    displayText();
+    pageNum(currentPage, prevPage);
+    disabledBtn(prevIndex,numCount);
+}
+function goToNextPage(){
+    const numCount = document.querySelector('.main__pagesNumCont');
+
+    const numbers = Array.from(numCount.children);
+
+    const currentPage = document.querySelector('.current-slideNumber');
+    const nextPage = currentPage.nextElementSibling;
+    const nextIndex = numbers.findIndex(number => number === nextPage);
+    currentPageNum = currentPageNum + 1;
+    
+    displayText();
+    pageNum(currentPage, nextPage);
+    disabledBtn(nextIndex, numCount);
+}
+
+
 function changingPage(){
  // On each of the Previous buttons clicked, change page;button availability
     pagePrevBtn.forEach(pagePrevBtn => {
+      
         pagePrevBtn.addEventListener('click', () =>{
-            const numCount = document.querySelector('.main__pagesNumCont');
-
-            const numbers = Array.from(numCount.children);
-
-            const currentPage = document.querySelector('.current-slideNumber');
-            const prevPage = currentPage.previousElementSibling;
-            const prevIndex = numbers.findIndex(number => number === prevPage);
-            currentPageNum = currentPageNum - 1;
-
+            goToPreviousPage();
             changePageNum();
-            displayText();
-            pageNum(currentPage, prevPage);
-            disabledBtn(prevIndex,numCount);
-
         });
     })
 
     // On each of the Next buttons clicked, change page;button availability
     pageNextBtn.forEach(pageNextBtn =>{
         pageNextBtn.addEventListener('click', () =>{
-            const numCount = document.querySelector('.main__pagesNumCont');
-
-            const numbers = Array.from(numCount.children);
-
-            const currentPage = document.querySelector('.current-slideNumber');
-            const nextPage = currentPage.nextElementSibling;
-            const nextIndex = numbers.findIndex(number => number === nextPage);
-            currentPageNum = currentPageNum + 1;
-            
+            goToNextPage();
             changePageNum();
-            displayText();
-            pageNum(currentPage, nextPage);
-            disabledBtn(nextIndex, numCount);
         });
     })
  }
 changingPage();
+
+function returnPage(){
+            const numCount = document.querySelector('.main__pagesNumCont');
+            const numbers = Array.from(numCount.children);
+            const currentPage = document.querySelector('.current-slideNumber');
+            const prevPage = currentPage.previousElementSibling;
+            const prevIndex = numbers.findIndex(number => number === prevPage);
+
+            currentPageNum = currentPageNum - 1;
+
+            console.log('works?')
+
+            displayText();
+            pageNum(currentPage, prevPage);
+            disabledBtn(prevIndex, numCount);
+}
