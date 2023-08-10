@@ -1,5 +1,7 @@
 # Web application for display and posting of Pictures
+
 ## THIS APP IS STILL WORK IN PROGRESS!
+
 ## Introduction:
 An application that started as Internship on BS-Computer private firm, which was further developed by me with added functionality.
 This app was made in VScode IDE and tested using Live Server extension. Made for further practice of JS (fetch API, While method etc).
@@ -25,5 +27,6 @@ This app is used for posting, commenting and deleting items. Reaching for databa
     7. Prototype of Roles (ADMIN,USER,GUEST)
     8. Tables displaying content from JSON
     9. Toastr notifications on login(npm package)
+    10. Statistic from another live online API
 
 ## NO WAY TO LAUNCH IT AT THE MOMENT!!!
