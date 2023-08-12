@@ -60,13 +60,23 @@
 
 //www.youtube.com/watch?v=x1cEbRIrOu4&ab_channel=Codevolution
 import http from "node:http";
-import {requests} from './api-folder/api.mjs'
-const cors = require("cors");
+import cors from "cors";
+import express from "express";
+import { requests } from "./api-folder/api.mjs";
 
+const app = express();
 const server = http.createServer(app)
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
-app.get("/requests", async (req, res, next))
+requests().then(zahteviData => { 
+    zahteviData;
+    console.log("our json db has this:", zahteviData)
+});
+
+
+app.get("/requests", async (req, res, next) => {
+    console.log("Hello from requests")
+});
 server.listen(PORT, () => {
     console.log('Server running on port 3000')
 }) //port number

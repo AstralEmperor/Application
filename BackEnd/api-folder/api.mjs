@@ -1,6 +1,6 @@
 //requests page data
 export async function requests(){
-    const res = await fetch('../../../BackEnd/api-folder/data/requestsData.json');
+    const res = await fetch('../BackEnd/api-folder/data/requestsData.json');
     const zahteviData = await res.json()
     .catch(error => console.log(error))
     return zahteviData;
