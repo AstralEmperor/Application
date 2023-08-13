@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../../shared/style.css" rel="stylesheet">
-    <link href="./users.css" rel="stylesheet">
-    <link href=".././opservations/opservations.css" rel="stylesheet">
-    <link href="../../shared/mquery/mediaq.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Opservacije</title>
+    <link href="../../shared/style.css" rel="stylesheet">
+    <link href="./opservations.css" rel="stylesheet">
+    <link href="../../shared/mquery/mediaq.css" rel="stylesheet">
+    <link href="../../../node_modules/toastr/build/toastr.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../../../node_modules/toastr/build/toastr.min.js"></script>
+    <title>Statistika</title>
 </head>
 <body>
   <nav class="nav">
@@ -45,54 +47,19 @@
 </nav>
 <nav>
   <ul class="nav2">
-    <li class="nav2__list">Opservacije</li>
-    <li class="nav2__list">></li>
-    <li class="nav2__list currentPage">Korisnici</li>
+    <li class="nav2__list">Statistika</li>
   </ul>
 </nav>
-<section class="main">
-         <h2 class="main__search">Korisnici</h2>
-       <hr class="main__h2-hr">
-     <div class="main__prikazContainer">
-      <div class="main__brojPrikaza">
-       <p>Prikaži</p>
-       <input class="main__inputNumElements" type="number" min="1" value="10">
-       <p>Elemenata</p>
-     </div>
-     <div class="main__pretragaContainer">
-       <label for="pretraga">Pretraga:</label>
-       <input class="main__inputPretraga" type="text" id="pretraga" name="pretraga">
-     </div>
-    </div>
-    <table class="main__searchUl">
-      <thead class="main__tableHeader">
-        <tr>
-      <th><button class = "listHeaderBtn" id = "th__korisnik">Korisnik</button></th>
-      <th><button class = "listHeaderBtn" id = "th__email">Email</button></th>
-      <th><button class = "listHeaderBtn" id = "th__ogranicen">Ograničen</button></button></th>
-      <th><button class = "listHeaderBtn" id = "th__status">Status</button></th>
-      <th><button class = "listHeaderBtn" id = "th__akcija">Akcija</button></th>
-        </tr>
-      </thead>
-        <tbody class="korisnici__tbody">  
-      </tbody>
-    </table>
-    <div class="main__view--zahtevi main__view2--zahtevi">
-      <div class="main__viewWrap-1--zahtevi">
-      <p class="main__pageItemNum2"></p>
-    </div>
-    <div class="main__viewWrap-2--zahtevi">
-      <button class="main__page--zahtevi tertiaryBtn leftBtn">Prethodna</button>
-      <button class="main__page--zahtevi tertiaryBtn">Sledeća</button>
-    </div>
-  </div>
-    </section>
-    <footer class="footer">
-      <p class="footer__text">Design CopyRight: @BS-Computer<br> 
-                              App created by: Marko K.</p>
-    </footer>
-    <script src="../../shared/mquery/secondaryNav.js"></script>
-    <script src="./users.js" type="module"></script>
-    <script src="../../shared/mquery/navigation.js"></script>
+  <section class="main">
+    
+  </section>
+<footer class="footer">
+  <p class="footer__text">Design CopyRight: @BS-Computer<br> 
+                          App created by: Marko K.</p>
+</footer>
+<script src="../../shared/mquery/secondaryNav.js"></script>
+<script src="./listOfItems.mjs"></script>
+<script src="../../shared/mquery/navigation.js"></script>
+<!-- <script type="module" src="../JS/opservation-functions.js"></script> -->
 </body>
 </html>

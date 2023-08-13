@@ -27,6 +27,6 @@ This app is used for posting, commenting and deleting items. Reaching for databa
     7. Prototype of Roles (ADMIN,USER,GUEST)
     8. Tables displaying content from JSON
     9. Toastr notifications on login(npm package)
-    10. Statistic from another live online API
+    10. Statistics
 
 ## NO WAY TO LAUNCH IT AT THE MOMENT!!!
