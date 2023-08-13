@@ -15,7 +15,7 @@ This app is used for posting, commenting and deleting items. Reaching for databa
     - CSS
     - JavaScript
     - JSON
-    - NPM (Toastr,mongoose,express,express-async-handler)
+    - NPM (Toastr)
 
 ## App functionality:
     1. Responsive design
