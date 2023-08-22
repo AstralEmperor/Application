@@ -1,5 +1,8 @@
 // made with help from https://www.section.io/engineering-education/a-raw-nodejs-rest-api-without-frameworks-such-as-express/
 
+//DOESNT WORK!
+
+
 import { requests} from "../api.mjs";
 
 requests().then(zahteviData => zahteviData);

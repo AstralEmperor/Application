@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../../shared/style.css" rel="stylesheet">
-    <link href="./opservations.css" rel="stylesheet">
+    <link href="../opservations/opservations.css" rel="stylesheet">
+    <link href="./statistic.css" rel="stylesheet">
     <link href="../../shared/mquery/mediaq.css" rel="stylesheet">
     <link href="../../../node_modules/toastr/build/toastr.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -50,16 +51,46 @@
     <li class="nav2__list">Statistika</li>
   </ul>
 </nav>
-  <section class="main">
-    
+  <section class="main statistics">
+    <div class="statistics__stats-container">
+    <div class="statistics__numberOf">
+      <p>Broj korisnika:</p>
+      <P id="bKorisnika"></P>
+    </div>
+    <div class="statistics__numberOf">
+      <p >Broj opservacija:</p>
+      <p id="bOpservacija"></p>
+    </div>
+    <div class="statistics__numberOf">
+      <p >Broj proizvoda:</p>
+      <p id="bProizvoda"></p>
+    </div>
+     <div class="statistics__numberOf">
+      <p >Prodato:</p>
+      <p id="bProdato"></p>
+    </div>
+    <div class="statistics__numberOf">
+      <p >Dostavljeno:</p>
+      <p id="bDostavljeno"></p>
+    </div>
+    <div class="statistics__numberOf">
+      <p >U transportu:</p>
+      <p id="bTransport"></p>
+    </div>
+    <div class="statistics__numberOf">
+      <p >Na cekanju:</p>
+      <p id="bCekanje"></p>
+    </div>
+
+    </div>
   </section>
 <footer class="footer">
   <p class="footer__text">Design CopyRight: @BS-Computer<br> 
                           App created by: Marko K.</p>
 </footer>
 <script src="../../shared/mquery/secondaryNav.js"></script>
-<script src="./listOfItems.mjs"></script>
 <script src="../../shared/mquery/navigation.js"></script>
+<script src="./statistic.js" type="module"></script>
 <!-- <script type="module" src="../JS/opservation-functions.js"></script> -->
 </body>
 </html>

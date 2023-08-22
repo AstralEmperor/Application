@@ -1,6 +1,6 @@
 //requests page data
 export async function requests(){
-    const res = await fetch('../BackEnd/api-folder/data/requestsData.json');
+    const res = await fetch('../../../BackEnd/api-folder/data/requestsData.json');
     const zahteviData = await res.json()
     .catch(error => console.log(error))
     return zahteviData;
@@ -20,4 +20,11 @@ export async function getData(){
     const loginInfo = await res.json()
     .catch(error => console.log(error))
     return loginInfo;
+}
+
+export async function getProductStats(){
+    const res = await fetch('../../../BackEnd/api-folder/data/products.json');
+    const products = await res.json()
+    .catch(error => console.log(error))
+    return products;
 }
