@@ -61,10 +61,6 @@
       <p >Broj opservacija:</p>
       <p id="bOpservacija"></p>
     </div>
-    <div class="statistics__numberOf">
-      <p >Broj proizvoda:</p>
-      <p id="bProizvoda"></p>
-    </div>
      <div class="statistics__numberOf">
       <p >Prodato:</p>
       <p id="bProdato"></p>
@@ -77,9 +73,11 @@
       <p >U transportu:</p>
       <p id="bTransport"></p>
     </div>
-    <div class="statistics__numberOf">
-      <p >Na cekanju:</p>
-      <p id="bCekanje"></p>
+
+    <div class="chartCard">
+      <div class="chartBox">
+        <canvas id="myChart"></canvas>
+      </div>
     </div>
 
     </div>
@@ -88,6 +86,7 @@
   <p class="footer__text">Design CopyRight: @BS-Computer<br> 
                           App created by: Marko Kovačević</p>
 </footer>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
 <script src="../../shared/mquery/secondaryNav.js"></script>
 <script src="../../shared/mquery/navigation.js"></script>
 <script src="./statistic.js" type="module"></script>
