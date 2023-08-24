@@ -1,6 +1,6 @@
-import { requests } from "../../../BackEnd/api-folder/api.mjs";
-import { getKorisnici } from "../../../BackEnd/api-folder/api.mjs";
-import { getProductStats } from "../../../BackEnd/api-folder/api.mjs";
+import { requests } from "../../../BackEnd/api-folder/api.js";
+import { getKorisnici } from "../../../BackEnd/api-folder/api.js";
+import { getProductStats } from "../../../BackEnd/api-folder/api.js";
 
    // async funkcija za pozivanje asinhrone date
 async function getStats(){
