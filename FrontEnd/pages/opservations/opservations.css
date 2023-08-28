@@ -295,3 +295,6 @@ cursor: pointer;
 .main__view2{
     margin-top:39px;
 }
+@media only screen and (max-width:420px) {
+  
+}

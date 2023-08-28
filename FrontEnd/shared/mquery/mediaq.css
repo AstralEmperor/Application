@@ -96,7 +96,9 @@ display:none;
     }
 }
 @media only screen and (max-width:420px) {
-    *{
+    nav *,
+    footer *,
+    label *{
        font-size:12px;
     }
 }
