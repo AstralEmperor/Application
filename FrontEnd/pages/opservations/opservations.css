@@ -296,5 +296,12 @@ cursor: pointer;
     margin-top:39px;
 }
 @media only screen and (max-width:420px) {
-  
+    .main__createBtn{
+        width:100%;
+        align-items:center;
+    }
+    .main__search{
+        width:100%;
+        text-align:center;
+    }
 }

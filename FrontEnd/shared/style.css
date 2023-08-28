@@ -243,6 +243,8 @@ color:var(--textGray);
     opacity:0;
     pointer-events:none;
 }
+@media only screen and (max-width:420px) {
+}
 /* @media (prefers-color-scheme: dark){
     :root{
         --lightGray:#775c4a;
