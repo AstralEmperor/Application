@@ -4,8 +4,11 @@
     margin-bottom:2rem;
 }
 .statistics__stats-container{
-    background-color:var(--navMquery);
+    background-image:url('https://img.freepik.com/premium-vector/white-abstract-simple-uptrend-financial-chart-background_755228-1224.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
     padding:2rem;
+    border:1px solid var(--line);
     border-radius:20px;
 }
 .statistics__writtenData{
@@ -51,6 +54,7 @@
     border-radius: 20px;
     border: solid 3px var(--black);
     background: white;
+    opacity:0.9;
   }
   @media only screen and (max-width:420px) {
     .statistics__text{
