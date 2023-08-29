@@ -51,7 +51,7 @@ display:none;
         flex-direction:column;
     }
     .nav__li{
-        border-bottom:solid var(--line) 1px;
+        border-bottom:1px solid var(--line);
         justify-content: space-between;
         width:100%;
     }
@@ -68,8 +68,8 @@ display:none;
     }
     .nav__second{
         position:relative;
-        border-bottom:solid var(--line) 1px;
         padding:10px 0;
+        border-bottom:1px solid var(--line);
         width:100%;
         bottom:0;
     }

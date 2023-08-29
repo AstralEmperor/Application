@@ -7,9 +7,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../../shared/style.css" rel="stylesheet">
     <link href="./request.css" rel="stylesheet">
-    <link href=".././opservations/opservations.css" rel="stylesheet">
+    <link href="../products/proizvodi.css" rel="stylesheet">
     <link href="../../shared/mquery/mediaq.css" rel="stylesheet">
-    <title>Opservacije</title>
+    <title>Zahtevi</title>
 </head>
 <body>
   <nav class="nav">
@@ -17,9 +17,9 @@
     <div class="nav__links inactive">
     <div class="nav__group1">
   <ul class="nav__ul">
-      <li class="nav__li"><a class="nav__link tertiaryBtn" href="../opservations/opservations.html">Opservatori</a><button aria-expanded ="false" class="nav__link-button material-icons disabled2">expand_more</button></li>
+      <li class="nav__li"><a class="nav__link tertiaryBtn" href="../products/proizvodi.html">Proizvodi</a><button aria-expanded ="false" class="nav__link-button material-icons disabled2">expand_more</button></li>
       <li class="nav__li"><a class="nav__link tertiaryBtn disabled" href="#/">Lokacije</a><button aria-expanded ="false" class="nav__link-button material-icons disabled2">expand_more</button></li>
-      <li class="nav__li"><a class="nav__link tertiaryBtn" href="../request-page/request.html">Zahtevi</a><button aria-expanded ="false" class="nav__link-button material-icons disabled2">expand_more</button></li>
+      <li class="nav__li"><a class="nav__link tertiaryBtn nav__currentLink" href="../request-page/request.html">Zahtevi</a><button aria-expanded ="false" class="nav__link-button material-icons disabled2">expand_more</button></li>
       <li class="nav__li--special"><div class="nav__li nav__li--Container"><a class="nav__link tertiaryBtn" href="../users-page/users.html">Korisnici</a><button aria-expanded ="false" class="nav__link-button material-icons">expand_more</button></div>
           <ul class="nav__second">
             <li class="nav__li"><a class="nav__link tertiaryBtn" href="../activityDiary/activity.html">Dnevnik aktivnosti</a>
@@ -45,13 +45,11 @@
 </nav>
 <nav>
   <ul class="nav2">
-    <li class="nav2__list">Opservacije</li>
-    <li class="nav2__list"></li>
     <li class="nav2__list currentPage">Zahtevi</li>
   </ul>
 </nav>
 <section class="main">
-    <h2 class="main__search">Zahtevi sa opservacijama</h2>
+    <h2 class="main__search">Zahtevi</h2>
     <hr class="main__h2-hr">
     <div class="main__form">
         <div class="main__inputContainer">
@@ -64,8 +62,8 @@
                 </datalist>
               </form>
               <form class="main__inputForm">
-                <label for ="status">Opservator:</label>
-            <input class="main__input" type="text" placeholder="Izaberite opservatora">
+                <label for="status">Ime:</label>
+            <input class="main__input" type="text" placeholder="Izaberite ime">
             </form>
             <form class="main__inputForm">
               <label for ="lokacija">Lokacija:</label>
@@ -78,8 +76,8 @@
             </datalist>
           </form>
           <form class="main__inputForm">
-            <label for ="vrsta-opservacije">Vrsta opservacije:</label>
-            <input name="vrsta-opservacije" id="vrsta-opservacije" class="main__input" type="text" placeholder="Izaberite vrstu opservacije">
+            <label for ="vrsta-opservacije">Vrsta zahteva:</label>
+            <input name="vrsta-opservacije" id="vrsta-opservacije" class="main__input" type="text" placeholder="Izaberite vrstu kupovine">
           </form>
           <form class="main__inputForm">
             <label for ="datumOd">Datum od:</label>
@@ -110,11 +108,11 @@
         <tr>
       <th>Status</th>
       <th>Lokacija</th>
-      <th>Opservator</th>
-      <th>Vrsta opservacije</th>
+      <th>Kupac</th>
+      <th>Vrsta zahteva</th>
       <th data-format="DD/MM/YYYY">Datum kreiranja zahteva</th>
       <th data-format="DD/MM/YYYY">Datum odgovora</th>
-      <th>Opservacija</th>
+      <th>Tip zahteva</th>
         </tr>
       </thead>
         <tbody id="data-output" class="zahtevi__body">  

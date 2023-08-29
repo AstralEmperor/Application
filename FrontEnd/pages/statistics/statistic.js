@@ -37,7 +37,7 @@ getStats();
 
 // done with help from https://www.chartjs3.com/docs/chart/getting-started/
 const data = {
-    labels:['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Avg'],
+    labels:['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug'],
     datasets:[{
         label: 'Monthly Sales',
         data: [22, 122, 232 ,405, 334, 502, 496, 643],

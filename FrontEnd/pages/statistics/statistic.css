@@ -52,7 +52,7 @@
     max-height:600px;
     padding: 20px;
     border-radius: 20px;
-    border: solid 3px var(--black);
+    border: solid 2px var(--black);
     background: white;
     opacity:0.9;
   }

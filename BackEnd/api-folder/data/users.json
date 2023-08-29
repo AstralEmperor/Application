@@ -8,7 +8,7 @@
 {
   "id":2,
   "name":"Nikola",
-  "email":"aligatormoma1@gmail.com",
+  "email":"dzoni007@yahoo.com",
   "ogranicenje":"Da",
   "status":"offline"
 },
@@ -23,6 +23,27 @@
   "id":4,
   "name":"Abraham",
   "email":"abrahara23@yahoo.com",
+  "ogranicenje":"Da",
+  "status":"offline"
+},
+{
+  "id":"5",
+  "name":"Milica",
+  "email":"trolejbus23@gmail.com",
+  "ogranicenje":"Ne",
+  "status":"online"
+},
+{
+ "id":"6",
+ "name":"Nikolina",
+ "email":"aligatormoma1@gmail.com",
+ "ogranicenje":"Da",
+ "status":"offline"
+},
+{
+  "id":"7",
+  "name":"Filip",
+  "email":"spagetti22@gmail.com",
   "ogranicenje":"Da",
   "status":"offline"
 }]

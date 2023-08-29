@@ -113,7 +113,7 @@ function changeImage3(){
     const searchDescr = document.querySelectorAll(".man__singleImgContainer--special");
     const searchText = document.querySelectorAll(".main__text--special");
 
-    const mainView3 =document.getElementById("main__View3");
+    const mainView3 = document.getElementById("main__View3");
 
     if (mainView3.src.endsWith('list-blue.png')){
         mainView3.src = "../../assets/list-blue.png";
@@ -127,11 +127,11 @@ function changeImage3(){
         applyStyles(mainText,"display:none");
         applyStyles(chat,"width:20px;height:20px");
         applyStyles(del,"width:18px;height:18px");
-        applyStyles(singleCont,"display:flex;flex-direction:row;border-top:1px solid gray;max-height:82px;justify-content:space-between;padding:12px 0 12px 0;max-width:100%;margin-top:0px");
+        applyStyles(singleCont,"display:flex;flex-direction:row;border-top:1px solid gray;max-height:82px;justify-content:space-between;padding:12px 0 12px 0;margin-top:0px;padding-left:2rem;");
         applyStyles(infoCont,"display:flex;flex-direction:row-reverse;flex-basis:80%");
-        applyStyles(buttons,"height:41px;max-width:120px;border:none;");
+        applyStyles(buttons,"height:41px;justify-content:right;border:none;width:fit-content;");
         applyStyles(searchText,"display:flex;justify-content:flex-start;border:none");
-        applyStyles(searchDescr,"display:flex;justify-content:flex-start");
+        applyStyles(searchDescr,"display:flex;justify-content:space-between;");
 
         document.getElementById("main__View1").src="../../assets/grid.png";
         document.getElementById("main__View2").src="../../assets/menu.png";

@@ -118,3 +118,9 @@ td {
     width:30px;
     cursor:pointer;
 }
+.activity__id{
+    color:var(--altBlueDarkest);
+}
+.activity__success{
+    color:var(--success);
+}

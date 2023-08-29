@@ -57,18 +57,6 @@ function prototype(korisnici){
                 console.log('error');
             }
         }
-            //changes display(ogranicenje) based on if the user is limited or not
-    const limitation = document.querySelectorAll('.korisnik__allowance');
-    for(let limit of limitation){
-        if(limit.innerHTML === "Da"){
-            limit.innerHTML = '<div class="main__korisnici--ograničenje online"></div>'
-
-    }else if(limit.innerHTML === "Ne"){
-             limit.innerHTML = '<div class="main__korisnici--ograničenje offline"></div>'
-    }else{
-        console.log('error');
-    }
-  }
 }
 
 getKorisnici().then(korisnici =>{

@@ -17,6 +17,7 @@
     --white:#ffffff;
     --blackish:#231F20;
     --online:#00cf00;
+    --success:#068806;
     --offline:#fb0101;
     --quarterBtn1:#b61212;
     --quarterBtn2:#920c0c;
@@ -200,6 +201,12 @@ color:var(--textGray);
     display:flex;
     width:100%;
     justify-content:space-between;
+}
+.nav__second > li{
+    list-style-type:none;
+}
+.nav__currentLink{
+    color:var(--blueVariant);
 }
 .nav2__list{
     list-style:none;

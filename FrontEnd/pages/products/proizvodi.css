@@ -46,6 +46,9 @@ body{
     background-color:transparent;
     cursor: pointer;
 }
+.main__btnDismiss:hover{
+    color:var(--quarterBtn2);
+}
 .main__form{
     display:flex;
     align-items:center;
@@ -167,14 +170,17 @@ margin-right:5px;
     color:var(--blueVariant);
 }
 .main__primaryText{
-    width:100%;
+    font-size:1.2rem;
     list-style:none;
+}
+.main__textForBtns{
+    max-width:50px;
+    margin-inline:2rem;
 }
 .main__description--special{
     display:flex;
-    gap:10%;
-    text-align:left;
- 
+    text-align:right;
+    margin-left:3.5rem;
 }
 .main__imagesContainer{
     display:grid;
@@ -188,8 +194,12 @@ margin-right:5px;
     text-align:left;
     margin-top:30px;
 }
+.main__singleImgContainer:hover{
+    size:1.1;
+}
 .man__singleImgContainer--special{
     width:100%;
+    flex-direction:row;
     display:none;
 }
 .main__image{
@@ -242,8 +252,8 @@ margin-right:5px;
     width:100%;
     height:41px;
     border:1px solid var(--lightGray);
-    border-radius:4px;
-    top:-5px;
+    border-radius:0 0 4px 4px;
+    top:-4px;
      
     align-items:center;
     justify-content:space-between;
