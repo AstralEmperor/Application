@@ -8,6 +8,7 @@
     <link href="../../shared/style.css" rel="stylesheet">
     <link href="./request.css" rel="stylesheet">
     <link href="../products/proizvodi.css" rel="stylesheet">
+    <link href="./request-mquery.css" rel="stylesheet">
     <link href="../../shared/mquery/mediaq.css" rel="stylesheet">
     <title>Zahtevi</title>
 </head>
@@ -51,21 +52,21 @@
 <section class="main">
     <h2 class="main__search">Zahtevi</h2>
     <hr class="main__h2-hr">
-    <div class="main__form">
+    <form class="main__form">
         <div class="main__inputContainer">
-          <form class="main__inputForm">
+          <div class="main__inputForm">
             <label for ="status">Status:</label>
             <input name="status" id="status" class="main__input" type="text" list="online" placeholder="Izaberite status">
                 <datalist id="online">
                   <option value="Otvoren"></option>
                   <option value="Zatvoren"></option>
                 </datalist>
-              </form>
-              <form class="main__inputForm">
+              </div>
+              <div class="main__inputForm">
                 <label for="status">Ime:</label>
             <input class="main__input" type="text" placeholder="Izaberite ime">
-            </form>
-            <form class="main__inputForm">
+              </div>
+            <div class="main__inputForm">
               <label for ="lokacija">Lokacija:</label>
             <input name="lokacija" id="lokacija" class="main__input" type="text" list="lokacija-value" placeholder="Izaberite lokaciju">
             <datalist id="lokacija-value">
@@ -74,21 +75,21 @@
               <option value="Beograd"></option>
               <option value="Subotica"></option>
             </datalist>
-          </form>
-          <form class="main__inputForm">
+          </div>
+          <div class="main__inputForm">
             <label for ="vrsta-opservacije">Vrsta zahteva:</label>
             <input name="vrsta-opservacije" id="vrsta-opservacije" class="main__input" type="text" placeholder="Izaberite vrstu kupovine">
-          </form>
-          <form class="main__inputForm">
+          </div>
+          <div class="main__inputForm">
             <label for ="datumOd">Datum od:</label>
             <input name="datumOd" id="datumOd" class="main__input" type="text" placeholder="Izaberite datum od" onfocus="(this.type='date')">
-           </form>
-           <form class="main__inputForm">
+          </div>
+           <div class="main__inputForm">
             <label for ="datumDo">Datum do:</label>
             <input name="datumDo" id="datumDo" class="main__input" type="text" placeholder="Izaberite datum do" onfocus="(this.type='date')">
-          </form>
+           </div>
           </div>
-       </div>
+        </form>
      <div class="main__poništiContainer">
         <button class="tertiaryBtn main__btnPoništi">Poništi filtere</button>
      </div>
@@ -123,8 +124,8 @@
       <p id ="zahtevi__displayNumber" class="main__pageItemNum2"></p>
     </div>
     <div class="main__viewWrap-2--zahtevi">
-      <button class="main__page--zahtevi tertiaryBtn leftBtn">Prethodna</button>
-      <button class="main__page--zahtevi tertiaryBtn">Sledeća</button>
+      <button class="main__page--zahtevi tertiaryBtn leftBtn disabled">Prethodna</button>
+      <button class="main__page--zahtevi tertiaryBtn disabled">Sledeća</button>
     </div>
   </div>
     </section>

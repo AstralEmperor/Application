@@ -110,6 +110,11 @@ outline:var(--btnText);
     font-weight:bold;
     color:var(--tableTxt);
 }
+@media screen and (max-width:768px){
+    .listHeaderBtn{
+        font-size:0.8rem;
+    }
+}
 .listHeaderBtn:hover{
     color:var(--tableHeader);
 }
@@ -250,7 +255,13 @@ color:var(--textGray);
     opacity:0;
     pointer-events:none;
 }
-@media only screen and (max-width:420px) {
+@media only screen and (max-width:768px) {
+    *{
+        font-size:0.85rem;
+    }
+    ::placeholder{
+        font-size:0.85rem;
+    }
 }
 /* @media (prefers-color-scheme: dark){
     :root{

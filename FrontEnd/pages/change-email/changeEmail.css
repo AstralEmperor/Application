@@ -27,7 +27,7 @@ body{
     border:none;
     cursor:pointer;
     font-size:12px;
-    margin-bottom:30px;
+    margin-bottom:25px;
     color:var(--btnText);
     margin-top:30.5px;
 }
@@ -44,6 +44,8 @@ body{
 .email__description{
     font-size:12px;
     line-height:11px;
+    margin-top:1rem;
+    margin-bottom:1rem;
     color:var(--textGray);
 }
 .email__link{

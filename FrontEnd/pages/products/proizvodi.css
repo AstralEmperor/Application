@@ -112,13 +112,11 @@ margin-right:5px;
     display:flex;
     align-items:center;
     margin-left:35px;
-    font-size:14px;
     color:var(--textGray);
 }
 .main__pageItemNum2{
     display:flex;
     align-items:center;
-    font-size:14px;
     color:var(--textGray);
 }
 .main__viewWrap-2{
@@ -185,17 +183,16 @@ margin-right:5px;
 .main__imagesContainer{
     display:grid;
     grid-gap:24px;
-    grid-template-columns: repeat(auto-fit, minmax(279px, 6fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 6fr));
 }
 .main__singleImgContainer{
     display:flex;
     flex-direction:column;
     color:var(--textGray);
+    font-size:1.25rem;
     text-align:left;
     margin-top:30px;
-}
-.main__singleImgContainer:hover{
-    size:1.1;
+    transition:all 250ms;
 }
 .man__singleImgContainer--special{
     width:100%;
@@ -209,19 +206,18 @@ margin-right:5px;
 .main__image > img{
     max-width:100%;
     max-height:100%;
-    width:100%;
 }
 .main__info{
     position:relative;
 }
 .main__comment-box{
     display:none;
+    width:100%;
+    height:100%;
 }
 .active__comment{
     display:flex;
     position:absolute;
-    width:100%;
-    height:100%;
     flex-direction:column;
     background-color:var(--white);
     z-index:1000;
@@ -233,12 +229,15 @@ margin-right:5px;
     text-align:start;
     margin:2px 0;
     padding-bottom:50px;
+    padding-inline:0.5rem;
+    padding-top:0.25rem;
     border-color:var(--gray);
 }
 .main__commentBtnWrap{
     display:inline-flex;
     justify-content:space-between;
     flex-direction:row;
+    background-color:transparent;
 }
 .main__commentButton{
     width:30%;
@@ -279,6 +278,7 @@ cursor: pointer;
 .main__chatImg{
 width:20px;
 height:20px;
+z-index:10;
 }
 .main__delete{
 width:24px;
@@ -291,6 +291,7 @@ cursor: pointer;
 .main__deleteImg{
     width:18px;
     height:18px; 
+    z-index:10;
 }
 .add-item{
     background-color:transparent;
@@ -298,9 +299,11 @@ cursor: pointer;
     font-size:60px;
     border:var(--textGray);
     cursor: pointer;
-    transition:all 250ms ease-in-out;
     color:var(--btnText);
     box-shadow: 0 0 2px 0 rgb(177, 175, 175);
+}
+.add-item:hover{
+    color:var(--blueVariant);
 }
 .main__view2{
     margin-top:39px;

@@ -100,14 +100,14 @@ td {
         align-items:center;
         font-size:16px;
         color:var(--textGray);
-        border:1px solid var(--blueVariant);
-        border-radius:4px;
         right:15px;
 }
 .main__page--zahtevi{
     padding:7.5px;
     background-color: var(--white);
     border:none;
+    border:1px solid var(--blueVariant);
+    border-radius:4px;
     cursor: pointer;  
 }
 .leftBtn{

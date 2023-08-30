@@ -39,24 +39,26 @@ function changeImage1() {
     const searchDescr = document.querySelectorAll(".man__singleImgContainer--special");
     const searchText = document.querySelectorAll(".main__text--special");
     const mainView1 =document.getElementById("main__View1");
+    const activeComment = document.querySelectorAll(".main__comment-box");
 
     if (mainView1.src.endsWith('grid-blue.png')){
         mainView1.src = "../../assets/grid-blue.png";
         
 }else{
     mainView1.src = "../../assets/grid-blue.png";
-    container.style.cssText="grid-gap:24px;grid-template-columns: repeat(auto-fit, minmax(279px, 6fr));";
+    container.style.cssText="grid-gap:24px;grid-template-columns: repeat(auto-fit, minmax(350px, 6fr));";
     document.querySelector(".main__picBtns").style.cssText ="min-width:279px;";
 
     applyStyles(description, "display: grid");
     applyStyles(mainText, "display: flex");
     applyStyles(chat,"width:20px;height:20px");
     applyStyles(del,"width:18px;height:18px");
-    applyStyles(singleCont,"display:flex;flex-direction:column;margin-top:30px");
+    applyStyles(singleCont,"display:flex;flex-direction:column;margin-top:30px;");
     applyStyles(infoCont,"display:flex;flex-direction:column");
     applyStyles(buttons,"height:41px");
     applyStyles(searchText,"display:none");
     applyStyles(searchDescr,"display:none");
+    applyStyles(activeComment,"width:100%;height:100%");
 
     document.getElementById("main__View2").src="../../assets/menu.png";
     document.getElementById("main__View3").src="../../assets/list.png";
@@ -75,6 +77,7 @@ function changeImage2() {
     const buttons = document.querySelectorAll(".main__picBtns");
     const searchDescr = document.querySelectorAll(".man__singleImgContainer--special");
     const searchText = document.querySelectorAll(".main__text--special");
+    const activeComment = document.querySelectorAll(".main__comment-box");
 
     const mainView2 =document.getElementById("main__View2");
 
@@ -83,18 +86,19 @@ function changeImage2() {
           
     } else {
         mainView2.src = "../../assets/menu-blue.png";
-        document.getElementsByClassName("main__imagesContainer")[0].style.cssText ="grid-template-columns: repeat(auto-fit(3fr));grid-gap:29px;";
+        document.getElementsByClassName("main__imagesContainer")[0].style.cssText ="grid-template-columns: repeat(auto-fit, minmax(279,3fr));grid-gap:29px;";
         document.getElementsByClassName("main__picBtns")[0].style.cssText ="min-width:429px;";
 
         applyStyles(description,"display:none");
         applyStyles(mainText,"display:none");
-        applyStyles(chat,"width:26px;height:26px");
+        applyStyles(chat,"width:26px;height:26px;");
         applyStyles(del,"width:24px;height:24px;");
-        applyStyles(singleCont,"display:flex;flex-direction:column;padding-top:0px;max-width:100%;margin-top:30px");
+        applyStyles(singleCont,"display:flex;flex-direction:column;padding-top:0px;max-width:100%;margin-top:30px;");
         applyStyles(infoCont,"display:flex;flex-direction:column");
         applyStyles(buttons,"height:63px");
         applyStyles(searchText,"display:none");
         applyStyles(searchDescr,"display:none");
+        applyStyles(activeComment,"width:100%;height:100%");
   
         document.getElementById("main__View1").src="../../assets/grid.png";
         document.getElementById("main__View3").src="../../assets/list.png";
@@ -112,6 +116,7 @@ function changeImage3(){
     const buttons = document.querySelectorAll(".main__picBtns");
     const searchDescr = document.querySelectorAll(".man__singleImgContainer--special");
     const searchText = document.querySelectorAll(".main__text--special");
+    const activeComment = document.querySelectorAll(".main__comment-box");
 
     const mainView3 = document.getElementById("main__View3");
 
@@ -127,14 +132,16 @@ function changeImage3(){
         applyStyles(mainText,"display:none");
         applyStyles(chat,"width:20px;height:20px");
         applyStyles(del,"width:18px;height:18px");
-        applyStyles(singleCont,"display:flex;flex-direction:row;border-top:1px solid gray;max-height:82px;justify-content:space-between;padding:12px 0 12px 0;margin-top:0px;padding-left:2rem;");
+        applyStyles(singleCont,"display:flex;flex-direction:row;border-top:1px solid gray;max-height:100px;justify-content:space-between;padding:12px 0 12px 0;margin-top:0px;padding-left:2rem;");
         applyStyles(infoCont,"display:flex;flex-direction:row-reverse;flex-basis:80%");
         applyStyles(buttons,"height:41px;justify-content:right;border:none;width:fit-content;");
         applyStyles(searchText,"display:flex;justify-content:flex-start;border:none");
         applyStyles(searchDescr,"display:flex;justify-content:space-between;");
+        applyStyles(activeComment,"width:auto;height:auto;top:-1.5px;");
 
         document.getElementById("main__View1").src="../../assets/grid.png";
         document.getElementById("main__View2").src="../../assets/menu.png";
+
 }
 
 changePageNum();
@@ -261,6 +268,7 @@ function createComment(){
             const commentCancel = arrayOfPosts[i].querySelector('.main__commentCancel ');
             const commentBox =  arrayOfPosts[i].querySelector('.main__comment-box');
             const commentButton = arrayOfPosts[i].querySelector('.main__commentButton');
+
             messagesBtn.addEventListener('click', () =>{
               
                 commentBox.classList.add('active__comment');

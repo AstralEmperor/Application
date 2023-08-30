@@ -52,6 +52,7 @@ gap:10px;
 .main__searchUl{
     margin-top:30px;
     width:100%;
+    font-size:1rem;;
     text-align:center;
     border-spacing:0;
     color:var(--tableTxt);
@@ -76,7 +77,6 @@ td {
     height:70px;
     align-items:center;
     justify-content:space-between;
-    border-radius:4px;
 }
 .main__inputForm{
     display:flex;
@@ -85,7 +85,7 @@ td {
     color:var(--textGray);
 }
 main__view2--zahtevi{
-    margin-top:39px;
+    border-radius:4px;
 }
 .main__viewWrap-1--zahtevi{
     display:flex;
@@ -100,16 +100,18 @@ main__view2--zahtevi{
         align-items:center;
         font-size:16px;
         color:var(--textGray);
-        border:1px solid var(--blueVariant);
-        border-radius:4px;
         right:15px;
+        margin-top:39px;
 }
 .main__page--zahtevi{
     padding:7.5px;
     background-color: var(--white);
     border:none;
+    border:1px solid var(--blueVariant);
+    border-radius:4px;
     cursor: pointer;  
 }
 .leftBtn{
     border-right:1px solid var(--blueVariant);
 }
+
