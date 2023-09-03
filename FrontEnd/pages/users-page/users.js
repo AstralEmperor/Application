@@ -54,15 +54,14 @@ function prototype(korisnici){
                 stat.innerHTML ='<div class="main__korisnici--onlineStatus offline"></div>'
     
             }else{
-                console.log('error');
+                console.log('error',422);
             }
         }
 }
 
 getKorisnici().then(korisnici =>{
     korisnici;
-    console.log(korisnici)
- 
+
     prototype(korisnici);
   //Adds event listener for DELETE button
   let rows = document.querySelectorAll('tbody tr');

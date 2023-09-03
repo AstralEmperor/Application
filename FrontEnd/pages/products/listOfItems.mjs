@@ -280,8 +280,7 @@ function createComment(){
         commentButton .addEventListener('click', e =>{
             e.preventDefault();
             const data = arrayOfPosts[i].querySelector('.main__commentBox').value;
-            
-            console.log(data);
+    
             fetch('.json',{
                 method:'POST',
                 headers:{
@@ -392,8 +391,6 @@ function returnPage(){
             const prevIndex = numbers.findIndex(number => number === prevPage);
 
             currentPageNum = currentPageNum - 1;
-
-            console.log('works?')
 
             displayText();
             pageNum(currentPage, prevPage);
