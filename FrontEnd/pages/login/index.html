@@ -17,8 +17,8 @@
      <img src="../../assets/Icon.png" class="login__icon" alt="Bs-icon.png">
      <p class="login__label">Prijavi se!</p>
      <div>
-     <input class="login__name login__input" type="text" placeholder="Ime" required>
-     <input class="login__email login__input" type="email" placeholder="Elektronska pošta" required>
+     <input name="loginName" class="login__name login__input" type="text" placeholder="Ime" required>
+     <input name="loginEmail" class="login__email login__input" type="email" placeholder="Elektronska pošta" required>
      <input class="login__password login__input" type="password" placeholder="Šifra" required>
      <p class="login__nonExistent">Account doesn't exist!</p>
      <p class="login__wrong">Password or Username are wrong!</p>
@@ -29,7 +29,8 @@
 </div>
      <button class="login__loginBtn primaryBtn" type="submit">PRIJAVI SE</button>
       <a class="login__link tertiaryBtn login__forgottenBtn" href="../change-email/changeEmail.html">Zaboravili ste lozinku?</a>
-      <a class="login__link tertiaryBtn login__register" href="../register/register.html">Registruj se</a>
+      <a class="login__link pentaBtn login__register" href="../register/register.html">Registruj se</a>
+      <a class="login__link tertiaryBtn login__guest" href="../products/proizvodi.html">Uđi kao gost</a>
  </form>
     <script src="./login.js" type="module"></script>
 </body>

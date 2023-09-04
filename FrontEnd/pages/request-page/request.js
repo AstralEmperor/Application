@@ -5,8 +5,7 @@ const requestBody = document.querySelector('.zahtevi__body');
     async function getRequest() {
         try{
             const zahteviData = await requests();
-            console.log(zahteviData)
-                // console.log(zahteviData)
+
                 let tableBody = document.querySelector('#data-output');
                 let out = [];
         
@@ -29,15 +28,15 @@ const requestBody = document.querySelector('.zahtevi__body');
             // Changes color of Status depending on Availability
                 let statusZah = document.querySelectorAll('.zahtev__status');
                     for(let statusZ of statusZah){
-                        console.log(statusZ)
+
                         if(statusZ.textContent == 'Zatvoren'){
-                            console.log('red');
+ 
                             statusZ.style.color = "#fb0101";
                         }else if(statusZ.textContent == 'Otvoren'){
-                            console.log('green');
+;
                             statusZ.style.color = "#00cf00";
                         }else{
-                            console.log(error);
+                            console.error('Naming error');
                         }
                 }
             
@@ -58,7 +57,7 @@ const requestBody = document.querySelector('.zahtevi__body');
                     }
             
         }catch (error) {
-            console.error(error);
+            console.log(error);
           }
     }
 

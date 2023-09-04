@@ -22,21 +22,17 @@ body{
     margin-bottom:32px;
     color:var(--textGray);
     font-weight:400;
-    font-size:14px;
+    font-size:1.1rem;   
+    letter-spacing:0.02em;
 }
 .main__createBtn{
-    width:133px;
-    height:32px;
     margin-bottom:30px;
     text-decoration:none;
-    color:var(--btnText);
     display:inline-flex;
     justify-content:center;
     align-items:center;
 }
 .main__btnSearch{
-    width:90px;
-    height:32px;
     margin-right:14px;
 }
 .main__btnDismiss{
@@ -173,12 +169,16 @@ margin-right:5px;
 }
 .main__textForBtns{
     max-width:50px;
-    margin-inline:2rem;
+    margin-inline:1.5rem;
+}
+.main__description{
+display:flex;
+align-items:center;
 }
 .main__description--special{
     display:flex;
     text-align:right;
-    margin-left:3.5rem;
+    margin-left:1.25rem;
 }
 .main__imagesContainer{
     display:grid;
@@ -239,6 +239,16 @@ margin-right:5px;
     flex-direction:row;
     background-color:transparent;
 }
+dl > dd{
+    font-weight:600;
+    font-size:1.05rem;
+}
+.main__text{
+    opacity:0.85;
+    font-size:1.05rem;
+    letter-spacing:0.04em;
+    padding-inline:0.25rem;
+}
 .main__commentButton{
     width:30%;
     padding:2px 0;
@@ -252,7 +262,7 @@ margin-right:5px;
     height:41px;
     border:1px solid var(--lightGray);
     border-radius:0 0 4px 4px;
-    top:-4px;
+    top:-5px;
      
     align-items:center;
     justify-content:space-between;
@@ -270,7 +280,7 @@ margin-right:5px;
 .main__chatBox{
 width:24px;
 height:24px;
-margin-left:30px;
+margin-left:0.5em;
 border:none;
 background:transparent;
 cursor: pointer;
@@ -281,12 +291,12 @@ height:20px;
 z-index:10;
 }
 .main__delete{
-width:24px;
-height:24px;
-margin-right:30px;
-border:none;
-background:transparent;
-cursor: pointer;
+    width:24px;
+    height:24px;
+    margin-right:0.5em;
+    border:none;
+    background:transparent;
+    cursor: pointer;
 }
 .main__deleteImg{
     width:18px;

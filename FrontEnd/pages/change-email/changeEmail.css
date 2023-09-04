@@ -14,21 +14,13 @@ body{
     box-shadow: 1px 3px 6px rgb(0 0 0 / 0.16);
 }
 .email__icon{
-    height:81px;
-    width:81px;
+    height:5rem;
+    width:5rem;
     margin-top:29px;
     margin-bottom:29px;
 }
 .email__changeBtn{
-    background-color:var(--blue);
-    width:83px;
-    height:32px;
-    border-radius:4px;
-    border:none;
-    cursor:pointer;
-    font-size:12px;
-    margin-bottom:25px;
-    color:var(--btnText);
+    margin-bottom:1rem;
     margin-top:30.5px;
 }
 .email__input{
@@ -46,7 +38,9 @@ body{
     line-height:11px;
     margin-top:1rem;
     margin-bottom:1rem;
+    letter-spacing:0.05em;
     color:var(--textGray);
+    opacity:0.8;
 }
 .email__link{
     text-decoration:none;
@@ -54,6 +48,8 @@ body{
     cursor:pointer;
 }
 .email__return {
-border:none;
-background-color:transparent;
+    border:none;
+    font-size:rem;
+    background-color:transparent;
+    margin-bottom:0.5rem;
 }

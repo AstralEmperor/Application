@@ -54,7 +54,7 @@ function prototype(korisnici){
                 stat.innerHTML ='<div class="main__korisnici--onlineStatus offline"></div>'
     
             }else{
-                console.log('error',422);
+                console.warn('error',422);
             }
         }
 }

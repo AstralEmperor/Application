@@ -14,8 +14,8 @@ body{
     flex-direction:column;
     background-color:var(--lightGray);
     margin:0 auto;
-    height:520px;
-    width:338px;
+    min-height:520px;
+    max-width:338px;
     align-items:center;
     padding:0px 15px 0 15px;
     border-radius:20px;
@@ -29,8 +29,9 @@ body{
 }
 .login__label{
     margin-bottom:42px;
-    font-size:20px;
+    font-size:1.5rem;
     font-weight:400;
+    letter-spacing:0.04em;
 }
 .login__email{
     margin-bottom:25px;
@@ -51,9 +52,7 @@ body{
     color:var(--line);
 }
 .login__loginBtn{
-width:97px;
-height:32px;
-margin-bottom:27px;
+    margin-bottom:0.75rem;
 }
 .login__rememberMe{
     margin-top:14px;
@@ -63,13 +62,24 @@ margin-bottom:27px;
  margin:0 auto;
  border-top:1px solid var(--line);
  cursor:pointer;
- padding:10px 0;
+ letter-spacing:0.05em;
+ padding:0.5rem 0;
+}
+.login__register{
+    padding:0.75rem 0 0 0;
+    font-weight:600;
+    text-transform:uppercase;
+    color:var(--blueVariant);
+}
+.login__guest{
+    padding:0.5rem 0 1rem 0;
+    letter-spacing:0.02em;
 }
 
 /* FORM EMAIL */
 .login__link{
     text-decoration:none;
-    color:var(--textGray);
+
 }
 .login__wrong{
     display:none;

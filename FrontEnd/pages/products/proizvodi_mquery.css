@@ -10,10 +10,19 @@
         margin:30px 0.5rem 0;
     }
     .main__pageItemNum{
-        margin-left:5px;
+        margin-left:1rem;
+    }
+    .main__pageItemNum{
+        letter-spacing:0.05em;
     }
     .main__primaryText{
         font-size:0.8rem;
+    }
+    dl > dd{
+        font-size:0.8rem;
+    }
+    .main__view{
+        padding:0;
     }
 }
 @media only screen and (max-width:420px){
@@ -27,5 +36,8 @@
         flex-direction: column;
         justify-content:center;
         align-items: center;
+    }
+    .main__delete{
+        padding-left:0.5rem;
     }
 }
