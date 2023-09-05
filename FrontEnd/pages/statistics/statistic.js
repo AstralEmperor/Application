@@ -9,6 +9,8 @@ async function getStats(){
     const bProdato = document.getElementById('bProdato');
     const bDostavljeno = document.getElementById('bDostavljeno');
     const bTransport = document.getElementById('bTransport');
+    const bPrimedbe = document.getElementById('bPrimedbe');
+    const companyN = document.getElementById('companyName');
 
     try{
         const zahteviData = await requests()
@@ -17,9 +19,11 @@ async function getStats(){
         
         let korisnikNumber = korisnici.length;
         let brojZahteva = zahteviData.length;
-        let prodato = products.sold;
-        let dostavljeno = products.delivered;
-        let transport = products.transporting;
+        let prodato = products.data2023.sold;
+        let dostavljeno = products.data2023.delivered;
+        let transport = products.data2023.transporting;
+        let complaint = products.data2023.complaints;
+        let company = products.companyName;
 
 
         // ovaj deo ispisuje
@@ -28,6 +32,8 @@ async function getStats(){
         bProdato.innerText = prodato; 
         bDostavljeno.innerText = dostavljeno; 
         bTransport.innerText = transport;
+        bPrimedbe.innerText = complaint;
+        companyN.innerText = company;
 
     }catch(error){
         console.log(error);

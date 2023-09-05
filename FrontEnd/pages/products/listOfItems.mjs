@@ -33,6 +33,7 @@ function changeImage1() {
     const chat = document.querySelectorAll('.main__chatImg');
     const deleteWrap = document.querySelectorAll(".main__delete");
     const del = document.querySelectorAll('.main__deleteImg');
+    const cartIcon = document.querySelectorAll('.main__cart');
     const mainText = document.querySelectorAll(".main__text");
     const singleCont = document.querySelectorAll(".main__singleImgContainer");
     const infoCont = document.querySelectorAll(".main__info");
@@ -56,7 +57,8 @@ function changeImage1() {
     applyStyles(chat,"width:20px;height:20px");
     applyStyles(deleteWrap,"margin-right:0.5em;");
     applyStyles(del,"width:18px;height:18px");
-    applyStyles(singleCont,"display:flex;flex-direction:column;margin-top:30px;");
+    applyStyles(cartIcon,"width:21px;height:21px");
+    applyStyles(singleCont,"display:flex;flex-direction:column;margin-top:30px");
     applyStyles(infoCont,"display:flex;flex-direction:column");
     applyStyles(buttons,"height:41px;margin-left:0rem;top:-5px;");
     applyStyles(searchText,"display:none");
@@ -76,6 +78,7 @@ function changeImage2() {
     const chat = document.querySelectorAll('.main__chatImg');
     const deleteWrap = document.querySelectorAll(".main__delete");
     const del = document.querySelectorAll('.main__deleteImg');
+    const cartIcon = document.querySelectorAll('.main__cart');
     const mainText = document.querySelectorAll(".main__text");
     const singleCont = document.querySelectorAll(".main__singleImgContainer");
     const infoCont = document.querySelectorAll(".main__info");
@@ -101,6 +104,7 @@ function changeImage2() {
         applyStyles(chat,"width:26px;height:26px;");
         applyStyles(deleteWrap, "margin-right:0.5em;");
         applyStyles(del,"width:24px;height:24px;");
+        applyStyles(cartIcon,"width:27px;height:27px");
         applyStyles(singleCont,"display:flex;flex-direction:column;padding-top:0px;max-width:100%;margin-top:30px;");
         applyStyles(infoCont,"display:flex;flex-direction:column");
         applyStyles(buttons,"height:63px;margin-left:0rem;top:-5px;");
@@ -120,6 +124,7 @@ function changeImage3(){
     const chat = document.querySelectorAll('.main__chatImg');
     const deleteWrap = document.querySelectorAll(".main__delete");
     const del = document.querySelectorAll('.main__deleteImg');
+    const cartIcon = document.querySelectorAll('.main__cart');
     const mainText = document.querySelectorAll(".main__text");
     const singleCont = document.querySelectorAll(".main__singleImgContainer");
     const infoCont = document.querySelectorAll(".main__info");
@@ -144,6 +149,7 @@ function changeImage3(){
         applyStyles(chat,"width:20px;height:20px;margin-left:15%");
         applyStyles(deleteWrap,"margin-right:15%");
         applyStyles(del,"width:18px;height:18px;margin");
+        applyStyles(cartIcon,"width:22px;height:22px");
         applyStyles(singleCont,"display:flex;flex-direction:row;border-top:1px solid gray;max-height:100px;justify-content:space-between;padding:12px 0 12px 0;margin-top:0px;padding-left:0.5rem;align-items:center;");
         applyStyles(infoCont,"display:flex;flex-direction:row-reverse;flex-basis:80%;align-items:center;");
         applyStyles(buttons,"height:41px;justify-content:right;border:none;width:fit-content;top:0;gap:1rem;margin-left:0.75rem;");

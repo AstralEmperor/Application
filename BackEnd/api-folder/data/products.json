@@ -1,6 +1,18 @@
-{
-    "id":"1",
-    "sold":"2756",
-    "delivered":"2730",
-    "transporting":"26"
+{  
+    "companyName":"Fresh & Green",
+    "launched":"December 5th 2022",
+    "data2022":{
+        "id":"12",
+        "sold":"26",
+        "delivered":"26",
+        "transporting":"0",
+        "complaints":"0"
+    },
+    "data2023":{
+        "id":"23",
+        "sold":"2756",
+        "delivered":"2730",
+        "transporting":"26",
+        "complaints":"0"
+    }
 }

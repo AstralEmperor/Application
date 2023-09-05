@@ -150,9 +150,11 @@ margin-right:5px;
     color:var(--textGray);
 }
 .main__btnWrap{
+    position:relative;
     display: flex;
     align-items:center;
     justify-content:center;
+    top:7px;
 }
 .main__pageBtnPrev{
     margin-right:10px;
@@ -277,6 +279,12 @@ dl > dd{
 .main__topDescription{
  font-size:16px;
 }
+.actions__group1{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:1rem;
+}
 .main__chatBox{
 width:24px;
 height:24px;
@@ -285,10 +293,19 @@ border:none;
 background:transparent;
 cursor: pointer;
 }
+.main__cart{
+    border:none;
+    background-color:transparent;
+    cursor:pointer;
+}
+.main__cartImg{
+    width:21px;
+    height:21px;
+}
 .main__chatImg{
-width:20px;
-height:20px;
-z-index:10;
+    width:20px;
+    height:20px;
+    z-index:10;
 }
 .main__delete{
     width:24px;
