@@ -20,9 +20,10 @@ display:none;
     background-color:var(--black);
 }
 /* MEDIA QUERY FOR TABLET */
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:1024px) {
     .nav{
         position:relative;
+        font-size:1rem;
     }
     .nav__toggleBtn{
         display:flex;
@@ -39,16 +40,21 @@ display:none;
         background-color:var(--white);
         top:100%;
         width:100%;
-        padding:10px;
+        padding-inline:2rem;
+    }
+    .nav__link{
+        font-size:1rem;
     }
     .nav__user{
         width:100%;
         margin-right:0px;
+        font-size:1rem;
     }
     .nav__ul{
         display:flex;
         flex:1;
         flex-direction:column;
+        font-size:1rem;
     }
     .nav__li{
         border-bottom:1px solid var(--line);
@@ -80,7 +86,7 @@ display:none;
         width:100%;
     }
     .nav__user{
-       padding:15px 0; 
+       padding-block:1rem 0; 
     }
     .inactive{
         display:none;
@@ -95,10 +101,17 @@ display:none;
         flex-direction:column;
     }
 }
+@media only screen and (max-width:768px) {
+    *:not(img){
+        font-size:0.85rem;
+    }
+    ::placeholder{
+        font-size:0.85rem;
+    }
+}
 @media only screen and (max-width:420px) {
-    nav *,
     footer *,
     label *{
-       font-size:12px;
+       font-size:0.8rem;
     }
 }

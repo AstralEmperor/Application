@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../../shared/style.css" rel="stylesheet">
     <link href="../../shared/mquery/mediaq.css" rel="stylesheet">
+    <link href="../products/proizvodi.css" rel="stylesheet">
     <link href="./pocetna.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Početna</title>
 </head>
 <body>
     <nav class="nav">
-        <img class="nav__icon" src="../../assets/Icon.png" alt="Bs-icon.png">
+        <img class="nav__icon" src="../../assets/F&G_logo.png" alt="Bs-icon.png">
         <div class="nav__links inactive">
         <div class="nav__group1">
       <ul class="nav__ul">
@@ -42,6 +43,34 @@
         <span class="nav__spanLine"></span>
       </button>
     </nav>
+    <nav>
+      <ul class="nav2">
+        <li class="nav2__list">Početna</li>
+      </ul>
+    </nav>
+    <section class="main home">
+      <div class="home__container">
+          <div class="home__btnWrap">
+            <button class="home__btn home__btn--previous"><span> < </span></button>
+            <button class="home__btn home__btn--next"><span> > </span></button>
+          </div>
+        <div class="home__carousel">
+            <img class="home__img current-image" src="../../assets/fruit_farming1.jpeg" alt="img1_fruit1.jpeg">
+            <img loading="lazy" class="home__img" src="../../assets/fruit__farming2.jpg" alt="img1_fruit2.jpg">
+            <img loading="lazy" class="home__img" src="../../assets/vegetables__farming3.jpg" alt="img1_vegetable3.jpg">
+        </div>
+        <div class="home__absoluteContainer">
+          <div class="home__coverText">
+            <h1 class="home__h1">Fresh & Green</h1>
+          </div>
+          <div class="home__dots">
+            <button class="home__singleDot current-dot"></button>
+            <button class="home__singleDot"></button>
+            <button class="home__singleDot"></button>
+          </div>
+        </div> 
+      </div>  
+    </section>
     <script src="./pocetna.js"></script>
     <script src="../../shared/mquery/secondaryNav.js"></script>
     <script src="../../shared/mquery/navigation.js"></script>
