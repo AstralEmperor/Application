@@ -60,7 +60,7 @@ function changeImage1() {
     applyStyles(cartIcon,"width:21px;height:21px");
     applyStyles(singleCont,"display:flex;flex-direction:column;margin-top:30px");
     applyStyles(infoCont,"display:flex;flex-direction:column");
-    applyStyles(buttons,"height:41px;margin-left:0rem;top:-5px;");
+    applyStyles(buttons,"height:41px;margin-left:0rem;");
     applyStyles(searchText,"display:none");
     applyStyles(searchDescr,"display:none");
     applyStyles(activeComment,"width:100%;height:100%");
@@ -107,7 +107,7 @@ function changeImage2() {
         applyStyles(cartIcon,"width:27px;height:27px");
         applyStyles(singleCont,"display:flex;flex-direction:column;padding-top:0px;max-width:100%;margin-top:30px;");
         applyStyles(infoCont,"display:flex;flex-direction:column");
-        applyStyles(buttons,"height:63px;margin-left:0rem;top:-5px;");
+        applyStyles(buttons,"height:63px;margin-left:0rem;");
         applyStyles(searchText,"display:none");
         applyStyles(searchDescr,"display:none");
         applyStyles(activeComment,"width:100%;height:100%");
@@ -155,7 +155,7 @@ function changeImage3(){
         applyStyles(buttons,"height:41px;justify-content:right;border:none;width:fit-content;top:0;gap:1rem;margin-left:0.75rem;");
         applyStyles(searchText,"display:flex;justify-content:flex-start;border:none");
         applyStyles(searchDescr,"display:flex;justify-content:space-between;");
-        applyStyles(activeComment,"width:auto;height:auto;top:-1.5px;");
+        applyStyles(activeComment,"width:auto;height:auto;");
         applyStyles(fruitImg,"max-width:4rem;max-height:100%;");
 
         document.getElementById("main__View1").src="../../assets/grid.png";
