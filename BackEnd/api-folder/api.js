@@ -36,7 +36,7 @@ export async function getData(){
     .catch(error => console.warn(error))
     return loginInfo;
 }
-
+//products data(for statistics)
 export async function getProductStats(){
     const res = await fetch('../../../BackEnd/api-folder/data/products.json',{
         method:'GET',
@@ -47,4 +47,16 @@ export async function getProductStats(){
     const products = await res.json()
     .catch(error => console.warn(error))
     return products;
+}
+// reviews data
+export async function getReviews(){
+    const res = await fetch('../../../BackEnd/api-folder/data/reviews.json',{
+        method: 'GET',
+        headers:{
+            'Content-Type':'application/json'
+        }
+    });
+    const reviewData = await res.json()
+    .catch(error => console.warn(error))
+    return reviewData;
 }

@@ -1,0 +1,34 @@
+{
+    "companyName":"Fresh & Green",
+    "year":"2023",
+    "reviews":[
+        {
+        "id":"1",
+        "image":"../../assets/comment1.jpg",
+        "name":"Marko M.",
+        "comment":" - 'Fast delivery and quality products!' ",
+        "stars":"5"
+        },
+        {
+        "id":"2",
+        "image":"../../assets/comment2.webp",
+        "name":"Nikola P.",
+        "comment":" - 'Very satisfied with quick response time and nice staff' ",
+        "stars":"4.5"
+        },
+        {
+        "id":"3",
+        "image":"../../assets/comment3.jpg",
+        "name":"Milica K.",
+        "comment":" - 'Everything was great, I recommend this app!' ",
+        "stars":"5"
+        },
+        {
+        "id":"4",
+        "image":"../../assets/comment4.jpg",
+        "name":"Nikolina T.",
+        "comment":" - 'Good prices and responsive staff' ",
+        "stars":"4"
+        }
+    ]
+}
