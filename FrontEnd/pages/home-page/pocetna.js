@@ -56,7 +56,7 @@ function prototype(reviewData){
         while(i <= maxStars);
 
        reviewInfo+=`
-        <div class="review__card review__card--1">
+        <div tabindex="0" aria-label="review_card" class="review__card review__card--1">
         <div class="review__wrapInfo">
             <div class="review__imgWrap">
               <img class="review__image" src="`+ review.image +` " alt="review-img1.jpg">
@@ -114,15 +114,23 @@ const updateDots = (currentDot, targetDot) => {
 const hideShowArrows = (images, previousBtn, nextBtn, targetIndex) => {
   if(targetIndex === 0){// if targeted index is first item in array, turn off btnPrevious
     previousBtn.classList.add('is-hidden');
+    previousBtn.setAttribute('tabindex', '-1');
     nextBtn.classList.remove('is-hidden');
+    nextBtn.setAttribute('tabindex', '0');
+    document.activeElement.blur();
 
   }else if(targetIndex === images.length - 1){ // if target index is the last item, turn off btnNext
     previousBtn.classList.remove('is-hidden');
     nextBtn.classList.add('is-hidden');
+    previousBtn.setAttribute('tabindex', '0');
+    nextBtn.setAttribute('tabindex', '-1');
+    document.activeElement.blur();
 
   }else{  // in every other case, show both arrows
     previousBtn.classList.remove('is-hidden');
     nextBtn.classList.remove('is-hidden');
+    previousBtn.setAttribute('tabindex', '0');
+    nextBtn.setAttribute('tabindex', '0');
   }
 }
 

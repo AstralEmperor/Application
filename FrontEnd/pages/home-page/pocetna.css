@@ -102,6 +102,9 @@
     opacity:0.5;
     pointer-events:none;
 }
+.is-hidden:focus-visible{
+    pointer-events:none;
+}
 .home__btn:hover{
     cursor:pointer;
 }
