@@ -15,7 +15,7 @@ let data = {
     roles: GUEST
 }
 
-fetch('../JS/data.json',{
+fetch('../../../BackEnd/api-folder/data/users.json',{
     method:'POST',
     headers:{
         "Content-Type":"application/json"

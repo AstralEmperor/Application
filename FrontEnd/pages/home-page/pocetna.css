@@ -22,6 +22,7 @@
     position:relative;
     display:flex;
     height:50rem;
+    margin-top:4rem;
     width:100%;
     overflow:hidden;
 }

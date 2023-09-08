@@ -12,7 +12,7 @@ getData().then(loginInfo => {
   for(let i = 0; i < loginInfo.length; i++){
       if(loginName === loginInfo[i].names && loginEmail === loginInfo[i].email && loginPw === loginInfo[i].password){
         toastr.success("Login Succesful!")
-        window.location = '../home-page/pocetna.html';
+        window.location = './FrontEnd/pages/home-page/pocetna.html';
         return true;
         
       }else if(i === loginInfo.length - 1){

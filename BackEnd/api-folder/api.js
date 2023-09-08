@@ -26,7 +26,7 @@ export async function getKorisnici(){
 
 //login data
 export async function getData(){
-    const res = await fetch('../../../BackEnd/api-folder/data/loginData.json',{
+    const res = await fetch('./BackEnd/api-folder/data/loginData.json',{
         method:'GET',
         headers:{
             'Content-Type':'application/json'

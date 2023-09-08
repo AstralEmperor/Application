@@ -25,13 +25,13 @@ background-color:transparent;
     justify-content:space-between;
     flex-direction: row;
     align-items:center;
-    margin-top:30px;
+    margin-top:4rem;
     color:var(--textGray);
 }
 .main__brojPrikaza{
-display:flex;
-flex-direction:row;
-gap:10px;
+    display:flex;
+    flex-direction:row;
+    gap:10px;
 }
 .main__inputNumElements{
     max-width:40px;
