@@ -58,7 +58,9 @@ background-color:transparent;
     margin-top:30px;
     width:100%;
     text-align:left;
+    border-spacing:0;
 }
+
 .main__tableHeader > tr > th{
     min-height:50px;
     padding:20px 0;
