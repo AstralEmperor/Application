@@ -81,3 +81,93 @@ getReviewData().then(reviewData => {
     reviewData;
     prototype(reviewData);
 })
+
+const previousBtn = document.querySelector('.home__btn--previous');
+const nextBtn = document.querySelector('.home__btn--next');
+const carousel = document.querySelector('.home__carousel');
+const images = Array.from(carousel.children);
+const dotsCont = document.querySelector('.home__dots');
+const dots = Array.from(dotsCont.children);
+
+//takes first image current width(based on screen size)
+const carouselWidth = images[0].getBoundingClientRect().width;
+
+// slides carousel based on index number and carousel width
+const setSlidePosition = (slide, index) => {
+  slide.style.left = carouselWidth  * index + 'px';
+}
+
+images.forEach(setSlidePosition);
+
+const moveToSlide = (carousel, currentImage, targetImage) => {
+  carousel.style.transform = 'translateX(-' + targetImage.style.left + ')';
+  currentImage.classList.remove('current-image');
+  targetImage.classList.add('current-image');
+}
+
+//removes class on previous dot, adds it to new one(next/previous)
+const updateDots = (currentDot, targetDot) => {
+  currentDot.classList.remove('current-dot');
+  targetDot.classList.add('current-dot');
+}
+
+const hideShowArrows = (images, previousBtn, nextBtn, targetIndex) => {
+  if(targetIndex === 0){// if targeted index is first item in array, turn off btnPrevious
+    previousBtn.classList.add('is-hidden');
+    nextBtn.classList.remove('is-hidden');
+
+  }else if(targetIndex === images.length - 1){ // if target index is the last item, turn off btnNext
+    previousBtn.classList.remove('is-hidden');
+    nextBtn.classList.add('is-hidden');
+
+  }else{  // in every other case, show both arrows
+    previousBtn.classList.remove('is-hidden');
+    nextBtn.classList.remove('is-hidden');
+  }
+}
+
+//on previousBtn click look for nextTarget based on index, and siblings
+previousBtn.addEventListener('click', () => {
+    const currentImage = document.querySelector('.current-image');
+    const previousImage = currentImage.previousElementSibling;
+
+    const currentDot = document.querySelector('.current-dot');
+    const previousDot = currentDot.previousElementSibling;
+
+    const prevIndex = images.findIndex(image => image === previousImage);
+
+    updateDots(currentDot, previousDot);
+    moveToSlide(carousel, currentImage, previousImage);
+    hideShowArrows(images, previousBtn, nextBtn, prevIndex);
+})
+//on nextBtn click look for nextTarget based on index, and siblings
+nextBtn.addEventListener('click', () => {
+    const currentImage = document.querySelector('.current-image');
+    const nextImage = currentImage.nextElementSibling;
+
+    const currentDot = document.querySelector('.current-dot');
+    const nextDot = currentDot.nextElementSibling;
+
+    const nextIndex = images.findIndex(image => image === nextImage);
+
+    updateDots(currentDot, nextDot);
+    moveToSlide(carousel, currentImage, nextImage);
+    hideShowArrows(images, previousBtn, nextBtn, nextIndex);
+})
+
+//add event listener to whole dotsContainer and if clicked target is Button, 'do action',else do nothing
+dotsCont.addEventListener('click', e => {
+  const targetDot = e.target.closest('button');
+
+  if(!targetDot) return;
+
+  const currentImage = document.querySelector('.current-image');
+  const currentDot = document.querySelector('.current-dot');
+
+  const targetIndex = dots.findIndex(dot => dot === targetDot);
+  const targetImage = images[targetIndex];
+
+  updateDots(currentDot, targetDot);
+  moveToSlide(carousel, currentImage, targetImage);
+  hideShowArrows(images, previousBtn, nextBtn, targetIndex);
+})

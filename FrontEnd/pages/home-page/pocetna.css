@@ -32,6 +32,7 @@
     display:flex;
     flex-direction:row;
     height:100%;
+    transition:all 350ms ease-in-out;
 }
 .home__carousel > img{
     width:100%;
@@ -89,6 +90,10 @@
 .home__btn > img{
     height:100%;
     width:100%;
+}
+.is-hidden{
+    opacity:0.5;
+    pointer-events:none;
 }
 .home__btn:hover{
     cursor:pointer;
