@@ -66,6 +66,9 @@
     border:2px solid var(--black);
     transition:all 250ms ease-in-out;
 }
+.home__singleDot:hover{
+    cursor:pointer;
+}
 .current-dot{
     background-color:var(--blue);
     scale:1.2;
@@ -86,6 +89,10 @@
     color:var(--lightGray);
     border:none;
     background:transparent;
+}
+.home__btn:hover,
+.home__btn:focus-visible{
+    opacity:0.8;
 }
 .home__btn > img{
     height:100%;
