@@ -129,7 +129,8 @@
     justify-content:center;
     background-color:var(--white);
 }
-.review__card:hover{
+.review__card:hover,
+.review__card:focus-visible{
     scale:1.05;
 }
 .review__wrapInfo{
