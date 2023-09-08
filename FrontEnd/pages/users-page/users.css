@@ -53,6 +53,7 @@ gap:10px;
 .main__inputPretraga{
     border:1px solid var(--textGray);
     border-radius:4px;
+    width:100%;
 }
 .main__searchUl{
     margin-top:30px;

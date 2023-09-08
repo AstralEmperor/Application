@@ -1,0 +1,16 @@
+@media only screen and (max-width: 768px){
+    .home__container{
+        height:25rem;
+    }
+    .home__dots{
+        gap:1rem;
+    }
+    .home__singleDot{
+        width:15px;
+        height:15px;
+    }
+    .home__btn{
+        width:30px;
+        height:30px;
+    }
+}

@@ -26,15 +26,19 @@ background-color:transparent;
     flex-direction: row;
     align-items:center;
     margin-top:4rem;
+    gap:0.5rem;
     color:var(--textGray);
 }
 .main__brojPrikaza{
     display:flex;
+    text-align:center;
+    align-items:center;
     flex-direction:row;
     gap:10px;
 }
 .main__inputNumElements{
     max-width:40px;
+    height:20px;
     text-align:center;
     align-items:center;
     border-radius:4px;
@@ -48,6 +52,7 @@ background-color:transparent;
 .main__inputPretraga{
     border:1px solid var(--textGray);
     border-radius:4px;
+    width:100%;
 }
 .main__searchUl{
     margin-top:30px;

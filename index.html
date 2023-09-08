@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link rel="stylesheet" href="./FrontEnd/shared/style.css">
     <link rel="stylesheet" href="./FrontEnd/pages/login/login.css">
     <link rel="stylesheet" href="./FrontEnd/shared/mquery/mediaq.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="./node_modules/toastr/build/toastr.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="./node_modules/toastr/build/toastr.min.js"></script>
     <title>Login</title>
 </head>
 <body>
- <form name="login" class="login" method="GET">
+ <form id="login" name="login" class="login" method="GET">
      <img src="./FrontEnd/assets/F&G_logo.png" class="login__icon" alt="Bs-icon.png">
      <p class="login__label">Prijavi se!</p>
      <div>
@@ -33,6 +32,7 @@
       <a class="login__link pentaBtn login__register" href="./FrontEnd/pages/register/register.html">Registruj se</a>
       <a class="login__link tertiaryBtn login__guest" href="./FrontEnd/pages/home-page/pocetna.html">Uđi kao gost</a>
  </form>
+    <script src="./node_modules/toastr/build/toastr.min.js"></script>
     <script src="./FrontEnd/pages/login/login.js" type="module"></script>
 </body>
 </html>

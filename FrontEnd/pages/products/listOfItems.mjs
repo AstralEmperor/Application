@@ -49,7 +49,7 @@ function changeImage1() {
         
 }else{
     mainView1.src = "../../assets/grid-blue.png";
-    container.style.cssText="grid-gap:24px;grid-template-columns: repeat(auto-fit, minmax(350px, 6fr));";
+    container.style.cssText="grid-gap:24px;grid-template-columns: repeat(auto-fit, minmax(auto,100%, 4fr))";
     document.querySelector(".main__picBtns").style.cssText ="min-width:279px;";
 
     applyStyles(description, "display: grid");
@@ -96,7 +96,7 @@ function changeImage2() {
           
     } else {
         mainView2.src = "../../assets/menu-blue.png";
-        document.getElementsByClassName("main__imagesContainer")[0].style.cssText ="grid-template-columns: repeat(auto-fit, minmax(279,3fr));grid-gap:29px;";
+        document.getElementsByClassName("main__imagesContainer")[0].style.cssText ="grid-template-columns: repeat(auto-fit, minmax(auto,100%, 4fr));grid-gap:29px;";
         document.getElementsByClassName("main__picBtns")[0].style.cssText ="min-width:429px;";
 
         applyStyles(description,"display:none");
@@ -146,13 +146,13 @@ function changeImage3(){
 
         applyStyles(description,"display:flex;justify-content:space-between;flex-basis:100%;gap:0.75rem;text-align:center");
         applyStyles(mainText,"display:none");
-        applyStyles(chat,"width:20px;height:20px;margin-left:15%");
+        applyStyles(chat,"width:20px;height:20px;margin-left:10px");
         applyStyles(deleteWrap,"margin-right:15%");
         applyStyles(del,"width:18px;height:18px;margin");
         applyStyles(cartIcon,"width:22px;height:22px");
         applyStyles(singleCont,"display:flex;flex-direction:row;border-top:1px solid gray;max-height:100px;justify-content:space-between;padding:12px 0 12px 0;margin-top:0px;padding-left:0.5rem;align-items:center;");
         applyStyles(infoCont,"display:flex;flex-direction:row-reverse;flex-basis:80%;align-items:center;");
-        applyStyles(buttons,"height:41px;justify-content:right;border:none;width:fit-content;top:0;gap:1rem;margin-left:0.75rem;");
+        applyStyles(buttons,"height:41px;justify-content:right;border:none;width:fit-content;top:0;gap:0.5rem;margin-left:0.5rem;");
         applyStyles(searchText,"display:flex;justify-content:flex-start;border:none");
         applyStyles(searchDescr,"display:flex;justify-content:space-between;");
         applyStyles(activeComment,"width:auto;height:auto;");

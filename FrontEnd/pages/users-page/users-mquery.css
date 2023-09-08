@@ -1,5 +1,11 @@
 @media screen and (max-width:768px){
     .main__korisnici-Action{
         width:20px;
+    }    
+    table, thead, tbody, th, td, tr { 
+		font-size:0.65rem; 
+	}
+    .main__korisnici-Action--EditBtn{
+        margin-right:0px;
     }
 }

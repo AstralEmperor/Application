@@ -102,7 +102,7 @@ display:none;
     }
 }
 @media only screen and (max-width:768px) {
-    *:not(img){
+    *:not(img,td,th){
         font-size:0.85rem;
     }
     ::placeholder{
@@ -113,5 +113,11 @@ display:none;
     footer *,
     label *{
        font-size:0.8rem;
+    }
+    .main{
+        margin:0;
+        padding:30px 5px;
+        margin:0;
+        border-radius: 0;
     }
 }

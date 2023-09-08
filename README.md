@@ -32,4 +32,5 @@ This app is used for selling and posting of fruits and vegetables. Reaching for 
     11. Automatic/Manual Carousel
     12. Reviews generated using data
 
-## NO WAY TO LAUNCH IT AT THE MOMENT!!!
+## How to Launch?
+https://astralemperor.github.io/Application/
