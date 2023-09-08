@@ -129,6 +129,9 @@
     justify-content:center;
     background-color:var(--white);
 }
+.review__card:hover{
+    scale:1.05;
+}
 .review__wrapInfo{
     width:100%;
     display:flex;
