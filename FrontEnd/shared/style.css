@@ -6,7 +6,7 @@
     --altBlue:#008888;
     --altBlueDark:#3c818a;
     --altBlueDarkest:#204a50;
-    --blueVariant:#50BBC7;
+    --blueVariant:#47a6b1;
     --blueVariant2:#a5d9df;
     --blueVariant3:#cfeff3;
     --line:#CED4DA;
@@ -272,7 +272,7 @@ html{
     src:url('https://fonts.googleapis.com') crossorigin;
     font-style: normal;
     font-weight: 400;
-
+    font-display: fallback;
 }
 /* @media (prefers-color-scheme: dark){
     :root{

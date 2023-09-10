@@ -28,7 +28,7 @@
 }
 .home__carousel{
     position:relative;
-    width:100%;;
+    width:100%;
     display:flex;
     flex-direction:row;
     height:100%;
@@ -37,6 +37,7 @@
 .home__carousel > img{
     width:100%;
     height:100%;
+    object-fit:inherit;
 }
 .home__img{
     position:absolute;

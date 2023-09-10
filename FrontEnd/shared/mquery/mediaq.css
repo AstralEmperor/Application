@@ -30,6 +30,8 @@ display:none;
     }
     .nav__icon{
         z-index:200;
+        width:50px;
+        height:24px;
     }
     .nav__links{
         position:absolute;
@@ -41,6 +43,8 @@ display:none;
         top:100%;
         width:100%;
         padding-inline:2rem;
+        padding-block:1rem;
+        border-block:1px solid var(--tableHeader);
     }
     .nav__link{
         font-size:1rem;

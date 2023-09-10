@@ -17,8 +17,22 @@
 @media only screen and (max-width: 420px){
 
     .review__imgWrap{
-        width:6.5rem;
-        height:4.5rem;
+        width:6rem;
+        height:4rem;
         margin-right:2rem;
     }
+    .home__img,
+    .home__absoluteContainer{
+        border-radius: 0;
+    }
+    .review__card{
+        border-radius:10px;
+        box-shadow:none;
+        border:1px solid var(--navMquery);
+    }
+    .review__card:hover,
+    .review__card:focus-visible{
+    scale:1;
+    } 
+
 }
