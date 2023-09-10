@@ -1,6 +1,8 @@
 @media only screen and (max-width: 768px){
     .home__container{
         height:20rem;
+        border-radius:0;
+        box-shadow:none;
     }
     .home__dots{
         gap:1rem;
