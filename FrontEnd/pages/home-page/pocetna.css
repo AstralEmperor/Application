@@ -193,6 +193,6 @@
 .review__comment{
     letter-spacing:0.05em;
     font-style:italic;
-    font-size:1rem;
+    font-size:0.9rem;
     color:var(--tableHeader);
 }

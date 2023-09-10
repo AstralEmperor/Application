@@ -123,4 +123,8 @@ display:none;
         margin:0;
         border-radius: 0;
     }
+    .nav__second--type2 {
+        max-width: 100%;
+        margin-bottom:0.5rem;
+    }
 }

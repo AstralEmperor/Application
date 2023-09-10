@@ -42,14 +42,14 @@ function prototype(reviewData){
       // do this opperation until while condition is fullfilled
       do{ 
         if(rating >= i){ // if i is bigger or equal compared to rating, add full star
-          spanPrint+= `<img src="../../assets/star_full.png" alt="star_full.png">`
+          spanPrint+= `<img loading="lazy" src="../../assets/star_full.png" alt="star_full.png">`
           i++;
-      }else if(rating <= i + 0.5 && halfStar){ // if there is half a star, do this and change boolean to false so it stops printing half a star
-          spanPrint+= `<img src="../../assets/star_half.png" alt="star_half.png">`
+      }else if(rating <= i + 0.5 && halfStar){ // if there is half a star, add half-star and change boolean to false so it stops printing half a star
+          spanPrint+= `<img loading="lazy" src="../../assets/star_half.png" alt="star_half.png">`
           halfStar = false;
           i++;
         }else if(rating < i  && i <= maxStars){ // if i is bigger than rating and smaller or equal to maxStars, add empty star
-          spanPrint+= `<img src="../../assets/star_empty.png" alt="star_empty.png">`
+          spanPrint+= `<img loading="lazy" src="../../assets/star_empty.png" alt="star_empty.png">`
           i++;
         }
       }
@@ -59,7 +59,7 @@ function prototype(reviewData){
         <div tabindex="0" aria-label="review_card" class="review__card review__card--1">
         <div class="review__wrapInfo">
             <div class="review__imgWrap">
-              <img class="review__image" src="`+ review.image +` " alt="review-img1.jpg">
+              <img loading="lazy" class="review__image" src="`+ review.image +` " alt="review-img1.jpg">
             </div>
           <div class="review__info">
             <p class="review__name">
