@@ -121,11 +121,6 @@ outline:var(--btnText);
     box-shadow:1px 3px 6px rgba(0,0,0,0.16);
     position:relative;
 }
-@media screen and (max-width:768px){
-    .listHeaderBtn{
-        font-size:0.8rem;
-    }
-}
 .listHeaderBtn:hover{
     color:var(--tableHeader);
 }
@@ -155,7 +150,7 @@ outline:var(--btnText);
     text-align:center;
 }
 .nav__second--type2{
-    width:130px;
+    max-width:130px;
 }
 .nav__second::before{
     content:"";
@@ -188,7 +183,7 @@ outline:var(--btnText);
 .nav__icon{
     margin-left:30px;
     margin-right:30px;
-    width:65px;
+    width:59px;
     height:28px;
 }
 .nav__li{
@@ -268,6 +263,16 @@ outline:var(--btnText);
 .disabled2{
     opacity:0;
     pointer-events:none;
+}
+html{
+    font-family: 'Open Sans', sans-serif
+}
+@font-face {
+    font-family: 'Open Sans', sans-serif;
+    src:url('https://fonts.googleapis.com') crossorigin;
+    font-style: normal;
+    font-weight: 400;
+
 }
 /* @media (prefers-color-scheme: dark){
     :root{

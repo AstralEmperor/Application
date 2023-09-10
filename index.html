@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login stranica za Fresh i Green aplikaciju">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./FrontEnd/shared/style.css">
     <link rel="stylesheet" href="./FrontEnd/pages/login/login.css">
     <link rel="stylesheet" href="./FrontEnd/shared/mquery/mediaq.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="./node_modules/toastr/build/toastr.min.css" rel="stylesheet">
-    <title>Login</title>
+    <title lang="eng">Login</title>
 </head>
 <body>
  <form id="login" name="login" class="login" method="GET">
@@ -20,8 +23,8 @@
      <input name="loginName" class="login__name login__input" type="text" placeholder="Ime" required>
      <input name="loginEmail" class="login__email login__input" type="email" placeholder="Elektronska pošta" required>
      <input class="login__password login__input" type="password" placeholder="Šifra" required>
-     <p class="login__nonExistent">Account doesn't exist!</p>
-     <p class="login__wrong">Password or Username are wrong!</p>
+     <p class="login__nonExistent">Ovaj nalog ne postoji!</p>
+     <p class="login__wrong">Pogrešno unešeni detalji!</p>
      <div class="login__rememberMe">
        <input name="remember" id="remember" type="checkbox" checked>
        <label for="remember">Zapamti me!</label>

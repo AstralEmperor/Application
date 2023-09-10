@@ -135,7 +135,7 @@
 .review__card{
     width:100%;
     max-width:25rem;
-    max-height:15rem;
+    min-height:12rem;
     box-shadow:0 2px 15px 2px var(--tableHeader);
     border-radius:20px;
     padding:1rem;
@@ -193,6 +193,6 @@
 .review__comment{
     letter-spacing:0.05em;
     font-style:italic;
-    font-size:1.15rem;
+    font-size:1rem;
     color:var(--tableHeader);
 }

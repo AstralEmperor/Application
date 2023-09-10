@@ -42,14 +42,14 @@ function prototype(reviewData){
       // do this opperation until while condition is fullfilled
       do{ 
         if(rating >= i){ // if i is bigger or equal compared to rating, add full star
-          spanPrint+= `<img src="../../assets/star_full.png">`
+          spanPrint+= `<img src="../../assets/star_full.png" alt="star_full.png">`
           i++;
       }else if(rating <= i + 0.5 && halfStar){ // if there is half a star, do this and change boolean to false so it stops printing half a star
-          spanPrint+= `<img src="../../assets/star_half.png">`
+          spanPrint+= `<img src="../../assets/star_half.png" alt="star_half.png">`
           halfStar = false;
           i++;
         }else if(rating < i  && i <= maxStars){ // if i is bigger than rating and smaller or equal to maxStars, add empty star
-          spanPrint+= `<img src="../../assets/star_empty.png">`
+          spanPrint+= `<img src="../../assets/star_empty.png" alt="star_empty.png">`
           i++;
         }
       }

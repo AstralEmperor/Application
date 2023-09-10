@@ -6,28 +6,28 @@
         "id":"1",
         "image":"../../assets/comment1.jpg",
         "name":"Marko M.",
-        "comment":" - 'Fast delivery and quality products!' ",
+        "comment":" - 'Brza dostava i kvalitetna roba!' ",
         "stars":"5"
         },
         {
         "id":"2",
         "image":"../../assets/comment2.webp",
         "name":"Nikola P.",
-        "comment":" - 'Very satisfied with quick response time and nice staff' ",
+        "comment":" - 'Veoma zadovoljan, 10/10' ",
         "stars":"4.5"
         },
         {
         "id":"3",
         "image":"../../assets/comment3.jpg",
         "name":"Milica K.",
-        "comment":" - 'Everything was great, I recommend this app!' ",
+        "comment":" - 'Sve je super, preporučujem ovu aplikaciju!' ",
         "stars":"5"
         },
         {
         "id":"4",
         "image":"../../assets/comment4.jpg",
         "name":"Nikolina T.",
-        "comment":" - 'Good prices and responsive staff' ",
+        "comment":" - 'Dobre cene, fini ljudi' ",
         "stars":"3.5"
         }
     ]
