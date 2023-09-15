@@ -162,7 +162,7 @@ margin-right:5px;
 }
 .main__textForBtns{
     max-width:50px;
-    margin-inline:1.5rem;
+    margin-inline:1rem;
 }
 .main__description{
 display:flex;
@@ -293,8 +293,8 @@ cursor: pointer;
     height:21px;
 }
 .main__chatImg{
-    width:20px;
-    height:20px;
+    width:25px;
+    height:25px;
     z-index:10;
 }
 .main__delete{

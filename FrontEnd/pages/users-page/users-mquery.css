@@ -3,9 +3,18 @@
         width:20px;
     }    
     table, thead, tbody, th, td, tr { 
-		font-size:0.65rem; 
+		font-size:0.6rem !important; 
 	}
     .main__korisnici-Action--EditBtn{
         margin-right:0px;
     }
+    td,
+    th{
+        padding-inline:0.25em !important;
+    }
+}
+@media screen and (max-width:420px){
+    table, thead, tbody, th, td, tr { 
+		font-size:0.5rem !important; 
+	}
 }

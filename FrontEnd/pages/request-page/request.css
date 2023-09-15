@@ -79,6 +79,9 @@ td {
     align-items:center;
     justify-content:space-between;
 }
+.main__viewWrap-2--zahtevi{
+margin-top:0 !important;
+}
 .main__inputForm{
     display:flex;
     flex-direction:column;

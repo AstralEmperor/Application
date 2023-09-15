@@ -30,10 +30,11 @@ const applyStyles = (elements, styles) =>{
 //3 functions for View changing on button Press. 
 function changeImage1() {
     const description = document.querySelectorAll('.main__description');
+    const chatWrap = document.querySelectorAll('.main__chatBox');
     const chat = document.querySelectorAll('.main__chatImg');
     const deleteWrap = document.querySelectorAll(".main__delete");
     const del = document.querySelectorAll('.main__deleteImg');
-    const cartIcon = document.querySelectorAll('.main__cart');
+    const cartIcon = document.querySelectorAll('.main__cartImg');
     const mainText = document.querySelectorAll(".main__text");
     const singleCont = document.querySelectorAll(".main__singleImgContainer");
     const infoCont = document.querySelectorAll(".main__info");
@@ -54,7 +55,8 @@ function changeImage1() {
 
     applyStyles(description, "display: grid");
     applyStyles(mainText, "display: flex");
-    applyStyles(chat,"width:20px;height:20px");
+    applyStyles(chatWrap,"display:flex");
+    applyStyles(chat,"width:25px;height:25px");
     applyStyles(deleteWrap,"margin-right:0.5em;");
     applyStyles(del,"width:18px;height:18px");
     applyStyles(cartIcon,"width:21px;height:21px");
@@ -75,10 +77,11 @@ function changeImage1() {
 
 function changeImage2() {
     const description = document.querySelectorAll('.main__description');
+    const chatWrap = document.querySelectorAll('.main__chatBox');
     const chat = document.querySelectorAll('.main__chatImg');
     const deleteWrap = document.querySelectorAll(".main__delete");
     const del = document.querySelectorAll('.main__deleteImg');
-    const cartIcon = document.querySelectorAll('.main__cart');
+    const cartIcon = document.querySelectorAll('.main__cartImg');
     const mainText = document.querySelectorAll(".main__text");
     const singleCont = document.querySelectorAll(".main__singleImgContainer");
     const infoCont = document.querySelectorAll(".main__info");
@@ -101,10 +104,11 @@ function changeImage2() {
 
         applyStyles(description,"display:none");
         applyStyles(mainText,"display:none");
-        applyStyles(chat,"width:26px;height:26px;");
+        applyStyles(chatWrap,"display:flex");
+        applyStyles(chat,"width:28px;height:28px;");
         applyStyles(deleteWrap, "margin-right:0.5em;");
         applyStyles(del,"width:24px;height:24px;");
-        applyStyles(cartIcon,"width:27px;height:27px");
+        applyStyles(cartIcon,"width:26px;height:26px");
         applyStyles(singleCont,"display:flex;flex-direction:column;padding-top:0px;max-width:100%;margin-top:30px;");
         applyStyles(infoCont,"display:flex;flex-direction:column");
         applyStyles(buttons,"height:63px;margin-left:0rem;");
@@ -121,10 +125,11 @@ function changeImage2() {
 }
 function changeImage3(){
     const description = document.querySelectorAll('.main__description');
+    const chatWrap = document.querySelectorAll('.main__chatBox');
     const chat = document.querySelectorAll('.main__chatImg');
     const deleteWrap = document.querySelectorAll(".main__delete");
     const del = document.querySelectorAll('.main__deleteImg');
-    const cartIcon = document.querySelectorAll('.main__cart');
+    const cartIcon = document.querySelectorAll('.main__cartImg');
     const mainText = document.querySelectorAll(".main__text");
     const singleCont = document.querySelectorAll(".main__singleImgContainer");
     const infoCont = document.querySelectorAll(".main__info");
@@ -146,13 +151,14 @@ function changeImage3(){
 
         applyStyles(description,"display:flex;justify-content:space-between;flex-basis:100%;gap:0.75rem;text-align:center");
         applyStyles(mainText,"display:none");
+        applyStyles(chatWrap,"display:none");
         applyStyles(chat,"width:20px;height:20px;margin-left:10px");
-        applyStyles(deleteWrap,"margin-right:15%");
+        applyStyles(deleteWrap,"margin-right:0");
         applyStyles(del,"width:18px;height:18px;margin");
         applyStyles(cartIcon,"width:22px;height:22px");
-        applyStyles(singleCont,"display:flex;flex-direction:row;border-top:1px solid gray;max-height:100px;justify-content:space-between;padding:12px 0 12px 0;margin-top:0px;padding-left:0.5rem;align-items:center;");
+        applyStyles(singleCont,"display:flex;flex-direction:row;border-top:1px solid gray;max-height:100px;justify-content:space-between;padding:12px 0 12px 0;margin-top:0px;padding-inline:0.5rem;align-items:center;");
         applyStyles(infoCont,"display:flex;flex-direction:row-reverse;flex-basis:80%;align-items:center;");
-        applyStyles(buttons,"height:41px;justify-content:right;border:none;width:fit-content;top:0;gap:0.5rem;margin-left:0.5rem;");
+        applyStyles(buttons,"height:41px;justify-content:right;align-items:center;flex-direction:column;border:none;width:fit-content;top:0;gap:1rem;margin-inline:0.5rem;");
         applyStyles(searchText,"display:flex;justify-content:flex-start;border:none");
         applyStyles(searchDescr,"display:flex;justify-content:space-between;");
         applyStyles(activeComment,"width:auto;height:auto;");

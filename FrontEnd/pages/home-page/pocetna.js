@@ -1,5 +1,6 @@
 import { getReviews } from "../../../BackEnd/api-folder/api.js";
 
+//---------------------------------REVIEWS--------------------------------------//
 async function getReviewData(){
     try{
         const reviewData = await getReviews();
@@ -59,17 +60,17 @@ function prototype(reviewData){
         <div tabindex="0" aria-label="review_card" class="review__card review__card--1">
         <div class="review__wrapInfo">
             <div class="review__imgWrap">
-              <img loading="lazy" class="review__image" src="`+ review.image +` " alt="review-img1.jpg">
+              <img loading="lazy" class="review__image" src="${review.image}" alt="review-img1.jpg">
             </div>
           <div class="review__info">
             <p class="review__name">
-              `+ review.name +`
+              ${review.name}
             </p>
             <div class="review__stars">
-            ` + spanPrint +`
+            ${spanPrint}
             </div>
             <p class="review__comment">
-            `+ review.comment +`
+            ${review.comment}
             </p>
         </div>
         </div>
@@ -81,6 +82,8 @@ getReviewData().then(reviewData => {
     reviewData;
     prototype(reviewData);
 })
+
+//---------------------------------CAROUSEL--------------------------------------//
 
 const previousBtn = document.querySelector('.home__btn--previous');
 const nextBtn = document.querySelector('.home__btn--next');
