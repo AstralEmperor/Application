@@ -71,9 +71,8 @@ function changeImage1() {
     document.getElementById("main__View2").src="../../assets/menu.png";
     document.getElementById("main__View3").src="../../assets/list.png";
   }
+  changePageNum();
  }
- 
- changePageNum();
 
 function changeImage2() {
     const description = document.querySelectorAll('.main__description');
