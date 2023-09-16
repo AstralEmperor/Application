@@ -18,11 +18,8 @@
     .main__primaryText{
         font-size:0.7rem;
     }
-    dl > dd{
-        font-size:0.7rem;
-    }
     .main__view{
-        padding:0;
+        padding:0.5em;
     }
 }
 @media only screen and (max-width:420px){
@@ -36,6 +33,12 @@
         flex-direction: column;
         justify-content:center;
         align-items: center;
+    }
+    dl > dd{
+        font-size:0.7rem;
+    }
+    .main__text{
+        font-size:0.7rem;
     }
     .main__imagesContainer{
         grid-template-columns: repeat(auto-fit, minmax(auto, 100%));

@@ -6,6 +6,7 @@ const specialContainer = document.querySelector('.man__singleImgContainer--speci
 const pagePrevBtn = document.querySelectorAll('.main__pageBtnPrev');
 const pageNextBtn = document.querySelectorAll('.main__pageBtnNext');
 
+const permission = JSON.parse(localStorage.getItem("currentRole"));
 // Function for cloning 'first' original item 
 function listTemplate(){
     let copySingleCont = singleContainer.cloneNode(true); 
@@ -57,8 +58,6 @@ function changeImage1() {
     applyStyles(mainText, "display: flex");
     applyStyles(chatWrap,"display:flex");
     applyStyles(chat,"width:25px;height:25px");
-    applyStyles(deleteWrap,"margin-right:0.5em;");
-    applyStyles(del,"width:18px;height:18px");
     applyStyles(cartIcon,"width:21px;height:21px");
     applyStyles(singleCont,"display:flex;flex-direction:column;margin-top:30px");
     applyStyles(infoCont,"display:flex;flex-direction:column");
@@ -67,6 +66,11 @@ function changeImage1() {
     applyStyles(searchDescr,"display:none");
     applyStyles(activeComment,"width:100%;height:100%");
     applyStyles(fruitImg,"max-width:100%;max-height:100%;");
+
+    if(permission === 'ADMIN' || permission === 'EDITOR'){
+        applyStyles(deleteWrap,"margin-right:0.5em;");
+        applyStyles(del,"width:18px;height:18px");
+    }
 
     document.getElementById("main__View2").src="../../assets/menu.png";
     document.getElementById("main__View3").src="../../assets/list.png";
@@ -105,8 +109,6 @@ function changeImage2() {
         applyStyles(mainText,"display:none");
         applyStyles(chatWrap,"display:flex");
         applyStyles(chat,"width:28px;height:28px;");
-        applyStyles(deleteWrap, "margin-right:0.5em;");
-        applyStyles(del,"width:24px;height:24px;");
         applyStyles(cartIcon,"width:26px;height:26px");
         applyStyles(singleCont,"display:flex;flex-direction:column;padding-top:0px;max-width:100%;margin-top:30px;");
         applyStyles(infoCont,"display:flex;flex-direction:column");
@@ -115,6 +117,11 @@ function changeImage2() {
         applyStyles(searchDescr,"display:none");
         applyStyles(activeComment,"width:100%;height:100%");
         applyStyles(fruitImg,"max-width:100%;max-height:100%;");
+
+         if(permission === 'ADMIN' || permission === 'EDITOR'){
+            applyStyles(deleteWrap, "margin-right:0.5em;");
+            applyStyles(del,"width:24px;height:24px;");
+         }
   
         document.getElementById("main__View1").src="../../assets/grid.png";
         document.getElementById("main__View3").src="../../assets/list.png";
@@ -152,16 +159,19 @@ function changeImage3(){
         applyStyles(mainText,"display:none");
         applyStyles(chatWrap,"display:none");
         applyStyles(chat,"width:20px;height:20px;margin-left:10px");
-        applyStyles(deleteWrap,"margin-right:0");
-        applyStyles(del,"width:18px;height:18px;margin");
         applyStyles(cartIcon,"width:22px;height:22px");
         applyStyles(singleCont,"display:flex;flex-direction:row;border-top:1px solid gray;max-height:100px;justify-content:space-between;padding:12px 0 12px 0;margin-top:0px;padding-inline:0.5rem;align-items:center;");
         applyStyles(infoCont,"display:flex;flex-direction:row-reverse;flex-basis:80%;align-items:center;");
-        applyStyles(buttons,"height:41px;justify-content:right;align-items:center;flex-direction:column;border:none;width:fit-content;top:0;gap:1rem;margin-inline:0.5rem;");
+        applyStyles(buttons,"justify-content:right;align-items:center;flex-direction:column;border:none;width:fit-content;top:0;gap:1rem;margin-inline:0.5rem;");
         applyStyles(searchText,"display:flex;justify-content:flex-start;border:none");
         applyStyles(searchDescr,"display:flex;justify-content:space-between;");
         applyStyles(activeComment,"width:auto;height:auto;");
         applyStyles(fruitImg,"max-width:4rem;max-height:100%;");
+
+        if(permission === 'ADMIN' || permission === 'EDITOR'){
+            applyStyles(deleteWrap,"margin-right:0");
+            applyStyles(del,"width:18px;height:18px;margin");
+        }
 
         document.getElementById("main__View1").src="../../assets/grid.png";
         document.getElementById("main__View2").src="../../assets/menu.png";
@@ -254,13 +264,22 @@ function btnSupport(totalPages,currentNumPages){
 
 // On click of button " + " add new Element calling createListItem(), and check if pagination is neccesery with changePageNum();
 const addItemBtn = document.querySelector('.add-item');
+const view = document.querySelector('.main__view');
 //adding new Item 
 function addingNewItem(){
-    addItemBtn.addEventListener('click', ()=>{
-        number = 1;
-        createListItems();
-        changePageNum();
-    })
+    if(permission === 'ADMIN'|| permission === 'EDITOR'){
+
+        addItemBtn.style.display ="block";
+
+            addItemBtn.addEventListener('click', ()=>{
+                number = 1;
+                createListItems();
+                changePageNum();
+            })
+    }else{
+
+        view.style.marginBottom ="1.5rem";
+    }
 }
 addingNewItem();
 
@@ -269,12 +288,19 @@ function deleteListItem(){
     const singleCont = document.querySelectorAll(".main__singleImgContainer");
     for(let i = 0; i < singleCont.length; i++){
         const deleteBtn = singleCont[i].querySelector('.main__deleteImg');
+        const deleteBtnWrap = singleCont[i].querySelector(".main__delete");
+
+        if(permission === 'ADMIN' || permission === 'EDITOR'){
             deleteBtn.addEventListener('click', () =>{
                 setTimeout(()=>{
                     singleCont[i].remove();
                     changePageNum();
                 },100)
             })
+        }else{
+            deleteBtn.style.display="none";
+            deleteBtnWrap.style.display="none";
+        }
     }
 }
 deleteListItem();

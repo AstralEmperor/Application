@@ -12,6 +12,10 @@ getData().then(loginInfo => {
   for(let i = 0; i < loginInfo.length; i++){
       if(loginName === loginInfo[i].names && loginEmail === loginInfo[i].email && loginPw === loginInfo[i].password){
         toastr.success("Login Succesful!")
+        const role = loginInfo[i].roles;
+
+        const currentUser = localStorage.setItem("currentUser", JSON.stringify(loginName));
+        const currentRole = localStorage.setItem("currentRole", JSON.stringify(role));
         window.location = './FrontEnd/pages/home-page/pocetna.html';
         return true;
         

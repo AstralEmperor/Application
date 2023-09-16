@@ -149,9 +149,6 @@ outline:var(--btnText);
     width:fit-content;
     text-align:center;
 }
-.nav__second--type2{
-    max-width:130px;
-}
 .nav__second::before{
     content:"";
     position:absolute;
@@ -177,7 +174,7 @@ outline:var(--btnText);
 }
 .nav__ul{
     display:flex;
-    gap:1rem;
+    gap:1.25rem;
     letter-spacing:0.05em;
 }
 .nav__icon{
@@ -213,6 +210,15 @@ outline:var(--btnText);
     display:flex;
     width:100%;
     justify-content:space-between;
+}
+#request-link{
+    display:none;
+}
+#users-link{
+    display:none;
+}
+#logout{
+    cursor:pointer;
 }
 .nav__second > li{
     list-style-type:none;

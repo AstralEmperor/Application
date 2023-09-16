@@ -45,6 +45,7 @@
 .statistics__text{
   font-size:1.2rem;
   letter-spacing:0.07em;
+  text-align:center;
   color:var(--altBlueDarkest);
 }
   .chartMenu p {
@@ -68,18 +69,3 @@
     background: white;
     opacity:0.9;
   }
-  @media only screen and (max-width:420px) {
-    .statistics__text{
-      font-size:1.25rem;
-    }
-    .statistics__data{
-      font-size:1.65rem;
-    }
-    .statistics__data{
-      font-size:2rem;
-    }
-    .statistics__writtenData{
-      row-gap:2rem;
-      width:100%;
-    }
-}

@@ -47,12 +47,15 @@ display:none;
         border-block:1px solid var(--tableHeader);
     }
     .nav__link{
-        font-size:1rem;
+        font-size:1rem !important;
     }
     .nav__user{
         width:100%;
         margin-right:0px;
-        font-size:1rem;
+        font-size:1rem !important;
+    }
+    .nav__link-button{
+        font-size:1.5rem !important;
     }
     .nav__ul{
         display:flex;
@@ -120,6 +123,9 @@ display:none;
     footer *,
     label *{
        font-size:0.8rem;
+    }
+    .nav__second--type2{
+        max-width:130px;
     }
     .main{
         margin:0;

@@ -1,0 +1,21 @@
+@media only screen and (max-width:768px){
+    .statistics__data{
+        font-size:2rem;
+      }
+}
+
+@media only screen and (max-width:420px) {
+    .statistics__text{
+      font-size:1.25rem;
+    }
+    .statistics__data{
+      font-size:1.65rem;
+    }
+    .statistics__data{
+      font-size:2rem;
+    }
+    .statistics__writtenData{
+      row-gap:2rem;
+      width:100%;
+    }
+}
