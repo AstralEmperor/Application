@@ -11,7 +11,7 @@ getData().then(loginInfo => {
     
   for(let i = 0; i < loginInfo.length; i++){
       if(loginName === loginInfo[i].names && loginEmail === loginInfo[i].email && loginPw === loginInfo[i].password){
-        toastr.success("Login Succesful!")
+        // toastr.success("Login Succesful!")
         const role = loginInfo[i].roles;
 
         const currentUser = localStorage.setItem("currentUser", JSON.stringify(loginName));
@@ -21,7 +21,7 @@ getData().then(loginInfo => {
         
       }else if(i === loginInfo.length - 1){
           document.querySelector('.login__wrong').style.display ="flex";
-          toastr.error("Account not found!")
+          // toastr.error("Account not found!")
           return false;
       }
   }
