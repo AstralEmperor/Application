@@ -145,9 +145,15 @@ outline:var(--btnText);
     background-color:var(--secondNav);
     position:absolute;
     padding:4px 6px;
-    bottom:-30%;
+    bottom:-25px;
+    gap:0.5em;
     width:fit-content;
     text-align:center;
+}
+.nav__second--type2{
+    text-align:left;
+    padding-inline:0.5rem;
+    bottom:-85px;
 }
 .nav__second::before{
     content:"";
@@ -219,6 +225,10 @@ outline:var(--btnText);
 }
 #logout{
     cursor:pointer;
+    color:var(--quarterBtn1);
+}
+#logout:hover{
+    color:var(--offline);
 }
 .nav__second > li{
     list-style-type:none;
