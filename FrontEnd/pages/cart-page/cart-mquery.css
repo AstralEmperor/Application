@@ -1,0 +1,18 @@
+@media screen and (max-width:768px){
+    .cart__noItem-description,
+    .cart__span-empty{
+        font-size:1.75rem !important;
+    }
+}
+@media screen and (max-width:420px){
+    .cart__noItem-description,
+    .cart__span-empty{
+        font-size:1.25rem !important;
+    }
+    .cart__iconCont{
+        margin-bottom:3rem;
+    }
+    .cart__divToShop{
+        margin-top:1.5rem;
+    }
+}

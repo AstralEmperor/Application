@@ -304,6 +304,60 @@ function deleteListItem(){
     }
 }
 deleteListItem();
+// function which was originally made in -navigation.js- , used to show number of items selected for purchase
+function numberOfItems(){
+    const cartNumber = document.getElementById('cartNumber');
+    const itemNumber =JSON.parse(localStorage.getItem("items")) || [];
+
+    if(itemNumber.length === 0){
+        cartNumber.style.display = "none";
+        localStorage.removeItem("items");
+     }
+    else if(itemNumber.length >= 1){
+        cartNumber.style.display = "flex"; 
+         cartNumber.innerText = itemNumber.length ;
+
+    }else{
+        cartNumber.style.display = "flex"; 
+    }
+}
+numberOfItems()
+
+// Shopping Cart event listener, which pushes items to localStorage, or splices 1 item if unselected
+function addToCart(){
+    const cartNumber = document.getElementById('cartNumber');
+    const singleCont = document.querySelectorAll(".main__singleImgContainer");
+    for(let i = 0; i < singleCont.length; i++){
+        const singleProduct = singleCont[i].innerHTML;
+        let selected = false;
+        const cart = singleCont[i].querySelector('.main__cartImg');
+        const cartWrap = singleCont[i].querySelector('.main__cart');
+
+        cart.addEventListener('click', () => {
+            if(selected === false){
+                cart.src="../../assets/shopping-cart-green.png";
+                const storage = JSON.parse(localStorage.getItem("items")) || [];
+                storage.push(singleProduct);
+                localStorage.setItem("items", JSON.stringify(storage))
+                cartNumber.style.display = "flex";
+                numberOfItems();
+               selected = true;
+            }else if(selected === true){
+                cart.src="../../assets/shopping-cart.png";
+                const storage = JSON.parse(localStorage.getItem("items")) || []
+                storage.splice(singleProduct, 1);
+                localStorage.setItem('items', JSON.stringify(storage));
+                if(storage.length === 0){
+                    cartNumber.style.display = "none";
+                    localStorage.removeItem("items");
+                 }
+                numberOfItems();
+                selected = false;
+            }
+        })
+    }
+}
+addToCart();
 
 //Creating input comment on button click, for every card //api here is empty for now
 function createComment(){

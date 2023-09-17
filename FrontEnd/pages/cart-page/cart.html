@@ -9,8 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="../products/proizvodi.css" rel="stylesheet">
     <link href="../../shared/style.css" rel="stylesheet">
+    <link href="./cart.css" rel="stylesheet">
     <link href="../../shared/mquery/mediaq.css" rel="stylesheet">
-    <link href="./activity-mquery.css" rel="stylesheet">
+    <link href="./cart-mquery.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title lang="eng">Cart</title>
 </head>
@@ -38,7 +39,7 @@
   </div>
     <ul class="nav__second nav__second--type2">
       <li><a class="nav__link tertiaryBtn disabled" href="../profileInfo-page/profile.html">Nalog</a></li>
-      <li><a class="nav__link tertiaryBtn disabled nav__currentLink" href="../cart-page/cart.html">Korpa</a></li>
+      <li><a id="navCart" class="nav__link tertiaryBtn nav__currentLink" href="../cart-page/cart.html"><div>Korpa</div><span id="cartNumber" class="nav__cartItems"></span></a></li>
       <li><a id="logout" class="nav__link tertiaryBtn">Izloguj se</a></li>
     </ul>
 </div>
@@ -54,3 +55,38 @@
     <li class="nav2__list">Korpa</li>
   </ul>
 </nav>
+<section class="main cart">
+  <h2 class="main__search">Izabrani proizvodi</h2>
+  <hr class="main__h2-hr">
+  <div class="cart__items">
+    <div class="cart__iconCont">
+      <img src="../../assets/shopping-cart.png" alt="shopping_cart.png">
+    </div>
+    <div class="cart__noItem-container">
+      <div class="cart__noItem">
+        <p class="cart__noItem-description"> Korpa je trenutno <span class="cart__span-empty">prazna!</span></p>
+    </div>
+    <div class="cart__divToShop">
+      <button tabindex="-1" class="cart__btnToShop primaryBtn"><a tabindex="0" href="../products/proizvodi.html">Vrati se do prodavnice</a></button>
+    </div>
+  </div>
+  <div class="cart__itemsContainer">
+    <!-- <div class="cart__singleItem">
+      <div class="cart__itemImage">
+        <img src="#" alt="item.png">
+      </div>
+      <div class="description"></div>
+    </div> -->
+  </div>
+  </div>
+</section>
+<footer class="footer">
+  <p lang="en" class="footer__text">Initial design made by:<em>@BS-Computer</em><br> 
+                                    App created by: <em>Marko Kovačević</em></p>
+</footer>
+  <script src="../../shared/mquery/secondaryNav.js"></script>
+  <script src="./listOfItems.mjs"></script>
+  <script src="../../shared/mquery/navigation.js"></script>
+  <script src="./cart.js"></script>
+</body>
+</html>

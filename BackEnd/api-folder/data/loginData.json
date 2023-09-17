@@ -18,4 +18,11 @@
     "email":"spagetti22@gmail.com",
     "password":"tomatto",
     "roles":"EDITOR"
+  },
+  {
+    "id":"4",
+    "names":"User",
+    "email":"sample11@gmail.com",
+    "password":"023",
+    "roles":"EDITOR"
   }]

@@ -6,7 +6,7 @@
     --altBlue:#008888;
     --altBlueDark:#3c818a;
     --altBlueDarkest:#204a50;
-    --blueVariant:#47a6b1;
+    --blueVariant:#3f9099;
     --blueVariant2:#a5d9df;
     --blueVariant3:#cfeff3;
     --line:#CED4DA;
@@ -125,7 +125,7 @@ outline:var(--btnText);
     color:var(--tableHeader);
 }
 .currentPage{
-    color:var(--blueVariant);
+    color:var(--blueVariant) !important;
 }
 .nav__link-button{
     border:none;
@@ -243,6 +243,20 @@ outline:var(--btnText);
     color:var(--textGray);
     font-size:0.9rem;
     letter-spacing:0.05em;
+}
+#navCart{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+}
+.nav__cartItems{
+    background-color:var(--altBlueDark);
+    color:var(--white);
+    width:fit-content;
+    height:fit-content;
+    padding-inline:5px;
+    border-radius:60%;
 }
 .footer{
     display:flex;

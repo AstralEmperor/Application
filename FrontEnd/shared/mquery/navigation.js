@@ -9,6 +9,7 @@ function addNav(){
     addUserName();
     viewPermission();
     clearLocalData();
+    numberOfItems();
 }
 addNav();
 
@@ -28,6 +29,7 @@ function clearLocalData(){
   })
 }
 
+// reveals nav links based on permission
 function viewPermission(){
   const permission = JSON.parse(localStorage.getItem("currentRole")) || 'GUEST';
 
@@ -38,4 +40,14 @@ function viewPermission(){
     userLink.style.display="flex";
     requestLink.style.display="flex";
   }
+}
+
+//shows item number next to cart link
+function numberOfItems(){
+    const cartNumber = document.getElementById('cartNumber');
+    const itemNumber =JSON.parse(localStorage.getItem("items")) || [];
+
+      if(itemNumber.length >= 1){
+         cartNumber.innerText = itemNumber.length ;
+      }
 }

@@ -37,8 +37,8 @@
   <div id ="nav__user" class="nav__li nav__user">User_Name<button aria-expanded ="false" class="nav__link-button material-icons">expand_more</button>
   </div>
     <ul class="nav__second nav__second--type2">
-      <li><a class="nav__link tertiaryBtn disabled nav__currentLink" href="../profileInfo-page/profile.html">Nalog</a></li>
-      <li><a class="nav__link tertiaryBtn disabled" href="../cart-page/cart.html">Korpa</a></li>
+      <li><a class="nav__link tertiaryBtn nav__currentLink" href="../profileInfo-page/profile.html">Nalog</a></li>
+      <li><a id="navCart" class="nav__link tertiaryBtn" href="../cart-page/cart.html"><div>Korpa</div><span id="cartNumber" class="nav__cartItems"></span></a></li>
       <li><a id="logout" class="nav__link tertiaryBtn">Izloguj se</a></li>
     </ul>
 </div>
@@ -54,3 +54,15 @@
     <li class="nav2__list">Nalog</li>
   </ul>
 </nav>
+<section class="main profileInfo">
+  
+</section>
+<footer class="footer">
+  <p lang="en" class="footer__text">Initial design made by:<em>@BS-Computer</em><br> 
+                                    App created by: <em>Marko Kovačević</em></p>
+</footer>
+  <script src="../../shared/mquery/secondaryNav.js"></script>
+  <script src="./listOfItems.mjs"></script>
+  <script src="../../shared/mquery/navigation.js"></script>
+</body>
+</html>
