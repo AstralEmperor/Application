@@ -11,7 +11,6 @@
     <link href="../products/proizvodi.css" rel="stylesheet">
     <link href="./pocetna.css" rel="stylesheet">
     <link href="./pocetna-mquery.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title lang="eng">HomePage</title>
 </head>
 <body>
@@ -20,26 +19,26 @@
         <div class="nav__links inactive">
         <div class="nav__group1">
       <ul class="nav__ul">
-          <li class="nav__li"><a tabindex="0" class="nav__link tertiaryBtn nav__currentLink" href="../home-page/pocetna.html">Početna</a><button tabindex="-1" aria-expanded ="false" class="nav__link-button material-icons disabled2">expand_more</button></li>
-          <li class="nav__li"><a tabindex="0" class="nav__link tertiaryBtn" href="../products/proizvodi.html">Proizvodi</a><button tabindex="-1" aria-expanded ="false" class="nav__link-button material-icons disabled2">expand_more</button></li>
-          <li class="nav__li"><a tabindex="-1" class="nav__link tertiaryBtn disabled" href="#/">Lokacije</a><button tabindex="-1" aria-expanded ="false" class="nav__link-button material-icons disabled2">expand_more</button></li>
-          <li id="request-link" class="nav__li"><a tabindex="0" class="nav__link tertiaryBtn" href="../request-page/request.html">Zahtevi</a><button tabindex="-1" aria-expanded ="false" class="nav__link-button material-icons disabled2">expand_more</button></li>
-          <li id="users-link" class="nav__li--special"><div class="nav__li nav__li--Container"><a tabindex="0" class="nav__link tertiaryBtn" href="../users-page/users.html">Korisnici</a><button aria-expanded ="false" class="nav__link-button material-icons">expand_more</button></div>
-              <ul class="nav__second">
+          <li class="nav__li"><a tabindex="0" class="nav__link tertiaryBtn nav__currentLink" href="../home-page/pocetna.html">Početna</a><img tabindex="-1" aria-expanded ="false" class="nav__link-button disabled2" src="../../assets/arrow-down.png" alt="arrow.png"></li>
+          <li class="nav__li"><a tabindex="0" class="nav__link tertiaryBtn" href="../products/proizvodi.html">Proizvodi</a><img tabindex="-1" aria-expanded ="false" class="nav__link-button disabled2" src="../../assets/arrow-down.png" alt="arrow.png"></li>
+          <li class="nav__li"><a tabindex="-1" class="nav__link tertiaryBtn disabled" href="#/">Lokacije</a><img tabindex="-1" aria-expanded ="false" class="nav__link-button disabled2" src="../../assets/arrow-down.png" alt="arrow.png"></li>
+          <li id="request-link" class="nav__li"><a tabindex="0" class="nav__link tertiaryBtn" href="../request-page/request.html">Zahtevi</a><img tabindex="-1" aria-expanded ="false" class="nav__link-button disabled2" src="../../assets/arrow-down.png" alt="arrow.png"></li>
+          <li id="users-link" class="nav__li--special"><div class="nav__li nav__li--Container"><a tabindex="0" class="nav__link tertiaryBtn" href="../users-page/users.html">Korisnici</a><img aria-expanded ="false" class="nav__link-button" src="../../assets/arrow-down.png" alt="arrow.png"></div>
+              <ul class="nav__second" style="display:none">
                 <li><a class="nav__link tertiaryBtn" href="../activityDiary/activity.html">Dnevnik aktivnosti</a>
               </li>
              </ul>
             </li>
-            <li class="nav__li"><a tabindex="0" class="nav__link tertiaryBtn" href="../statistics/statistic.html">Statistika</a><button tabindex="-1" aria-expanded ="false" class="nav__link-button material-icons disabled2">expand_more</button></li>
+            <li class="nav__li"><a tabindex="0" class="nav__link tertiaryBtn" href="../statistics/statistic.html">Statistika</a><img tabindex="-1" aria-expanded ="false" class="nav__link-button disabled2" src="../../assets/arrow-down.png" alt="arrow.png"></li>
       </ul>
     </div>
     <div class="nav__group2">
-      <div id ="nav__user" class="nav__li nav__user">User_Name<button aria-expanded ="false" class="nav__link-button material-icons">expand_more</button>
+      <div id ="nav__user" class="nav__li nav__user">User_Name<img aria-expanded ="false" class="nav__link-button" src="../../assets/arrow-down.png" alt="arrow.png">
       </div>
-        <ul class="nav__second nav__second--type2">
+        <ul class="nav__second nav__second--type2" style="display:none">
           <li><a class="nav__link tertiaryBtn disabled" href="../profileInfo-page/profile.html">Nalog</a></li>
           <li><a id="navCart" class="nav__link tertiaryBtn" href="../cart-page/cart.html"><div>Korpa</div><span id="cartNumber" class="nav__cartItems"></span></a></li>
-          <li><a id="logout" class="nav__link tertiaryBtn">Izloguj se</a></li>
+          <li><a id="logout" class="nav__link tertiaryBtn">Odjava</a></li>
         </ul>
     </div>
     </div>
@@ -88,12 +87,14 @@
       </div>
     </section>
   </div>
+  <div id="translator disabled2"></div>
     <footer class="footer">
       <p lang="en" class="footer__text">Initial design made by: <em>@BS-Computer</em><br> 
                                         App created by: <em>Marko Kovačević</em></p>
     </footer>
     <script type="module" src="./pocetna.js"></script>
-    <script src="../../shared/mquery/secondaryNav.js"></script>
     <script src="../../shared/mquery/navigation.js"></script>
+    <script src="https:/translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="../../shared/translate.js"></script>
 </body>
 </html>

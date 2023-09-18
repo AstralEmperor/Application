@@ -6,9 +6,10 @@
     --altBlue:#008888;
     --altBlueDark:#3c818a;
     --altBlueDarkest:#204a50;
-    --blueVariant:#3f9099;
+    --blueVariant:#5cbcc7;
     --blueVariant2:#a5d9df;
     --blueVariant3:#cfeff3;
+    --blueVariant4:#3f9099;
     --line:#CED4DA;
     --gray:#c9c9c9;
     --navMquery:#b6b6b6;
@@ -124,6 +125,8 @@ outline:var(--btnText);
 .listHeaderBtn:hover{
     color:var(--tableHeader);
 }
+
+/*----------------Navigation----------------*/
 .currentPage{
     color:var(--blueVariant) !important;
 }
@@ -131,6 +134,8 @@ outline:var(--btnText);
     border:none;
     background-color:transparent;
     cursor:pointer;
+    width:10px;
+    height:10px;
 }
 .nav__group1{
     display:flex;
@@ -250,6 +255,7 @@ outline:var(--btnText);
     justify-content:space-between;
     align-items:center;
 }
+
 .nav__cartItems{
     background-color:var(--altBlueDark);
     color:var(--white);
@@ -258,6 +264,30 @@ outline:var(--btnText);
     padding-inline:5px;
     border-radius:60%;
 }
+
+/*----------------google-translate styles----------------*/
+
+.goog-te-gadget img{
+    display:none !important;
+}
+body > .skiptranslate,
+.skiptranslate > span{
+    display: none;
+}
+.goog-logo-link {
+    display:none !important;
+} 
+    
+.goog-te-gadget{
+    color: transparent !important;
+}
+body {
+    top: 0px !important;
+    bottom:0px !important
+}
+
+/*--------------- Footer, special tags ---------------*/
+
 .footer{
     display:flex;
     align-items:center;
@@ -304,6 +334,9 @@ html{
     font-weight: 400;
     font-display: fallback;
 }
+
+/*----------------light-dark mode----------------*/
+
 /* @media (prefers-color-scheme: dark){
     :root{
         --lightGray:#775c4a;
