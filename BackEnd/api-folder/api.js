@@ -38,15 +38,15 @@ export async function getData(){
 }
 //products data(for statistics)
 export async function getProductStats(){
-    const res = await fetch('../../../BackEnd/api-folder/data/products.json',{
+    const res = await fetch('../../../BackEnd/api-folder/data/statisticsData.json',{
         method:'GET',
         headers:{
             'Content-Type':'application/json'
         }
     });
-    const products = await res.json()
+    const statistics = await res.json()
     .catch(error => console.warn(error))
-    return products;
+    return statistics;
 }
 // reviews data
 export async function getReviews(){
@@ -59,4 +59,16 @@ export async function getReviews(){
     const reviewData = await res.json()
     .catch(error => console.warn(error))
     return reviewData;
+}
+// products
+export async function  getProducts(){
+    const res = await fetch('../../../BackEnd/api-folder/data/products-data.json',{
+        method:'GET',
+        headers:{
+            'Content-Type':"Application/json"
+        }
+    })
+    const products = await res.json()
+    .catch(error => console.warn(error))
+    return products;
 }

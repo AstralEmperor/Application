@@ -18,14 +18,6 @@ function updateNumberOfItems(){
 }
 const tbody = document.querySelector('.korisnici__tbody');
 
-async function getUsers(){
-  try{
-    const korisnici = await getKorisnici();
-    return korisnici;
-  }catch(error){
-    console.log(error)
-  }
-}
     // fills table with data brought from JSON file
 function prototype(korisnici){
     let info = '';

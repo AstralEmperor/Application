@@ -1,122 +1,214 @@
+import { getProducts} from '../../../BackEnd/api-folder/api.js';
 
+const containerWrap = document.querySelector('.main__productsContainer');
 const container = document.querySelector('.main__imagesContainer');
-const singleContainer = document.getElementsByClassName('main__singleImgContainer')[0];
-const specialContainer = document.querySelector('.man__singleImgContainer--special');
 
 const pagePrevBtn = document.querySelectorAll('.main__pageBtnPrev');
 const pageNextBtn = document.querySelectorAll('.main__pageBtnNext');
 
 const permission = JSON.parse(localStorage.getItem("currentRole"));
 // Function for cloning 'first' original item 
-function listTemplate(){
-    let copySingleCont = singleContainer.cloneNode(true); 
-    container.appendChild(copySingleCont,specialContainer.nextElementSibling);
-}
-//function that creates a new Element(cloning element with listTemplate function,and adding Delete function to new item)
-let number = 22;
-function createListItems(){
-    for(let i = 0; i < number; i++){
-        listTemplate();
+
+async function createListItems(products){
+    
+    const container = document.querySelector('#container');
+        let generateItem ='';
+        for(let product of products.items){
+
+            if(product.popust != undefined){
+                
+                generateItem += `<div class="main__singleImgContainer mainContainer">
+            <div class="main__image">
+              <p class="main__sale">${product.popust}</p>
+              <img class="main__fruit" src="${product.slika}" alt="fruit.png">
+            </div>
+            <div class="main__info">
+              <form class ="main__comment-box">
+                  <label class="main__commentLabel">Comment:</label>
+                  <input class="main__commentBox" name="comment" type="text" placeholder="Ostavi komentar">
+                <div class="main__commentBtnWrap">
+                  <button class="primaryBtn main__commentButton" type="submit">Post</button>
+                  <button class="quarterBtn main__commentCancel">X</button>
+                </div>
+              </form>
+            <div class="main__picBtns">
+              <div class="actions__group1">
+                 <button class="main__chatBox"><img class="main__chatImg" src="../../assets/chat.png" alt="chat.png"></button>
+                 <button class="main__cart"><img class="main__cartImg" src="../../assets/shopping-cart.png" alt="chat.png"></button>
+             </div>
+              <button class="main__delete"><img class="main__deleteImg" src="../../assets/close.png" alt="delete.png"></button>
+            </div>
+             <dl class="main__description">
+               <dt class="main__text">Lokacija:</dt>
+                <dd>${product.lokacija}</dd>
+               <dt class="main__text">Vrsta:</dt>
+                <dd>${product.produkt}</dd>
+               <dt class="main__text">Količina:</dt>
+                <dd>${product.kolicina}</dd>
+               <dt class="main__text">Cena:</dt>
+                <dd class="main__text--price">${product.cena}</dd>
+          </dl>
+        </div>
+      </div>`
+            }else{
+        
+            generateItem += `<div class="main__singleImgContainer mainContainer">
+            <div class="main__image">
+              <img class="main__fruit" src="${product.slika}" alt="fruit.png">
+            </div>
+            <div class="main__info">
+              <form class ="main__comment-box">
+                  <label class="main__commentLabel">Comment:</label>
+                  <input class="main__commentBox" name="comment" type="text" placeholder="Ostavi komentar">
+                <div class="main__commentBtnWrap">
+                  <button class="primaryBtn main__commentButton" type="submit">Post</button>
+                  <button class="quarterBtn main__commentCancel">X</button>
+                </div>
+              </form>
+            <div class="main__picBtns">
+              <div class="actions__group1">
+                 <button class="main__chatBox"><img class="main__chatImg" src="../../assets/chat.png" alt="chat.png"></button>
+                 <button class="main__cart"><img class="main__cartImg" src="../../assets/shopping-cart.png" alt="chat.png"></button>
+             </div>
+              <button class="main__delete"><img class="main__deleteImg" src="../../assets/close.png" alt="delete.png"></button>
+            </div>
+             <dl class="main__description">
+               <dt class="main__text">Lokacija:</dt>
+                <dd>${product.lokacija}</dd>
+               <dt class="main__text">Vrsta:</dt>
+                <dd>${product.produkt}</dd>
+               <dt class="main__text">Količina:</dt>
+                <dd>${product.kolicina}</dd>
+               <dt class="main__text">Cena:</dt>
+                <dd class="main__text--price">${product.cena}</dd>
+          </dl>
+        </div>
+      </div>`
+    }}
+        container.innerHTML = generateItem;
+
         createComment();
+        addToCart()
         deleteListItem();
-    }
+        changePageNum();
 }
-createListItems();
+
+getProducts().then(products => {
+    products
+    createListItems(products);
+});
 
 const applyStyles = (elements, styles) =>{
     for(let i = 0; i < elements.length; i++){
         elements[i].style.cssText = styles;
     }
 };
+
 //3 functions for View changing on button Press. 
 function changeImage1() {
-    const description = document.querySelectorAll('.main__description');
-    const chatWrap = document.querySelectorAll('.main__chatBox');
-    const chat = document.querySelectorAll('.main__chatImg');
-    const deleteWrap = document.querySelectorAll(".main__delete");
-    const del = document.querySelectorAll('.main__deleteImg');
-    const cartIcon = document.querySelectorAll('.main__cartImg');
-    const mainText = document.querySelectorAll(".main__text");
-    const singleCont = document.querySelectorAll(".main__singleImgContainer");
-    const infoCont = document.querySelectorAll(".main__info");
-    const buttons = document.querySelectorAll(".main__picBtns");
-    const searchDescr = document.querySelectorAll(".man__singleImgContainer--special");
-    const searchText = document.querySelectorAll(".main__text--special");
-    const mainView1 =document.getElementById("main__View1");
-    const activeComment = document.querySelectorAll(".main__comment-box");
-    const fruitImg = document.querySelectorAll(".main__fruit");
+    const view1 = document.querySelector('#main__View1');
 
-    if (mainView1.src.endsWith('grid-blue.png')){
+    view1.addEventListener('click', ()=>{
+        const image = document.querySelectorAll('.main__image');
+        const saleTag = document.querySelectorAll('.main__sale');
+        const description = document.querySelectorAll('.main__description');
+        const chatWrap = document.querySelectorAll('.main__chatBox');
+        const chat = document.querySelectorAll('.main__chatImg');
+        const deleteWrap = document.querySelectorAll(".main__delete");
+        const del = document.querySelectorAll('.main__deleteImg');
+        const cartIcon = document.querySelectorAll('.main__cartImg');
+        const mainText = document.querySelectorAll(".main__text");
+        const singleCont = document.querySelectorAll(".main__singleImgContainer");
+        const infoCont = document.querySelectorAll(".main__info");
+        const buttons = document.querySelectorAll(".main__picBtns");
+        const searchDescr = document.querySelectorAll(".man__singleImgContainer--special");
+        const searchText = document.querySelectorAll(".main__text--special");
+        const mainView1 =document.getElementById("main__View1");
+        const activeComment = document.querySelectorAll(".main__comment-box");
+        const fruitImg = document.querySelectorAll(".main__fruit");
+    
+        if (mainView1.src.endsWith('grid-blue.png')){
+            mainView1.src = "../../assets/grid-blue.png";
+            
+    }else{
         mainView1.src = "../../assets/grid-blue.png";
-        
-}else{
-    mainView1.src = "../../assets/grid-blue.png";
-    container.style.cssText="grid-gap:24px;grid-template-columns: repeat(auto-fit, minmax(auto,100%, 4fr))";
-    document.querySelector(".main__picBtns").style.cssText ="min-width:279px;";
-
-    applyStyles(description, "display: grid");
-    applyStyles(mainText, "display: flex");
-    applyStyles(chatWrap,"display:flex");
-    applyStyles(chat,"width:25px;height:25px");
-    applyStyles(cartIcon,"width:21px;height:21px");
-    applyStyles(singleCont,"display:flex;flex-direction:column;margin-top:30px");
-    applyStyles(infoCont,"display:flex;flex-direction:column");
-    applyStyles(buttons,"height:41px;margin-left:0rem;");
-    applyStyles(searchText,"display:none");
-    applyStyles(searchDescr,"display:none");
-    applyStyles(activeComment,"width:100%;height:100%");
-    applyStyles(fruitImg,"max-width:100%;max-height:100%;");
-
-    if(permission === 'ADMIN' || permission === 'EDITOR'){
-        applyStyles(deleteWrap,"margin-right:0.5em;");
-        applyStyles(del,"width:18px;height:18px");
-    }
-
-    document.getElementById("main__View2").src="../../assets/menu.png";
-    document.getElementById("main__View3").src="../../assets/list.png";
-  }
-  changePageNum();
- }
-
-function changeImage2() {
-    const description = document.querySelectorAll('.main__description');
-    const chatWrap = document.querySelectorAll('.main__chatBox');
-    const chat = document.querySelectorAll('.main__chatImg');
-    const deleteWrap = document.querySelectorAll(".main__delete");
-    const del = document.querySelectorAll('.main__deleteImg');
-    const cartIcon = document.querySelectorAll('.main__cartImg');
-    const mainText = document.querySelectorAll(".main__text");
-    const singleCont = document.querySelectorAll(".main__singleImgContainer");
-    const infoCont = document.querySelectorAll(".main__info");
-    const buttons = document.querySelectorAll(".main__picBtns");
-    const searchDescr = document.querySelectorAll(".man__singleImgContainer--special");
-    const searchText = document.querySelectorAll(".main__text--special");
-    const activeComment = document.querySelectorAll(".main__comment-box");
-    const fruitImg = document.querySelectorAll(".main__fruit");
-
-
-    const mainView2 =document.getElementById("main__View2");
-
-    if (mainView2.src.endsWith('menu-blue.png')){
-        mainView2.src = "../../assets/menu-blue.png";
-          
-    } else {
-        mainView2.src = "../../assets/menu-blue.png";
-        document.getElementsByClassName("main__imagesContainer")[0].style.cssText ="grid-template-columns: repeat(auto-fit, minmax(auto,100%, 4fr));grid-gap:29px;";
-        document.getElementsByClassName("main__picBtns")[0].style.cssText ="min-width:429px;";
-
-        applyStyles(description,"display:none");
-        applyStyles(mainText,"display:none");
+        containerWrap.style.cssText="grid-gap:24px;grid-template-columns: repeat(auto-fit, minmax(auto,100%, 4fr))";
+        document.querySelector(".main__picBtns").style.cssText ="min-width:279px;";
+    
+        applyStyles(image,"height:20rem;width:auto");
+        applyStyles(saleTag, "font-size:1.25rem");
+        applyStyles(description, "display: grid");
+        applyStyles(mainText, "display: flex");
         applyStyles(chatWrap,"display:flex");
-        applyStyles(chat,"width:28px;height:28px;");
-        applyStyles(cartIcon,"width:26px;height:26px");
-        applyStyles(singleCont,"display:flex;flex-direction:column;padding-top:0px;max-width:100%;margin-top:30px;");
+        applyStyles(chat,"width:25px;height:25px");
+        applyStyles(cartIcon,"width:21px;height:21px");
+        applyStyles(singleCont,"display:flex;flex-direction:column;margin-top:30px");
         applyStyles(infoCont,"display:flex;flex-direction:column");
-        applyStyles(buttons,"height:63px;margin-left:0rem;");
+        applyStyles(buttons,"height:41px;margin-left:0rem;");
         applyStyles(searchText,"display:none");
         applyStyles(searchDescr,"display:none");
         applyStyles(activeComment,"width:100%;height:100%");
         applyStyles(fruitImg,"max-width:100%;max-height:100%;");
+    
+        if(permission === 'ADMIN' || permission === 'EDITOR'){
+            applyStyles(deleteWrap,"margin-right:0.5em;");
+            applyStyles(del,"width:18px;height:18px");
+        }
+    
+        document.getElementById("main__View2").src="../../assets/menu.png";
+        document.getElementById("main__View3").src="../../assets/list.png";
+      }
+      changePageNum();
+    })
+ }
+ changeImage1();
+
+function changeImage2() {
+
+    const view2 = document.querySelector('#main__View2');
+    
+        view2.addEventListener('click', ()=>{
+            const image = document.querySelectorAll('.main__image');
+            const saleTag = document.querySelectorAll('.main__sale');
+            const description = document.querySelectorAll('.main__description');
+            const chatWrap = document.querySelectorAll('.main__chatBox');
+            const chat = document.querySelectorAll('.main__chatImg');
+            const deleteWrap = document.querySelectorAll(".main__delete");
+            const del = document.querySelectorAll('.main__deleteImg');
+            const cartIcon = document.querySelectorAll('.main__cartImg');
+            const mainText = document.querySelectorAll(".main__text");
+            const singleCont = document.querySelectorAll(".main__singleImgContainer");
+            const infoCont = document.querySelectorAll(".main__info");
+            const buttons = document.querySelectorAll(".main__picBtns");
+            const searchDescr = document.querySelectorAll(".man__singleImgContainer--special");
+            const searchText = document.querySelectorAll(".main__text--special");
+            const activeComment = document.querySelectorAll(".main__comment-box");
+            const fruitImg = document.querySelectorAll(".main__fruit");
+
+            const mainView2 =document.getElementById("main__View2");
+
+        if (mainView2.src.endsWith('menu-blue.png')){
+            mainView2.src = "../../assets/menu-blue.png";
+            
+        } else {
+            mainView2.src = "../../assets/menu-blue.png";
+            document.getElementsByClassName("main__productsContainer")[0].style.cssText ="grid-template-columns: repeat(auto-fit, minmax(auto,100%, 4fr));grid-gap:29px;";
+            document.getElementsByClassName("main__picBtns")[0].style.cssText ="min-width:429px;";
+
+            applyStyles(image,"height:20rem;width:auto");
+            applyStyles(saleTag, "font-size:1.25rem");
+            applyStyles(description,"display:none");
+            applyStyles(mainText,"display:none");
+            applyStyles(chatWrap,"display:flex");
+            applyStyles(chat,"width:28px;height:28px;");
+            applyStyles(cartIcon,"width:26px;height:26px");
+            applyStyles(singleCont,"display:flex;flex-direction:column;padding-top:0px;max-width:100%;margin-top:30px;");
+            applyStyles(infoCont,"display:flex;flex-direction:column");
+            applyStyles(buttons,"height:63px;margin-left:0rem;");
+            applyStyles(searchText,"display:none");
+            applyStyles(searchDescr,"display:none");
+            applyStyles(activeComment,"width:100%;height:100%");
+            applyStyles(fruitImg,"max-width:100%;max-height:100%;");
 
          if(permission === 'ADMIN' || permission === 'EDITOR'){
             applyStyles(deleteWrap, "margin-right:0.5em;");
@@ -125,11 +217,18 @@ function changeImage2() {
   
         document.getElementById("main__View1").src="../../assets/grid.png";
         document.getElementById("main__View3").src="../../assets/list.png";
-    }
-    
-    changePageNum();
+    }   
+     changePageNum();
+});
 }
+changeImage2();
+
 function changeImage3(){
+    const view3 = document.querySelector('#main__View3');
+    
+    view3.addEventListener('click', ()=>{
+    const image = document.querySelectorAll('.main__image');
+    const saleTag = document.querySelectorAll('.main__sale');
     const description = document.querySelectorAll('.main__description');
     const chatWrap = document.querySelectorAll('.main__chatBox');
     const chat = document.querySelectorAll('.main__chatImg');
@@ -152,9 +251,11 @@ function changeImage3(){
 
 } else {
         mainView3.src = "../../assets/list-blue.png";
-        document.getElementsByClassName("main__imagesContainer")[0].style.cssText ="grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));grid-gap:29px;";
+        document.getElementsByClassName("main__productsContainer")[0].style.cssText ="grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));grid-gap:29px;";
         document.getElementsByClassName("main__picBtns")[0].style.cssText ="min-width:93px;max-height:70px";
 
+        applyStyles(image,"height:3rem;width:3rem");
+        applyStyles(saleTag, "font-size:0.8rem");
         applyStyles(description,"display:flex;justify-content:space-between;flex-basis:100%;gap:0.75rem;text-align:center");
         applyStyles(mainText,"display:none");
         applyStyles(chatWrap,"display:none");
@@ -176,11 +277,12 @@ function changeImage3(){
         document.getElementById("main__View1").src="../../assets/grid.png";
         document.getElementById("main__View2").src="../../assets/menu.png";
 
+ }
+ changePageNum();
+    })
 }
 
-changePageNum();
-}
-
+changeImage3();
     //CHANGING PAGE WITH BUTTONS
     var currentPageNum = 1;
 // function that checks the number of Elements(posts in this case),and if theres more then 'numPerPage',adds new Pagination Number that is cloned from previously added one in HTML. Or removes if theres less elements.
@@ -201,8 +303,8 @@ function displayText(pageElements,arrayOfPosts,start,end,numPerPage){
 }
 
 function changePageNum(){
-    const numPerPage = 30;
-    let arrayOfitems = Array.from(container.children);
+    const numPerPage = 8;
+    let arrayOfitems = Array.from(containerWrap.children);
     let arrayOfPosts = [...arrayOfitems].filter(item => item.classList.contains('main__singleImgContainer'));
     let numCont = document.querySelectorAll('.main__pagesNumCont');
 
@@ -261,27 +363,6 @@ function btnSupport(totalPages,currentNumPages){
         }
     })
 }
-
-// On click of button " + " add new Element calling createListItem(), and check if pagination is neccesery with changePageNum();
-const addItemBtn = document.querySelector('.add-item');
-const view = document.querySelector('.main__view');
-//adding new Item 
-function addingNewItem(){
-    if(permission === 'ADMIN'|| permission === 'EDITOR'){
-
-        addItemBtn.style.display ="block";
-
-            addItemBtn.addEventListener('click', ()=>{
-                number = 1;
-                createListItems();
-                changePageNum();
-            })
-    }else{
-
-        view.style.marginBottom ="1.5rem";
-    }
-}
-addingNewItem();
 
 // Function that adds event listener on all buttons, and removes that item if ' X ' is pressed
 function deleteListItem(){
@@ -495,3 +576,23 @@ function returnPage(){
             pageNum(currentPage, prevPage);
             disabledBtn(prevIndex, numCount);
 }
+
+// On click of button " + " add new Element calling createListItem(), and check if pagination is neccesery with changePageNum();
+// const addItemBtn = document.querySelector('.add-item');
+// const view = document.querySelector('.main__view');
+// //adding new Item 
+// function addingNewItem(){
+//     if(permission === 'ADMIN'|| permission === 'EDITOR'){
+
+//         addItemBtn.style.display ="block";
+
+//             addItemBtn.addEventListener('click', ()=>{
+//                 number = 1;
+//                 changePageNum();
+//             })
+//     }else{
+
+//         view.style.marginBottom ="1.5rem";
+//     }
+// }
+// addingNewItem();

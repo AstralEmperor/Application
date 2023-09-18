@@ -15,15 +15,15 @@ async function getStats(){
     try{
         const zahteviData = await requests()
         const korisnici = await getKorisnici();
-        const products = await getProductStats();
+        const statistics = await getProductStats();
         
         let korisnikNumber = korisnici.length;
         let brojZahteva = zahteviData.length;
-        let prodato = products.data2023.sold;
-        let dostavljeno = products.data2023.delivered;
-        let transport = products.data2023.transporting;
-        let complaint = products.data2023.complaints;
-        let company = products.companyName;
+        let prodato = statistics.data2023.sold;
+        let dostavljeno = statistics.data2023.delivered;
+        let transport = statistics.data2023.transporting;
+        let complaint = statistics.data2023.complaints;
+        let company = statistics.companyName;
 
 
         // ovaj deo ispisuje

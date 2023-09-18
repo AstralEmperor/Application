@@ -111,9 +111,9 @@
     <div class="main__view">
       <div class="main__viewWrap-1">
       <div class="main__btn-wrap">
-        <button class="main__viewBtn main__viewBtn--1 "><img id="main__View1" class="main__viewImg " src="../../assets/grid-blue.png" alt="gridView-icon.png" onclick="changeImage1()"></button>
-        <button class="main__viewBtn main__viewBtn--2 "><img id="main__View2" class="main__viewImg" src="../../assets/menu.png" alt="menuView-icon.png" onclick="changeImage2()"></button>
-        <button class="main__viewBtn main__viewBtn--3 "><img id="main__View3" class="main__viewImg" src="../../assets/list.png" alt="listView-icon.png" onclick="changeImage3()"></button>
+        <button class="main__viewBtn main__viewBtn--1 "><img id="main__View1" class="main__viewImg " src="../../assets/grid-blue.png" alt="gridView-icon.png"></button>
+        <button class="main__viewBtn main__viewBtn--2 "><img id="main__View2" class="main__viewImg" src="../../assets/menu.png" alt="menuView-icon.png"></button>
+        <button class="main__viewBtn main__viewBtn--3 "><img id="main__View3" class="main__viewImg" src="../../assets/list.png" alt="listView-icon.png"></button>
       </div>
       <p id="numberOfItems--1" class="main__pageItemNum"></p>
     </div>
@@ -125,9 +125,9 @@
       <button class="main__page main__pageBtnNext"><img class="main__pageImg" src="../../assets/next.png" alt="next.png"></button>
     </div>
   </div>
-    <!--POST_1-->
+    <!--description-->
    <div class="main__imagesContainer">
-    <button class="add-item">+</button>
+    <!-- <button class="add-item">+</button> -->
     <div class="man__singleImgContainer--special">
       <ul class="main__description main__description--special">
        <li class="main__primaryText">Slika:</li>
@@ -138,39 +138,10 @@
       </ul>
        <p class="main__primaryText main__textForBtns">Akcija:</p>
     </div>
-    <div class="main__singleImgContainer mainContainer">
-        <div class="main__image">
-          <img class="main__fruit" src="../../assets/Fruit.jpg" alt="fruit.png">
-        </div>
-        <div class="main__info">
-          <form class ="main__comment-box">
-              <label class="main__commentLabel">Comment:</label>
-              <input class="main__commentBox" name="comment" type="text" placeholder="Ostavi komentar">
-            <div class="main__commentBtnWrap">
-              <button class="primaryBtn main__commentButton" type="submit">Post</button>
-              <button class="quarterBtn main__commentCancel">X</button>
-            </div>
-          </form>
-        <div class="main__picBtns">
-          <div class="actions__group1">
-             <button class="main__chatBox"><img class="main__chatImg" src="../../assets/chat.png" alt="chat.png"></button>
-             <button class="main__cart"><img class="main__cartImg" src="../../assets/shopping-cart.png" alt="chat.png"></button>
-         </div>
-          <button class="main__delete"><img class="main__deleteImg" src="../../assets/close.png" alt="delete.png"></button>
-        </div>
-         <dl class="main__description">
-           <dt class="main__text">Lokacija:</dt>
-            <dd >BBTT146 Zrenjanin</dd>
-           <dt class="main__text">Vrsta:</dt>
-            <dd>Voće i povrće</dd>
-           <dt class="main__text">Količina:</dt>
-            <dd>52pc</dd>
-           <dt class="main__text">Cena:</dt>
-            <dd class="main__text--price">10 $/kg</dd>
-      </dl>
-    </div>
+  <div id="container" class="main__productsContainer">
+    <!-- CONTENT LOADS HERE -->
   </div>
-  </div>
+</div>
   <div class="main__view main__view2">
     <div class="main__viewWrap-1">
     <p class="main__pageItemNum main__pageItemNum2"></p>
@@ -188,7 +159,7 @@
   <p lang="en" class="footer__text">Initial design made by:<em>@BS-Computer</em><br> 
                                     App created by: <em>Marko Kovačević</em></p>
 </footer>
-  <script src="./listOfItems.mjs"></script>
+  <script type="module" src="./listOfItems.mjs"></script>
   <script src="../../shared/mquery/navigation.js"></script>
 </body>
 </html>
