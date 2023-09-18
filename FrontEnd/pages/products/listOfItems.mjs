@@ -46,7 +46,7 @@ async function createListItems(products){
                <dt class="main__text">Količina:</dt>
                 <dd>${product.kolicina}</dd>
                <dt class="main__text">Cena:</dt>
-                <dd class="main__text--price">${product.cena}</dd>
+                <dd class="main__text--price sale">${product.cena}</dd>
           </dl>
         </div>
       </div>`

@@ -20,6 +20,7 @@
     --blackish:#231F20;
     --online:#00cf00;
     --success:#068806;
+    --sale:#13c913;
     --offline:#fb0101;
     --quarterBtn1:#b61212;
     --quarterBtn2:#920c0c;
@@ -302,6 +303,9 @@ outline:var(--btnText);
 .disabled2{
     opacity:0;
     pointer-events:none;
+}
+.sale{
+    color:var(--sale);
 }
 html{
     font-family: 'Open Sans', sans-serif
