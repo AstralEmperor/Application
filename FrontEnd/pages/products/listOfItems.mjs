@@ -9,17 +9,24 @@ const pageNextBtn = document.querySelectorAll('.main__pageBtnNext');
 const permission = JSON.parse(localStorage.getItem("currentRole"));
 // Function for cloning 'first' original item 
 
+function calculateSale(){
+    
+}
 async function createListItems(products){
     
     const container = document.querySelector('#container');
         let generateItem ='';
         for(let product of products.items){
 
+            // if theres a sale do this
             if(product.popust != undefined){
-                
+
+               const popustDecimal = (product.popust / 100);
+               const finalPrice = (product.cena * (1 - popustDecimal)).toFixed(2);
+
                 generateItem += `<div class="main__singleImgContainer mainContainer">
             <div class="main__image">
-              <p class="main__sale">${product.popust}</p>
+              <p class="main__sale">${product.popust} %</p>
               <img class="main__fruit" src="${product.slika}" alt="fruit.png">
             </div>
             <div class="main__info">
@@ -46,7 +53,7 @@ async function createListItems(products){
                <dt class="main__text">Količina:</dt>
                 <dd>${product.kolicina}</dd>
                <dt class="main__text">Cena:</dt>
-                <dd class="main__text--price sale">${product.cena}</dd>
+                <dd class="main__text--price sale">${finalPrice} $/kg</dd>
           </dl>
         </div>
       </div>`
@@ -80,7 +87,7 @@ async function createListItems(products){
                <dt class="main__text">Količina:</dt>
                 <dd>${product.kolicina}</dd>
                <dt class="main__text">Cena:</dt>
-                <dd class="main__text--price">${product.cena}</dd>
+                <dd class="main__text--price">${product.cena} $/kg</dd>
           </dl>
         </div>
       </div>`
@@ -136,7 +143,7 @@ function changeImage1() {
         document.querySelector(".main__picBtns").style.cssText ="min-width:279px;";
     
         applyStyles(image,"height:20rem;width:auto");
-        applyStyles(saleTag, "font-size:1.25rem");
+        applyStyles(saleTag, "font-size:1.25rem;transform-origin:28%;");
         applyStyles(description, "display: grid");
         applyStyles(mainText, "display: flex");
         applyStyles(chatWrap,"display:flex");
@@ -196,7 +203,7 @@ function changeImage2() {
             document.getElementsByClassName("main__picBtns")[0].style.cssText ="min-width:429px;";
 
             applyStyles(image,"height:20rem;width:auto");
-            applyStyles(saleTag, "font-size:1.25rem");
+            applyStyles(saleTag, "font-size:1.25rem;transform-origin:28%;");
             applyStyles(description,"display:none");
             applyStyles(mainText,"display:none");
             applyStyles(chatWrap,"display:flex");
@@ -255,7 +262,7 @@ function changeImage3(){
         document.getElementsByClassName("main__picBtns")[0].style.cssText ="min-width:93px;max-height:70px";
 
         applyStyles(image,"height:3rem;width:3rem");
-        applyStyles(saleTag, "font-size:0.8rem");
+        applyStyles(saleTag, "font-size:0.8rem;transform-origin:center;");
         applyStyles(description,"display:flex;justify-content:space-between;flex-basis:100%;gap:0.75rem;text-align:center");
         applyStyles(mainText,"display:none");
         applyStyles(chatWrap,"display:none");

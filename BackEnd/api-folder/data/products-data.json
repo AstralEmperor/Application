@@ -7,25 +7,25 @@
             "lokacija":"Zrenjanin",
             "produkt":"Jabuke",
             "kolicina":"52 kom",
-            "cena":"5 $/kg",
+            "cena":"5",
             "slika":"../../../FrontEnd/assets/apples1.png",
-            "popust":"5%"
+            "popust":"5"
         }
         ,{
             "id":"2",
             "lokacija":"Pančevo",
             "produkt":"Jagode",
             "kolicina":"22 kom",
-            "cena":"7 $/kg",
+            "cena":"7",
             "slika":"../../../FrontEnd/assets/strawberries.jpg",
-            "popust":"20%"
+            "popust":"20"
         },
         {
             "id":"3",
             "lokacija":"Zrenjanin",
             "produkt":"Naradze",
             "kolicina":"36 kom",
-            "cena":"4 $/kg",
+            "cena":"4",
             "slika":"../../../FrontEnd/assets/oranges.jpg"
         },
         {
@@ -33,7 +33,7 @@
             "lokacija":"Novi Sad",
             "produkt":"Šargarepe",
             "kolicina":"20 kom",
-            "cena":"3 $/kg",
+            "cena":"3",
             "slika":"../../../FrontEnd/assets/carrot.jpg"
         },
         {
@@ -41,16 +41,15 @@
             "lokacija":"Novi Sad",
             "produkt":"Groždje",
             "kolicina":"150 kom",
-            "cena":"5 $/kg",
-            "slika":"../../../FrontEnd/assets/berries.jpg",
-            "popust":"15%"
+            "cena":"5",
+            "slika":"../../../FrontEnd/assets/berries.jpg"
         },
         {
             "id":"6",
             "lokacija":"Zrenjanin",
             "produkt":"Jabuke",
             "kolicina":"20 kom",
-            "cena":"3.5 $/kg",
+            "cena":"3.5",
             "slika":"../../../FrontEnd/assets/apples2.jpg"
         },
         {
@@ -58,7 +57,7 @@
             "lokacija":"Pančevo",
             "produkt":"Kajsije",
             "kolicina":"20 kom",
-            "cena":"4 $/kg",
+            "cena":"4",
             "slika":"../../../FrontEnd/assets/peaches1.jpg"
         },
         {
@@ -66,15 +65,16 @@
             "lokacija":"Novi Sad",
             "produkt":"Maline",
             "kolicina":"135 kom",
-            "cena":"12 $/kg",
-            "slika":"../../../FrontEnd/assets/rasphberries.jpg"
+            "cena":"12",
+            "slika":"../../../FrontEnd/assets/rasphberries.jpg",
+            "popust":"15"
         },
         {
             "id":"9",
             "lokacija":"Novi Sad",
             "produkt":"Paradajz",
             "kolicina":"68 kom",
-            "cena":"2 $/kg",
+            "cena":"2",
             "slika":"../../../FrontEnd/assets/tomattoes.jpg"
         },
         {
@@ -82,7 +82,7 @@
             "lokacija":"Zrenjanin",
             "produkt":"Kukuruz",
             "kolicina":"100 kom",
-            "cena":"4 $/kg",
+            "cena":"4",
             "slika":"../../../FrontEnd/assets/corn.jpg"
         },
         {
@@ -90,16 +90,16 @@
             "lokacija":"Aradac",
             "produkt":"Kajsije",
             "kolicina":"60 kom",
-            "cena":"4.2 $/kg",
+            "cena":"4.2",
             "slika":"../../../FrontEnd/assets/peaches2.jpg",
-            "popust":"10%"
+            "popust":"10"
         },
         {
             "id":"12",
             "lokacija":"Novi Sad",
             "produkt":"Sljive",
             "kolicina":"60 kom",
-            "cena":"5.6 $/kg",
+            "cena":"5.6",
             "slika":"../../../FrontEnd/assets/plum.jpg"
         }
 

@@ -206,8 +206,8 @@ align-items:center;
 .main__sale{
     position:absolute;
     transform:rotate(-45deg);
-    top:13px;
-    width:6rem;
+    top:24px;
+    width:7rem;
     text-align:center;
     left:-18px;
     color:var(--btnText);
@@ -216,6 +216,7 @@ align-items:center;
     padding: 0 1rem;
     background: rgb(239,240,127);
     background: linear-gradient(90deg, rgba(239,240,127,1) 0%, rgba(150,255,110,1) 100%, rgba(187,189,190,1) 100%);
+    transform-origin:28%;
 }
 .main__info{
     position:relative;
