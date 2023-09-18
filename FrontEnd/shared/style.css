@@ -265,27 +265,6 @@ outline:var(--btnText);
     border-radius:60%;
 }
 
-/*----------------google-translate styles----------------*/
-
-.goog-te-gadget img{
-    display:none !important;
-}
-body > .skiptranslate,
-.skiptranslate > span{
-    display: none;
-}
-.goog-logo-link {
-    display:none !important;
-} 
-    
-.goog-te-gadget{
-    color: transparent !important;
-}
-body {
-    top: 0px !important;
-    bottom:0px !important
-}
-
 /*--------------- Footer, special tags ---------------*/
 
 .footer{

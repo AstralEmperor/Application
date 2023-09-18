@@ -27,13 +27,12 @@ This app is used for selling and posting of fruits and vegetables. Reaching for 
     6. Pagination
     7. Prototype of Roles (ADMIN,USER,EDITOR,GUEST) and their view permissions
     8. Tables displaying content from JSON for user/requests
-    9. Toastr notifications on login(npm package): REMOVED(commented out) for easier commit
+    9. Toastr notifications on login(npm package): //Disabled(commented out) for easier commit
     10. Statistics
     11. Manual Carousel
     12. Reviews generated using data
     13. Data transfer and manipulation with LocalStorage
-    14. Different Language translations with google translate API
-    15. COOMING-SOON! - displaying selected items in cart
+    14. COOMING-SOON! - displaying selected items in cart
 
 ## Trial account for viewing whole site
      "names":"User",
