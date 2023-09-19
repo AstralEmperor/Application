@@ -473,16 +473,16 @@ function createComment(){
         commentButton .addEventListener('click', e =>{
             e.preventDefault();
                 const data = arrayOfPosts[i].querySelector('.main__commentBox').value;
-                postComment(data);
-
-                
+                // postComment(data) 
+                commentBox.reset();
+                commentBox.classList.remove('active__comment');
         });
         
     };
 }
 createComment()
 
-// Post comment on json db ( not working since no actual server)
+// Post comment on json db ( NOT WORKING SINCE NO ACTUAL SERVER)
 async function postComment(data) {
     try {
       const res = await fetch("../../../BackEnd/api-folder/data/comments.json", {
@@ -498,7 +498,7 @@ async function postComment(data) {
     } catch (error) {
       console.error("Error:", error);
     }
-  }
+}
 
 //Current page number
 const pageNum = (currentPage,targetPage) =>{
