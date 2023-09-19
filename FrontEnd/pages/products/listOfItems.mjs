@@ -24,73 +24,75 @@ async function createListItems(products){
                const popustDecimal = (product.popust / 100);
                const finalPrice = (product.cena * (1 - popustDecimal)).toFixed(2);
 
-                generateItem += `<div class="main__singleImgContainer mainContainer">
-            <div class="main__image">
-              <p class="main__sale">${product.popust} %</p>
-              <img class="main__fruit" src="${product.slika}" alt="fruit.png">
-            </div>
-            <div class="main__info">
-              <form class ="main__comment-box">
-                  <label class="main__commentLabel">Comment:</label>
-                  <input class="main__commentBox" name="comment" type="text" placeholder="Ostavi komentar">
-                <div class="main__commentBtnWrap">
-                  <button class="primaryBtn main__commentButton" type="submit">Post</button>
-                  <button class="quarterBtn main__commentCancel">X</button>
+                generateItem += `
+                <div class="main__singleImgContainer mainContainer">
+                    <div class="main__image">
+                    <p class="main__sale">${product.popust} %</p>
+                    <img class="main__fruit" src="${product.slika}" alt="fruit.png">
+                    </div>
+                    <div class="main__info">
+                    <form class ="main__comment-box">
+                        <label class="main__commentLabel">Comment:</label>
+                        <input class="main__commentBox" name="comment" type="text" placeholder="Ostavi komentar">
+                        <div class="main__commentBtnWrap">
+                        <button class="primaryBtn main__commentButton" type="submit">Post</button>
+                        <button class="quarterBtn main__commentCancel">X</button>
+                        </div>
+                    </form>
+                    <div class="main__picBtns">
+                    <div class="actions__group1">
+                        <button class="main__chatBox"><img class="main__chatImg" src="../../assets/chat.png" alt="chat.png"></button>
+                        <button class="main__cart"><img class="main__cartImg" src="../../assets/shopping-cart.png" alt="chat.png"></button>
+                    </div>
+                    <button class="main__delete"><img class="main__deleteImg" src="../../assets/close.png" alt="delete.png"></button>
+                    </div>
+                    <dl class="main__description">
+                    <dt class="main__text">Lokacija:</dt>
+                        <dd>${product.lokacija}</dd>
+                    <dt class="main__text">Vrsta:</dt>
+                        <dd>${product.produkt}</dd>
+                    <dt class="main__text">Količina:</dt>
+                        <dd>${product.kolicina}</dd>
+                    <dt class="main__text">Cena:</dt>
+                        <dd class="main__text--price sale">${finalPrice} $/kg</dd>
+                </dl>
                 </div>
-              </form>
-            <div class="main__picBtns">
-              <div class="actions__group1">
-                 <button class="main__chatBox"><img class="main__chatImg" src="../../assets/chat.png" alt="chat.png"></button>
-                 <button class="main__cart"><img class="main__cartImg" src="../../assets/shopping-cart.png" alt="chat.png"></button>
-             </div>
-              <button class="main__delete"><img class="main__deleteImg" src="../../assets/close.png" alt="delete.png"></button>
-            </div>
-             <dl class="main__description">
-               <dt class="main__text">Lokacija:</dt>
-                <dd>${product.lokacija}</dd>
-               <dt class="main__text">Vrsta:</dt>
-                <dd>${product.produkt}</dd>
-               <dt class="main__text">Količina:</dt>
-                <dd>${product.kolicina}</dd>
-               <dt class="main__text">Cena:</dt>
-                <dd class="main__text--price sale">${finalPrice} $/kg</dd>
-          </dl>
-        </div>
-      </div>`
+            </div>`
             }else{
         
-            generateItem += `<div class="main__singleImgContainer mainContainer">
-            <div class="main__image">
-              <img class="main__fruit" src="${product.slika}" alt="fruit.png">
-            </div>
-            <div class="main__info">
-              <form class ="main__comment-box">
-                  <label class="main__commentLabel">Comment:</label>
-                  <input class="main__commentBox" name="comment" type="text" placeholder="Ostavi komentar">
-                <div class="main__commentBtnWrap">
-                  <button class="primaryBtn main__commentButton" type="submit">Post</button>
-                  <button class="quarterBtn main__commentCancel">X</button>
+            generateItem += `
+            <div class="main__singleImgContainer mainContainer">
+                <div class="main__image">
+                <img class="main__fruit" src="${product.slika}" alt="fruit.png">
                 </div>
-              </form>
-            <div class="main__picBtns">
-              <div class="actions__group1">
-                 <button class="main__chatBox"><img class="main__chatImg" src="../../assets/chat.png" alt="chat.png"></button>
-                 <button class="main__cart"><img class="main__cartImg" src="../../assets/shopping-cart.png" alt="chat.png"></button>
-             </div>
-              <button class="main__delete"><img class="main__deleteImg" src="../../assets/close.png" alt="delete.png"></button>
+                <div class="main__info">
+                <form class ="main__comment-box">
+                    <label class="main__commentLabel">Comment:</label>
+                    <input class="main__commentBox" name="comment" type="text" placeholder="Ostavi komentar">
+                    <div class="main__commentBtnWrap">
+                    <button class="primaryBtn main__commentButton" type="submit">Post</button>
+                    <button class="quarterBtn main__commentCancel">X</button>
+                    </div>
+                </form>
+                <div class="main__picBtns">
+                <div class="actions__group1">
+                    <button class="main__chatBox"><img class="main__chatImg" src="../../assets/chat.png" alt="chat.png"></button>
+                    <button class="main__cart"><img class="main__cartImg" src="../../assets/shopping-cart.png" alt="chat.png"></button>
+                </div>
+                <button class="main__delete"><img class="main__deleteImg" src="../../assets/close.png" alt="delete.png"></button>
+                </div>
+                <dl class="main__description">
+                <dt class="main__text">Lokacija:</dt>
+                    <dd>${product.lokacija}</dd>
+                <dt class="main__text">Vrsta:</dt>
+                    <dd>${product.produkt}</dd>
+                <dt class="main__text">Količina:</dt>
+                    <dd>${product.kolicina}</dd>
+                <dt class="main__text">Cena:</dt>
+                    <dd class="main__text--price">${product.cena} $/kg</dd>
+            </dl>
             </div>
-             <dl class="main__description">
-               <dt class="main__text">Lokacija:</dt>
-                <dd>${product.lokacija}</dd>
-               <dt class="main__text">Vrsta:</dt>
-                <dd>${product.produkt}</dd>
-               <dt class="main__text">Količina:</dt>
-                <dd>${product.kolicina}</dd>
-               <dt class="main__text">Cena:</dt>
-                <dd class="main__text--price">${product.cena} $/kg</dd>
-          </dl>
-        </div>
-      </div>`
+        </div>`
     }}
         container.innerHTML = generateItem;
 
@@ -449,8 +451,8 @@ addToCart();
 
 //Creating input comment on button click, for every card //api here is empty for now
 function createComment(){
-        const container = document.querySelector('.main__imagesContainer');
-        let arrayOfitems = Array.from(container.children);
+        const containerWrap = document.querySelector('.main__productsContainer');
+        let arrayOfitems = Array.from(containerWrap.children);
         let arrayOfPosts = [...arrayOfitems].filter(item => item.classList.contains('main__singleImgContainer'));
 
         for(let i = 0; i < arrayOfPosts.length;i++){
@@ -466,26 +468,38 @@ function createComment(){
         commentCancel.addEventListener('click', e =>{
             e.preventDefault();
             commentBox.classList.remove('active__comment');
+            commentBox.reset();
         });
         commentButton .addEventListener('click', e =>{
             e.preventDefault();
-            const data = arrayOfPosts[i].querySelector('.main__commentBox').value;
-    
-            fetch('.json',{
-                method:'POST',
-                headers:{
-                    'Content-Type':'application/json'
-                },
-                body:JSON.stringify(data)
-            })
-            .then(res => res.json())
-              .then(data => console.log(data))
-                .catch(error => console.log(error))
+                const data = arrayOfPosts[i].querySelector('.main__commentBox').value;
+                postComment(data);
+
+                
         });
         
     };
 }
-createComment();
+createComment()
+
+// Post comment on json db ( not working since no actual server)
+async function postComment(data) {
+    try {
+      const res = await fetch("../../../BackEnd/api-folder/data/comments.json", {
+        method: "POST", // or 'PUT'
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+  
+      const result = await res.json();
+      console.log("Success:", result);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
+
 //Current page number
 const pageNum = (currentPage,targetPage) =>{
 
@@ -583,23 +597,3 @@ function returnPage(){
             pageNum(currentPage, prevPage);
             disabledBtn(prevIndex, numCount);
 }
-
-// On click of button " + " add new Element calling createListItem(), and check if pagination is neccesery with changePageNum();
-// const addItemBtn = document.querySelector('.add-item');
-// const view = document.querySelector('.main__view');
-// //adding new Item 
-// function addingNewItem(){
-//     if(permission === 'ADMIN'|| permission === 'EDITOR'){
-
-//         addItemBtn.style.display ="block";
-
-//             addItemBtn.addEventListener('click', ()=>{
-//                 number = 1;
-//                 changePageNum();
-//             })
-//     }else{
-
-//         view.style.marginBottom ="1.5rem";
-//     }
-// }
-// addingNewItem();
