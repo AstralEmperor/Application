@@ -11,6 +11,7 @@ function addNav(){
     clearLocalData();
     numberOfItems();
     secondaryNav();
+    numberOfItems();
 }
 addNav();
 
@@ -75,4 +76,21 @@ for(let i = 0; i < navToggle.length; i++){
        }
   });
 }
+}
+// shows number of items selected for purchase
+function numberOfItems(){
+  const cartNumber = document.getElementById('cartNumber');
+  const itemNumber =JSON.parse(localStorage.getItem("products")) || [];
+
+  if(itemNumber.length === 0){
+      cartNumber.style.display = "none";
+      localStorage.removeItem("products");
+   }
+  else if(itemNumber.length >= 1){
+      cartNumber.style.display = "flex"; 
+       cartNumber.innerText = itemNumber.length ;
+
+  }else{
+      cartNumber.style.display = "flex"; 
+  }
 }

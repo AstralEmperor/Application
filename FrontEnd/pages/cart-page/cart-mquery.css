@@ -1,7 +1,21 @@
+@media screen and (max-width:1020px){
+    .cart__itemsContainer{
+        width:100%;
+    }
+    .cart__buyingContainer{
+        display:flex;
+        align-items:center;
+        flex-direction:column;
+        gap:1rem;
+    }
+}
 @media screen and (max-width:768px){
     .cart__noItem-description,
     .cart__span-empty{
         font-size:1.75rem !important;
+    }
+    .cart__productName{
+        font-size:0.85rem;
     }
 }
 @media screen and (max-width:420px){
@@ -18,4 +32,21 @@
     .cart__btnToShop{
         padding-block:0.25em;
     }
+    .cart__description{
+        padding-inline:0.5rem;
+    }
+    .cart__btnCancel{
+        width:1rem;
+        height:1rem;
+    }
+    .cart__image{
+        width:6rem;
+        height:3rem;
+    }
+    .cart__productLocation{
+        display:none;
+    }
+    .cart__amountInput{
+        width:2rem;
+    } 
 }

@@ -28,7 +28,7 @@ async function createListItems(products){
                 <div class="main__singleImgContainer mainContainer">
                     <div class="main__image">
                     <p class="main__sale">${product.popust} %</p>
-                    <img class="main__fruit" src="${product.slika}" alt="fruit.png">
+                    <img loading="lazy" class="main__fruit" src="${product.slika}" alt="fruit.png">
                     </div>
                     <div class="main__info">
                     <form class ="main__comment-box">
@@ -41,18 +41,18 @@ async function createListItems(products){
                     </form>
                     <div class="main__picBtns">
                     <div class="actions__group1">
-                        <button class="main__chatBox"><img class="main__chatImg" src="../../assets/chat.png" alt="chat.png"></button>
-                        <button class="main__cart"><img class="main__cartImg" src="../../assets/shopping-cart.png" alt="chat.png"></button>
+                        <button class="main__chatBox"><img loading="lazy" class="main__chatImg" src="../../assets/chat.png" alt="chat.png"></button>
+                        <button class="main__cart"><img loading="lazy" class="main__cartImg" src="../../assets/shopping-cart.png" alt="chat.png"></button>
                     </div>
-                    <button class="main__delete"><img class="main__deleteImg" src="../../assets/close.png" alt="delete.png"></button>
+                    <button class="main__delete"><img loading="lazy" class="main__deleteImg" src="../../assets/close.png" alt="delete.png"></button>
                     </div>
                     <dl class="main__description">
                     <dt class="main__text">Lokacija:</dt>
-                        <dd>${product.lokacija}</dd>
+                        <dd class="main__text--location">${product.lokacija}</dd>
                     <dt class="main__text">Vrsta:</dt>
-                        <dd>${product.produkt}</dd>
+                        <dd class="main__text--productName">${product.produkt}</dd>
                     <dt class="main__text">Količina:</dt>
-                        <dd>${product.kolicina}</dd>
+                        <dd class="main__text--amount">${product.kolicina}</dd>
                     <dt class="main__text">Cena:</dt>
                         <dd class="main__text--price sale">${finalPrice} $/kg</dd>
                 </dl>
@@ -63,7 +63,7 @@ async function createListItems(products){
             generateItem += `
             <div class="main__singleImgContainer mainContainer">
                 <div class="main__image">
-                <img class="main__fruit" src="${product.slika}" alt="fruit.png">
+                <img loading="lazy" class="main__fruit" src="${product.slika}" alt="fruit.png">
                 </div>
                 <div class="main__info">
                 <form class ="main__comment-box">
@@ -76,18 +76,18 @@ async function createListItems(products){
                 </form>
                 <div class="main__picBtns">
                 <div class="actions__group1">
-                    <button class="main__chatBox"><img class="main__chatImg" src="../../assets/chat.png" alt="chat.png"></button>
-                    <button class="main__cart"><img class="main__cartImg" src="../../assets/shopping-cart.png" alt="chat.png"></button>
+                    <button class="main__chatBox"><img loading="lazy" class="main__chatImg" src="../../assets/chat.png" alt="chat.png"></button>
+                    <button class="main__cart"><img loading="lazy" class="main__cartImg" src="../../assets/shopping-cart.png" alt="chat.png"></button>
                 </div>
-                <button class="main__delete"><img class="main__deleteImg" src="../../assets/close.png" alt="delete.png"></button>
+                <button class="main__delete"><img loading="lazy" class="main__deleteImg" src="../../assets/close.png" alt="delete.png"></button>
                 </div>
                 <dl class="main__description">
                 <dt class="main__text">Lokacija:</dt>
-                    <dd>${product.lokacija}</dd>
-                <dt class="main__text">Vrsta:</dt>
-                    <dd>${product.produkt}</dd>
-                <dt class="main__text">Količina:</dt>
-                    <dd>${product.kolicina}</dd>
+                     <dd class="main__text--location">${product.lokacija}</dd>
+                    <dt class="main__text">Vrsta:</dt>
+                        <dd class="main__text--productName">${product.produkt}</dd>
+                    <dt class="main__text">Količina:</dt>
+                        <dd class="main__text--amount">${product.kolicina}</dd>
                 <dt class="main__text">Cena:</dt>
                     <dd class="main__text--price">${product.cena} $/kg</dd>
             </dl>
@@ -394,52 +394,48 @@ function deleteListItem(){
     }
 }
 deleteListItem();
-// function which was originally made in -navigation.js- , used to show number of items selected for purchase
-function numberOfItems(){
-    const cartNumber = document.getElementById('cartNumber');
-    const itemNumber =JSON.parse(localStorage.getItem("items")) || [];
-
-    if(itemNumber.length === 0){
-        cartNumber.style.display = "none";
-        localStorage.removeItem("items");
-     }
-    else if(itemNumber.length >= 1){
-        cartNumber.style.display = "flex"; 
-         cartNumber.innerText = itemNumber.length ;
-
-    }else{
-        cartNumber.style.display = "flex"; 
-    }
-}
-numberOfItems()
 
 // Shopping Cart event listener, which pushes items to localStorage, or splices 1 item if unselected
 function addToCart(){
     const cartNumber = document.getElementById('cartNumber');
     const singleCont = document.querySelectorAll(".main__singleImgContainer");
+
     for(let i = 0; i < singleCont.length; i++){
-        const singleProduct = singleCont[i].innerHTML;
         let selected = false;
         const cart = singleCont[i].querySelector('.main__cartImg');
-        const cartWrap = singleCont[i].querySelector('.main__cart');
 
         cart.addEventListener('click', () => {
+            const fruitImg = singleCont[i].querySelector('.main__fruit').src;
+        
+            const productName = singleCont[i].querySelector('.main__text--productName').textContent;
+            const location = singleCont[i].querySelector('.main__text--location').textContent;
+            const amount = singleCont[i].querySelector('.main__text--amount').textContent;
+            const cost = singleCont[i].querySelector('.main__text--price').textContent;
+
+            const product = {
+                image:fruitImg,
+                name:productName,
+                location:location,
+                amount:amount,
+                cost:cost
+            }
+
             if(selected === false){
                 cart.src="../../assets/shopping-cart-green.png";
-                const storage = JSON.parse(localStorage.getItem("items")) || [];
-                storage.push(singleProduct);
-                localStorage.setItem("items", JSON.stringify(storage))
+                const storage = JSON.parse(localStorage.getItem("products")) || [];
+                storage.push(product);
+                localStorage.setItem("products", JSON.stringify(storage))
                 cartNumber.style.display = "flex";
                 numberOfItems();
                selected = true;
             }else if(selected === true){
                 cart.src="../../assets/shopping-cart.png";
-                const storage = JSON.parse(localStorage.getItem("items")) || []
-                storage.splice(singleProduct, 1);
-                localStorage.setItem('items', JSON.stringify(storage));
+                const storage = JSON.parse(localStorage.getItem("products")) || []
+                storage.splice(product, 1);
+                localStorage.setItem('products', JSON.stringify(storage));
                 if(storage.length === 0){
                     cartNumber.style.display = "none";
-                    localStorage.removeItem("items");
+                    localStorage.removeItem("products");
                  }
                 numberOfItems();
                 selected = false;

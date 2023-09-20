@@ -2,6 +2,7 @@
     --lightGray:#F4F4F4;
     --textGray:#505759;
     --coverGray:133, 137, 138;
+    --lightBlue:hsl(187, 51%, 65%);
     --blue:#53adb9;
     --altBlue:#008888;
     --altBlueDark:#3c818a;
@@ -258,7 +259,7 @@ outline:var(--btnText);
 }
 
 .nav__cartItems{
-    background-color:var(--altBlueDark);
+    background-color:var(--offline);
     color:var(--white);
     width:fit-content;
     height:fit-content;
