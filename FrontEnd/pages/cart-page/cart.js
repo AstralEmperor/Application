@@ -35,7 +35,7 @@ function displayItems(){
                         </label>
                     </div>
                     <div class="cart__productCost"><p>Cena: </p>
-                                                  <p><b><em>${items[i].cost}</em></b></p>
+                                                  <p><b>${items[i].cost}</b></p>
                    </div>
                 </div>
                 <div class="cart__options">
