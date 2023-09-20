@@ -32,7 +32,7 @@ This app is used for selling and posting of fruits and vegetables. Reaching for 
     11. Manual Carousel
     12. Reviews generated using data
     13. Data transfer and manipulation with LocalStorage
-    14. COOMING-SOON! - displaying selected items in cart
+    14. Selected Items generated on -Cart page- and display the total cost
 
 ## Trial account for viewing whole site
      "names":"User",
