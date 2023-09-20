@@ -43,7 +43,12 @@
     .main__text{
         font-size:0.7rem;
     }
-    .main__imagesContainer{
+    .main__singleImgContainer{
+        margin:0 0.5rem;
+        font-size: 12px;
+        max-height:20rem;
+    }
+    .main__productsContainer{
         grid-template-columns: repeat(auto-fit, minmax(auto, 100%));
     }
 }

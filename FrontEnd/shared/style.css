@@ -18,6 +18,7 @@
     --btnText:#505759;
     --black:#000000;
     --white:#ffffff;
+    --whitish:#f3f3f3;
     --blackish:#231F20;
     --online:#00cf00;
     --success:#068806;
@@ -279,7 +280,7 @@ outline:var(--btnText);
     position:absolute;
     min-height:50px;
     background-color:var(--white);
-    color:var(--blueVariant);
+    color:var(--blueVariant4);
     letter-spacing:0.05em;
     box-shadow:1px -2px 6px  rgba(0,0,0,0.16);
 }

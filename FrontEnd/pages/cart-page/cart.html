@@ -69,13 +69,29 @@
       <button tabindex="-1" class="cart__btnToShop primaryBtn"><a tabindex="0" href="../products/proizvodi.html">Vrati se do prodavnice</a></button>
     </div>
   </div>
-    <div class="cart__buyingContainer">
+    <div class="cart__selectedItemsCont">
           <div class="cart__itemsContainer">
         <!----- SELECTED ITEMS ARE GENERATED HERE ----->
           </div>
         <div class="cart__buyContainer">
-          <button class="primaryBtn cart__btnBuy">Kupi</button>
-          <button class="primaryBtn cart__btnWithraw">Odbaci</button>
+              <div class="cart__totalAmountContainer">
+                <div class="cart__priceCont">
+                  <p class="cart__cost">Cena proizvoda:</p>
+                  <p id="cost" class="price"></p>
+                </div>
+                  <div class="cart__priceCont">
+                    <p class="cart__tax">Taksa:</p>
+                    <p id="tax" class="price"></p>
+                  </div>
+                  <div class="cart__priceCont">
+                    <p class="cart__totalAmount">Ukupna cena:</p>
+                    <p id="total" class="price"></p>
+                  </div>
+              </div>
+            <div class="cart__buyButtons">
+              <button class="primaryBtn cart__btnBuy">Kupi</button>
+              <button class="primaryBtn cart__btnWithraw">Odbaci</button>
+          </div>
         </div>
     </div>
 </div>

@@ -2,11 +2,14 @@
     .cart__itemsContainer{
         width:100%;
     }
-    .cart__buyingContainer{
+    .cart__selectedItemsCont{
         display:flex;
         align-items:center;
         flex-direction:column;
         gap:1rem;
+    }
+    .cart__buyContainer{
+        width:100%;
     }
 }
 @media screen and (max-width:768px){
@@ -49,4 +52,12 @@
     .cart__amountInput{
         width:2rem;
     } 
+    .cart__btnWithraw,
+    .cart__btnBuy{
+        font-size:1.2rem;
+    }
+    .cart__singleItem{
+        border-radius:0;
+        padding-block:1.5rem;
+    }
 }

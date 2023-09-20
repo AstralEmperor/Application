@@ -1,7 +1,7 @@
 const container = document.querySelector('.cart__itemsContainer');
 
 function noItems(){
-    const displayContainer = document.querySelector('.cart__buyingContainer');
+    const displayContainer = document.querySelector('.cart__selectedItemsCont');
     const noItem = document.querySelector('.cart__noItem-container');
     const items = JSON.parse(localStorage.getItem("products"));
         if(items == undefined){
@@ -17,6 +17,9 @@ noItems();
 function displayItems(){
     const items = JSON.parse(localStorage.getItem("products"));
     if(items != undefined){
+        let itemsTotal = 0;
+        let tax = 0;
+        let totalCost = 0;
         for(let i = 0; i < items.length; i++){
             container.innerHTML += `
             <div class="cart__singleItem">
@@ -27,8 +30,9 @@ function displayItems(){
                     <div class="cart__productName">${items[i].name}</div>
                     <div class="cart__productLocation">${items[i].location}</div>
                     <div class="cart__input">
-                        <label for="number${i + 1}" class="cart__amountLabel">kg: </label>
+                        <label for="number${i + 1}" class="cart__amountLabel">kg: 
                         <input type="number" id="number${i + 1}" name="number" class="cart__amountInput" min="1" max="${items[i].amount}"  value="1">
+                        </label>
                     </div>
                     <div class="cart__productCost"><p>Cena: </p>
                                                   <p><b><em>${items[i].cost}</em></b></p>
@@ -38,7 +42,18 @@ function displayItems(){
                      <button aria-label="cancel item" class="cart__btnCancel" title="Discard product"><img src="../../assets/close.png" alt="product-cancel${i + 1}.jpg"></button>
                 </div>
             </div>`;
+            itemsTotal += parseFloat(items[i].cost);
         }
+        let cost = document.getElementById('cost');
+        cost.textContent =` ${itemsTotal} $`;
+
+        let taxation = document.getElementById('tax');
+        tax = (itemsTotal *(5 / 100)).toFixed(2);
+        taxation.textContent = ` ${tax} $`;
+
+        let totalCostDiv = document.getElementById('total');
+        totalCost = (parseFloat(itemsTotal) + parseFloat(tax)).toFixed(2);
+        totalCostDiv.textContent = `${totalCost} $`;
     }
 }
 displayItems();
@@ -49,7 +64,7 @@ function cancelItem(){
         const cancel = singleItem[i].querySelector('.cart__btnCancel');
 
                 cancel.addEventListener('click', () => {
-                    const displayContainer = document.querySelector('.cart__buyingContainer');
+                    const displayContainer = document.querySelector('.cart__selectedItemsCont');
                     const noItem = document.querySelector('.cart__noItem-container');
 
                     const items = JSON.parse(localStorage.getItem('products'));
@@ -65,6 +80,7 @@ function cancelItem(){
                     }else{
                         noItem.style.display = "none";
                         displayContainer.style.display = "flex";
+                        location.reload();
                     }
                 })
       }
