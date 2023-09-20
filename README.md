@@ -33,6 +33,7 @@ This app is used for selling and posting of fruits and vegetables. Reaching for 
     12. Reviews generated using data
     13. Data transfer and manipulation with LocalStorage
     14. Selected Items generated on -Cart page- and display the total cost
+    15. COMING SOON! - user profile
 
 ## Trial account for viewing whole site
      "names":"User",
