@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="./profile.css" rel="stylesheet">
+    <link href="./profile-mquery.css" rel="stylesheet">
     <link href="../products/proizvodi.css" rel="stylesheet">
     <link href="../../shared/style.css" rel="stylesheet">
-    <link href="./activity.css" rel="stylesheet">
     <link href="../../shared/mquery/mediaq.css" rel="stylesheet">
-    <link href="./activity-mquery.css" rel="stylesheet">
     <title lang="eng">Profile</title>
 </head>
 <body>
@@ -54,13 +54,30 @@
   </ul>
 </nav>
 <section class="main profileInfo">
-  
+  <h2 class="main__search">Informacije o korisniku</h2>
+  <hr class="main__h2-hr">
+  <div class="profileInfo__dataContainer">
+    <div class="profileInfo__nameWrap">
+        <div class="profileInfo__userName">
+          <p>Korisnik:</p>
+          <p class="profileInfo__name"></p>
+        </div>
+         <div class="profileInfo__userEmail">
+            <p>Email:</p>
+            <p class="profileInfo__email"></p>
+         </div>
+          <div class="profileInfo__wallet">
+            <p class="profileInfo__wallet--name">Trenutno stanje na računu:</p>
+            <p class="profileInfo__wallet--number"></p>
+          </div>
+    </div>
+  </div>
 </section>
 <footer class="footer">
   <p lang="en" class="footer__text">Initial design made by:<em>@BS-Computer</em><br> 
                                     App created by: <em>Marko Kovačević</em></p>
 </footer>
-  <script src="./listOfItems.mjs"></script>
   <script src="../../shared/mquery/navigation.js"></script>
+  <script src="./profile.js"></script>
 </body>
 </html>

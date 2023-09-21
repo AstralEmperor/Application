@@ -87,6 +87,43 @@ function cancelItem(){
 }
 cancelItem();
 
+//buying items on button click, if theres enough money in db, pay the amount and return new current money
+function buyItems(){
+    const buyBtn = document.querySelector('.cart__btnBuy');
+    const amountOfMoney = JSON.parse(localStorage.getItem("currentUser"));
+    let currentMoney = amountOfMoney.money;
+    let totalCost = parseFloat(document.getElementById('total').textContent);
+    buyBtn.addEventListener('click', () => {
+        const popupCont = document.querySelector('.cart__popUp-container');
+        const popup1 = document.getElementById('popup1');
+        const popup2 = document.getElementById('popup2');
+        if(currentMoney >= totalCost){
+            popupCont.style.display="block";
+            popup2.style.display="block";
+            let finalAmount = (currentMoney - totalCost).toFixed(2);
+            amountOfMoney.money = finalAmount;
+            localStorage.setItem("currentUser", JSON.stringify(amountOfMoney));
+        }else{
+            popupCont.style.display="block";
+            popup1.style.display="block";
+        }
+    })
+}
+function exitPopUp(){
+    const popupCont = document.querySelector('.cart__popUp-container');
+    const popups = document.querySelectorAll('.cart__relativeContainer');
+    for(let i = 0; i <popups.length; i++){
+        const close = popups[i].querySelector('.cart__popupCancel');
+            close.addEventListener('click', () => {
+                popupCont.style.display = "none";
+                popups[i].style.display="none";
+                localStorage.removeItem('products');
+                location.reload();
+            })
+    }
+}
+exitPopUp();
+
 function clearItems(){
     const widthraw = document.querySelector('.cart__btnWithraw');
         widthraw.addEventListener('click', () => {
@@ -94,4 +131,5 @@ function clearItems(){
             location.reload();
         })
 }
+buyItems();
 clearItems();

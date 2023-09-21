@@ -15,13 +15,20 @@ function addNav(){
 }
 addNav();
 
-// takes UserName from localStorage, and shows on page
+// takes UserName from localStorage, and shows on page and allows view of cart and profile, otherwise shows login button
 function addUserName(){
   const userDiv = document.querySelector('#nav__user');
-  const userNameData = JSON.parse(localStorage.getItem("currentUser")) || 'Gost';
+  const userData = JSON.parse(localStorage.getItem("currentUser"));
 
  const firstText = userDiv.childNodes[0];
- firstText.nodeValue = userNameData;
+ if(userData != undefined){
+    firstText.nodeValue = userData.name;
+
+ }else if(userData == undefined){
+    const secondNav = userDiv.nextElementSibling;
+    userDiv.innerHTML = `<a class="login tertiaryBtn" href="../../../index.html">Uloguj se</a>`
+    secondNav.style.display = "none";
+ }
 }
 
 //clears whole localStorage on logOut
@@ -36,12 +43,12 @@ function clearLocalData(){
 
 // reveals nav links based on permission
 function viewPermission(){
-  const permission = JSON.parse(localStorage.getItem("currentRole")) || 'GUEST';
+  const user = JSON.parse(localStorage.getItem("currentUser")) || 'GUEST';
 
  const userLink = document.getElementById('users-link');
  const requestLink = document.getElementById('request-link');
 
-  if(permission === 'ADMIN' || permission === 'EDITOR'){
+  if(user.permission === 'ADMIN' || user.permission === 'EDITOR'){
     userLink.style.display="flex";
     requestLink.style.display="flex";
   }
@@ -80,7 +87,7 @@ for(let i = 0; i < navToggle.length; i++){
 // shows number of items selected for purchase
 function numberOfItems(){
   const cartNumber = document.getElementById('cartNumber');
-  const itemNumber =JSON.parse(localStorage.getItem("products")) || [];
+  const itemNumber = JSON.parse(localStorage.getItem("products")) || [];
 
   if(itemNumber.length === 0){
       cartNumber.style.display = "none";

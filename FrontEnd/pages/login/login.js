@@ -1,5 +1,18 @@
 import { getData } from "../../../BackEnd/api-folder/api.js";
 
+// checks if user is logged in, if that is True, proceeds to next page
+function ifLoggedIn(){
+  window.addEventListener('load', () => {
+    const loggedIn = localStorage.getItem('currentUser');
+      if(loggedIn != undefined){ 
+        window.location = './FrontEnd/pages/home-page/pocetna.html';
+      }
+      else return;
+  });
+}
+ifLoggedIn();
+
+// takes data from 'user.json' and compares it to values inputed
 getData().then(loginInfo => {
   loginInfo;
   const loginForm = document.querySelector('.login');
@@ -14,8 +27,15 @@ getData().then(loginInfo => {
         // toastr.success("Login Succesful!")
         const role = loginInfo[i].roles;
 
-        const currentUser = localStorage.setItem("currentUser", JSON.stringify(loginName));
-        const currentRole = localStorage.setItem("currentRole", JSON.stringify(role));
+        let money = moneyGenerator();
+        const currentUser = {
+            name:loginName,
+            permission:role,
+            email:loginEmail,
+            money:money
+        }
+
+        localStorage.setItem("currentUser", JSON.stringify(currentUser));
         window.location = './FrontEnd/pages/home-page/pocetna.html';
         return true;
         
@@ -28,3 +48,11 @@ getData().then(loginInfo => {
   loginForm.reset();
  })
 })
+//randomly gives user moneyAmount, from 1-100
+function moneyGenerator(){
+    let min = Math.ceil(1);
+    let max = Math.floor(100);
+    let random = Math.floor(Math.random() * (max - min) + min);
+    return random;
+}
+

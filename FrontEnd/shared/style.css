@@ -267,7 +267,15 @@ outline:var(--btnText);
     padding-inline:5px;
     border-radius:60%;
 }
-
+.login{
+    text-decoration:none;
+}
+.denied{
+    color:var(--offline);
+}
+.success{
+    color:var(--online);
+}
 /*--------------- Footer, special tags ---------------*/
 
 .footer{

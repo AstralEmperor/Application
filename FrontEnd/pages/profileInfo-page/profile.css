@@ -1,0 +1,18 @@
+.profileInfo__nameWrap{
+    display:flex;
+    flex-direction:column;
+    gap:1.5rem;
+    padding-block:1.5rem;
+}
+.profileInfo__wallet,
+.profileInfo__userName,
+.profileInfo__userEmail{
+    display:flex;
+    align-items: baseline;
+    justify-content:space-between;
+    width:min(100%, 25rem);
+    letter-spacing:0.05em;
+}
+.profileInfo__wallet--number{
+    font-size:1.2rem;
+}
