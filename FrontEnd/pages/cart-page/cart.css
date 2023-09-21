@@ -43,6 +43,8 @@
 }
 .cart__btnToShop{
     font-size:1.5rem;
+    padding-block:0.5rem;
+    display:flex;
 }
 .cart__btnToShop > a {
     letter-spacing:0.05em;
