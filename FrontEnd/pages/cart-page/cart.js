@@ -45,7 +45,8 @@ function displayItems(){
             itemsTotal += parseFloat(items[i].cost);
         }
         let cost = document.getElementById('cost');
-        cost.textContent =` ${itemsTotal} $`;
+        let value = itemsTotal.toFixed(2);
+        cost.textContent =` ${value} $`;
 
         let taxation = document.getElementById('tax');
         tax = (itemsTotal *(5 / 100)).toFixed(2);

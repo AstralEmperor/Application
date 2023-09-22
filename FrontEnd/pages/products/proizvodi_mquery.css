@@ -51,4 +51,13 @@
     .main__productsContainer{
         grid-template-columns: repeat(auto-fit, minmax(auto, 100%));
     }
+    .main__createBtn{
+        width:100%;
+        align-items:center;
+    }
+    .main__search{
+        width:100%;
+        text-align:center;
+    }
+   
 }

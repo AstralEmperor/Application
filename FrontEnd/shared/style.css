@@ -29,6 +29,9 @@
     --wrong:#9e0101;
     --secondNav:#dee0e2;
     --tableTxt:#494949;
+
+    --footer:#3F3F3F;
+    --someItem:hsla(187, 85%, 63%, 0.041);
 }
 *{
     margin:0;
@@ -39,6 +42,8 @@ body{
     min-height:100vh;
     position:relative;
     padding-bottom:5rem;
+    background-color:var(--lightGray);
+    z-index:-1;
 }
 :is(.login__input, .email__input, .main__input, .zahtev__input):hover{
     border:1px solid var(--blue);
@@ -66,7 +71,11 @@ body{
     color:var(--tableTxt);
 }
 .primaryBtn{
-    background-color:var(--blue);
+    background: rgb(83,173,185);
+    background: -moz-linear-gradient(180deg, rgba(83,173,185,1) 0%, rgba(60,129,138,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(83,173,185,1) 0%, rgba(60,129,138,1) 100%);
+    background: linear-gradient(180deg, rgba(83,173,185,1) 0%, rgba(60,129,138,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#53adb9",endColorstr="#3c818a",GradientType=1);
     border:none;
     cursor:pointer;
     color:var(--lightGray);
@@ -118,7 +127,8 @@ outline:var(--btnText);
 }
 .main{
     margin:0 26px;
-    padding:30px 27px;
+    padding-inline:27px;
+    padding-bottom:30px;
     background-color:var(--white);
     min-height:100%;
     border-radius:20px;
@@ -127,6 +137,14 @@ outline:var(--btnText);
 }
 .listHeaderBtn:hover{
     color:var(--tableHeader);
+}
+.special-container{
+    position:relative;
+    padding-top:75px;
+}
+.special-container2{
+    position:relative;
+    padding-top:50px;
 }
 
 /*----------------Navigation----------------*/
@@ -287,8 +305,8 @@ outline:var(--btnText);
     justify-content:center;
     position:absolute;
     min-height:50px;
-    background-color:var(--white);
-    color:var(--blueVariant4);
+    background-color:var(--footer);
+    color:var(--white);
     letter-spacing:0.05em;
     box-shadow:1px -2px 6px  rgba(0,0,0,0.16);
 }

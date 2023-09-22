@@ -16,7 +16,10 @@
 </head>
 <body>
   <nav class="nav">
-    <img class="nav__icon" src="../../assets/F&G_logo.png" alt="Bs-icon.png">
+    <picture>
+      <source media="(min-width:1020px)" srcset="../../assets/F&G_logo.png">
+      <img class="nav__icon" class="nav__icon" src="../../assets/F&G_logo-dark.png" alt="Bs-icon.png">
+    </picture>
     <div class="nav__links inactive">
     <div class="nav__group1">
   <ul class="nav__ul">
@@ -55,8 +58,12 @@
   </ul>
 </nav>
 <section class="main">
-    <h2 class="main__search">Zahtevi korisnika</h2>
-    <hr class="main__h2-hr">
+  <div class="main__titleContainer">
+    <div class="main__titleWrap">
+      <h2 class="main__search">Zahtevi korisnika</h2>
+    </div>
+ </div>
+ <div class="special-container2">
     <form class="main__form">
         <div class="main__inputContainer">
           <div class="main__inputForm">
@@ -132,6 +139,7 @@
       <button class="main__page--zahtevi tertiaryBtn leftBtn disabled">Prethodna</button>
       <button class="main__page--zahtevi tertiaryBtn disabled">Sledeća</button>
     </div>
+  </div>
   </div>
     </section>
     <footer class="footer">
