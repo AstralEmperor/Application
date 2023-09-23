@@ -1,0 +1,17 @@
+@media only screen and (max-width:768px) {
+    .profileInfo__addPicture > p{
+        font-size:2rem !important;
+    }
+}
+@media only screen and (max-width:420px) {
+    .profileInfo__edit{
+        width:100%;
+        font-size:1.2rem !important;
+     }
+    .profileInfo__nameWrap-inner{
+        margin-top:0.5rem;
+    }
+    .profileInfo__nameWrap{
+        padding-inline:1rem;
+    }
+}

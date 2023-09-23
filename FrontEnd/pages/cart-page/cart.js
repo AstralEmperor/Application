@@ -104,9 +104,14 @@ function buyItems(){
             let finalAmount = (currentMoney - totalCost).toFixed(2);
             amountOfMoney.money = finalAmount;
             localStorage.setItem("currentUser", JSON.stringify(amountOfMoney));
+
+            const costPopup2 = document.querySelector('.cart__moneyNumber--2');
+            costPopup2.textContent = `${finalAmount} $`;
         }else{
             popupCont.style.display="block";
             popup1.style.display="block";
+            const costPopup1 = document.querySelector('.cart__moneyNumber--1');
+            costPopup1.textContent = `${finalAmount} $`;
         }
     })
 }

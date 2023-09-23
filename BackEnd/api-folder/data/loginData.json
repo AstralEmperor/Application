@@ -3,6 +3,8 @@
     "names":"Marko",
     "email":"warriorpronb55@gmail.com",
     "password":"123",
+    "location":"Zrenjanin",
+    "job":"Fresh & Green",
     "roles":"ADMIN"
   },
   {
@@ -10,6 +12,8 @@
    "names":"Nikola",
    "email":"dzoni007@yahoo.com",
    "password":"234",
+   "location":"Kikinda",
+   "job":"Unemployed",
    "roles":"USER"
   },
   {
@@ -17,6 +21,8 @@
     "names":"Mareti",
     "email":"spagetti22@gmail.com",
     "password":"tomatto",
+    "location":"Novi Sad",
+    "job":"NFC",
     "roles":"EDITOR"
   },
   {
@@ -24,5 +30,7 @@
     "names":"User",
     "email":"sample11@gmail.com",
     "password":"023",
+    "location":"Zrenjanin",
+    "job":"Professional Gamer",
     "roles":"EDITOR"
   }]

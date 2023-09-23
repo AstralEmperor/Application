@@ -32,6 +32,8 @@ getData().then(loginInfo => {
             name:loginName,
             permission:role,
             email:loginEmail,
+            location:loginInfo[i].location,
+            job:loginInfo[i].job,
             money:money
         }
 

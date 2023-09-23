@@ -1,18 +1,109 @@
+.profileInfo__dataContainer{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    padding-top:2rem;
+}
+.profileInfo__imageWrap{
+    width:8rem;
+    height:8rem;
+    object-fit:cover;
+    position:relative;
+}
+.profileInfo__imageCont{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+}
+.profileInfo__userName{
+    display:flex;
+    text-align: center;
+    justify-content:center;
+    text-align:center;
+    flex-direction:column;
+}
+.profileInfo__imageWrap > img{
+    width:100%;
+    height:100%;
+}
+.profileInfo__addPicture{
+    position:absolute;
+    height:2rem;
+    width:2rem;
+    font-size:2rem;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    font-weight:600;
+    text-align:center;
+    bottom:0;
+    right:0;
+    color:var(--white);
+    background: rgb(83,173,185);
+    background: -moz-linear-gradient(180deg, rgba(83,173,185,1) 0%, rgba(60,129,138,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(83,173,185,1) 0%, rgba(60,129,138,1) 100%);
+    background: linear-gradient(180deg, rgba(83,173,185,1) 0%, rgba(60,129,138,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#53adb9",endColorstr="#3c818a",GradientType=1);
+    border-radius:50%;
+    border:none;
+}
+.profileInfo__addPicture:hover{
+    cursor: pointer;
+    color:var(--gray)
+}
 .profileInfo__nameWrap{
     display:flex;
     flex-direction:column;
     gap:1.5rem;
     padding-block:1.5rem;
+    width:min(100%, 25rem);
+}
+.profileInfo__infoWrap{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    margin-top:2rem;
+    gap:2rem;
+}
+.profileInfo__name{
+    font-weight:600;
+    font-size:1.5rem;
+    letter-spacing:0.05em;
+}
+.profileInfo__workPlace{
+    font-size:0.8rem;
+    color:var(--btnText);
+    opacity:0.8;
+    margin-top:-5px;
 }
 .profileInfo__wallet,
-.profileInfo__userName,
-.profileInfo__userEmail{
+.profileInfo__userEmail,
+.profileInfo__userLocation{
     display:flex;
     align-items: baseline;
     justify-content:space-between;
-    width:min(100%, 25rem);
     letter-spacing:0.05em;
+    border-bottom:1px solid var(--line);
 }
 .profileInfo__wallet--number{
-    font-size:1.2rem;
+    font-size:1.3rem;
+    font-weight:800;
+} 
+.profileInfo__btnEditWrap{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+.profileInfo__edit{
+   width:12rem;
+   margin-top:1rem;
+   font-size:1.2rem !important;
+}
+#wallet,
+#email,
+#location{
+    font-weight:600;
+    color:var(--btnText)
 }

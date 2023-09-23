@@ -24,11 +24,6 @@ display:none;
     .nav{
         position:relative;
         font-size:1rem;
-        background: rgb(83,173,185);
-        background: -moz-linear-gradient(180deg, rgba(83,173,185,1) 0%, rgba(60,129,138,1) 100%);
-        background: -webkit-linear-gradient(180deg, rgba(83,173,185,1) 0%, rgba(60,129,138,1) 100%);
-        background: linear-gradient(180deg, rgba(83,173,185,1) 0%, rgba(60,129,138,1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#53adb9",endColorstr="#3c818a",GradientType=1);
     }
     .nav__toggleBtn{
         display:flex;
@@ -139,6 +134,13 @@ display:none;
     footer *,
     label *{
        font-size:0.8rem;
+    }
+    .nav{
+        background: rgb(83,173,185);
+        background: -moz-linear-gradient(180deg, rgba(83,173,185,1) 0%, rgba(60,129,138,1) 100%);
+        background: -webkit-linear-gradient(180deg, rgba(83,173,185,1) 0%, rgba(60,129,138,1) 100%);
+        background: linear-gradient(180deg, rgba(83,173,185,1) 0%, rgba(60,129,138,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#53adb9",endColorstr="#3c818a",GradientType=1);
     }
     .nav__second--type2{
         max-width:130px;

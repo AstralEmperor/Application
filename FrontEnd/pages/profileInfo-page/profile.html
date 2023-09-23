@@ -66,16 +66,33 @@
   <div class="profileInfo__dataContainer">
     <div class="profileInfo__nameWrap">
         <div class="profileInfo__userName">
-          <p>Korisnik:</p>
-          <p class="profileInfo__name"></p>
+          <div class="profileInfo__imageCont">
+            <div class="profileInfo__imageWrap">
+              <img src=".././../assets/user.png" alt="profile-photo.png">
+              <button class="profileInfo__addPicture" title="add picture"><p>+</p></button>
+            </div>
+          </div>
+            <div class="profileInfo__nameWrap-inner">
+              <p class="profileInfo__name"></p>
+              <p class="profileInfo__workPlace"></p>
+            </div>
         </div>
+        <div class="profileInfo__infoWrap">
+          <div class="profileInfo__userLocation">
+            <p id="location">Lokacija:</p>
+            <p class="profileInfo__location"></p>
+         </div>
          <div class="profileInfo__userEmail">
-            <p>Email:</p>
+            <p id="email">Email:</p>
             <p class="profileInfo__email"></p>
          </div>
           <div class="profileInfo__wallet">
-            <p class="profileInfo__wallet--name">Trenutno stanje na računu:</p>
+            <p id="wallet">Trenutno stanje na računu:</p>
             <p class="profileInfo__wallet--number"></p>
+          </div>
+        </div>
+          <div class="profileInfo__btnEditWrap">
+            <button class="primaryBtn profileInfo__edit">Edituj profil</button>
           </div>
     </div>
   </div>
