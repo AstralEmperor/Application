@@ -11,13 +11,77 @@
         width:15px;
         height:15px;
     }
+    .home{
+        min-height:auto;
+    }
     .home__btn{
         width:30px;
         height:30px;
     }
+    .home__mainContent{
+        height:100%;
+        min-height:90vh;
+        width:100%;
+        flex-direction:column-reverse;
+        position:relative;
+    }
+    .home__left{
+        flex-direction:column-reverse;
+        justify-content:space-between;
+        padding-top:14.5rem;
+        padding-bottom:15rem;
+        text-align:center;
+        }
+        .home__right{
+            padding-block:5rem;
+            justify-content:space-between;
+        }
+    .home__left,
+    .home__right{
+        position:absolute;
+        background-color:transparent;
+        height:100%;
+        width:100%;
+    }
+    .home__text{
+        font-size:1.2rem;
+        max-width:28ch;
+        text-shadow:1px 1px var(--btnText);
+    }
+    .home__h1{
+        line-height:45px;
+    }
+    #span1,#span2{
+        font-size:6rem;
+    }
+    #span3{
+        font-size:4rem;
+    }
+    #span1,#span2,#span3{
+        text-align:center;
+        font-weight:800;
+        text-shadow:1px 1px var(--btnText);
+        color:var(--white);
+    }
+  
+    .home__rating > img {
+        width:1.2rem;
+        height:1.2rem;
+    }
+    .home__ratingNumber{
+        display:none;
+    }
+    .home__startBtn{
+        font-size:1.75rem;
+        width:100%;
+        border-radius:5px;
+    }
 }
 @media only screen and (max-width: 420px){
 
+    .home__imgCont > img{
+        min-height:8rem;
+    }
     .review__imgWrap{
         width:4rem;
         height:4rem;
@@ -36,5 +100,30 @@
     .review__card:focus-visible{
     scale:1;
     } 
-
+    .home__btnWrap{
+        width:100%;
+    }
+    .home__startBtn{
+        font-size:1.5rem;
+        width:100%;
+        border-radius:5px;
+    }
+    #span1,#span2{
+        font-size:4rem;
+    }
+    #span3{
+        font-size:2rem;
+    }
+    .home__h1{
+        line-height:20px;
+    }
+    .home__left{
+        padding-top:12rem;
+        padding-bottom:13rem;
+    }
+    .home__text{
+        max-width:24ch;
+        font-size:1rem;
+    }
+    
 }

@@ -129,6 +129,9 @@ display:none;
     .listHeaderBtn{
         font-size:0.8rem;
     }
+    .main__titleWrap{
+        border-radius:0 !important;
+    }
 }
 @media only screen and (max-width:420px) {
     footer *,

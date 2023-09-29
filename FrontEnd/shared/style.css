@@ -44,6 +44,7 @@ body{
     padding-bottom:5rem;
     background-color:var(--lightGray);
     z-index:-1;
+    text-shadow:0.5px 0.5px var(--line);
 }
 :is(.login__input, .email__input, .main__input, .zahtev__input):hover{
     border:1px solid var(--blue);
@@ -85,10 +86,11 @@ body{
     font-size:.9rem;
     letter-spacing:0.1em;
     transition: 0.2s all;
+    text-shadow:1px 1px var(--black);
 }
 .primaryBtn:hover,
 .primaryBtn:focus{
-    background-color:var(--blueVariant);
+    color:var(--btnText);
 }
 .primaryBtn:focus{
 outline:var(--btnText);
@@ -221,6 +223,7 @@ outline:var(--btnText);
     flex-direction:row;
     gap:5px;
     align-items:center;
+    text-shadow:1px 1px var(--line);
 }
 .nav__li--special{
     list-style-type:none;
@@ -335,9 +338,14 @@ outline:var(--btnText);
 .sale{
     color:var(--sale);
 }
+.main__titleContainer{
+    z-index:2;
+    text-shadow:2px 2px var(--black);
+}
 html{
     font-family: 'Open Sans', sans-serif
 }
+
 @font-face {
     font-family: 'Open Sans', sans-serif;
     src:url('https://fonts.googleapis.com') crossorigin;

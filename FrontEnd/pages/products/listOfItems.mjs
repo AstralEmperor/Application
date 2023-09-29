@@ -141,8 +141,7 @@ function changeImage1() {
             
     }else{
         mainView1.src = "../../assets/grid-blue.png";
-        containerWrap.style.cssText="grid-gap:24px;grid-template-columns: repeat(auto-fit, minmax(auto,100%, 4fr))";
-        document.querySelector(".main__picBtns").style.cssText ="min-width:279px;";
+        containerWrap.style.cssText="grid-gap:24px;grid-template-columns:repeat(auto-fit, minmax(auto, 1fr))";
     
         applyStyles(image,"height:20rem;width:auto");
         applyStyles(saleTag, "font-size:1.25rem;transform-origin:28%;");
@@ -201,8 +200,7 @@ function changeImage2() {
             
         } else {
             mainView2.src = "../../assets/menu-blue.png";
-            document.getElementsByClassName("main__productsContainer")[0].style.cssText ="grid-template-columns: repeat(auto-fit, minmax(auto,100%, 4fr));grid-gap:29px;";
-            document.getElementsByClassName("main__picBtns")[0].style.cssText ="min-width:429px;";
+            document.getElementsByClassName("main__productsContainer")[0].style.cssText ="grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));grid-gap:29px;";
 
             applyStyles(image,"height:20rem;width:auto");
             applyStyles(saleTag, "font-size:1.25rem;transform-origin:28%;");
@@ -261,7 +259,6 @@ function changeImage3(){
 } else {
         mainView3.src = "../../assets/list-blue.png";
         document.getElementsByClassName("main__productsContainer")[0].style.cssText ="grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));grid-gap:29px;";
-        document.getElementsByClassName("main__picBtns")[0].style.cssText ="min-width:93px;max-height:70px";
 
         applyStyles(image,"height:3rem;width:3rem");
         applyStyles(saleTag, "font-size:0.8rem;transform-origin:center;");
