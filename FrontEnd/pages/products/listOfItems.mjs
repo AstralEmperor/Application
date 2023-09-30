@@ -309,7 +309,7 @@ function displayText(pageElements,arrayOfPosts,start,end,numPerPage){
 }
 
 function changePageNum(){
-    const numPerPage = 8;
+    const numPerPage = 9;
     let arrayOfitems = Array.from(containerWrap.children);
     let arrayOfPosts = [...arrayOfitems].filter(item => item.classList.contains('main__singleImgContainer'));
     let numCont = document.querySelectorAll('.main__pagesNumCont');

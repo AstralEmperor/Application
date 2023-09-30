@@ -26,7 +26,7 @@ function addUserName(){
 
  }else if(userData == undefined){
     const secondNav = userDiv.nextElementSibling;
-    userDiv.innerHTML = `<a class="login tertiaryBtn" href="../../../index.html">Uloguj se</a>`
+    userDiv.innerHTML = `<a class="login nav__link tertiaryBtn" href="../../../index.html">Uloguj se</a>`
     secondNav.style.display = "none";
  }
 }

@@ -5,17 +5,19 @@
 }
 
 body{
-    height:100vh;
     display:flex;
     align-items:center;
+    justify-content: center;
+    background-color:var(--gray);
 }
 .login{
     display:flex;
     flex-direction:column;
     background-color:var(--lightGray);
     margin:0 auto;
-    min-height:520px;
-    max-width:338px;
+    height:100%;
+    max-width:520px;
+    width:100%;
     align-items:center;
     padding:0px 15px 0 15px;
     border-radius:20px;

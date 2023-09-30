@@ -5,19 +5,23 @@
 }
 
 body{
-    height:100vh;
     display:flex;
     align-items:center;
+    justify-content: center;
+    background-color:var(--gray);
+    padding:0 !important;
 }
 .register{
     display:flex;
     flex-direction:column;
     background-color:var(--lightGray);
     margin:0 auto;
-    height:520px;
-    width:338px;
+    height:100%;
+    max-width:520px;
+    width:100%;
     align-items:center;
-    padding:0px 15px 0 15px;
+    padding-inline:0.8rem;
+    padding-bottom:1rem;
     border-radius:20px;
     box-shadow: 1px 3px 6px rgb(0 0 0 / 0.16);
 }

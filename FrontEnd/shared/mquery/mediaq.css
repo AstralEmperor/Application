@@ -121,7 +121,7 @@ display:none;
 }
 @media only screen and (max-width:768px) {
     *:not(img,td,th){
-        font-size:0.85rem;
+        font-size:1rem;
     }
     ::placeholder{
         font-size:0.85rem;
@@ -132,8 +132,19 @@ display:none;
     .main__titleWrap{
         border-radius:0 !important;
     }
+    .main{
+        margin:0;
+        padding-top:30px;
+        padding-bottom:60px;
+        padding-inline:5px;
+        margin:0;
+        border-radius: 0;
+    }
 }
 @media only screen and (max-width:420px) {
+    *:not(img,td,th){
+        font-size:0.85rem;
+    }
     footer *,
     label *{
        font-size:0.8rem;
