@@ -103,9 +103,61 @@ async function createListItems(products){
 }
 
 getProducts().then(products => {
-    products
+    products;
     createListItems(products);
 });
+
+
+const inputLocation = document.getElementById('lokacija');
+const inputImeProizvoda = document.getElementById('imeProizvoda');
+const inputKolicina = document.getElementById('kolicina');
+
+const searchBtn = document.getElementById('searchBtn');
+// searches items based on input
+function searchItems(){
+    searchBtn.addEventListener('click', e =>{
+        e.preventDefault();
+        filterItems();
+    })
+}
+searchItems();
+// compares Input(filter) and List(text) item values and that displays items accordingly
+function filterItems(){
+        const filterLocation = inputLocation.value.toLowerCase();
+        const filterImeProizvoda = inputImeProizvoda.value.toLowerCase();
+        const filterKolicina = inputKolicina.value.toLowerCase();
+
+        const listOfItems = document.querySelectorAll('.main__singleImgContainer');
+        listOfItems.forEach((item)=>{
+            let textLocation = item.querySelector('.main__text--location').textContent;
+            let textImeProizvoda = item.querySelector('.main__text--productName').textContent;
+            let textKolicina = item.querySelector('.main__text--amount').textContent;
+
+            if(!textLocation.toLowerCase().includes(filterLocation) || !textImeProizvoda.toLowerCase().includes(filterImeProizvoda.toLowerCase()) || (parseFloat(textKolicina) <= parseFloat(filterKolicina))){
+               item.style.cssText='display:none';
+            }else{
+                item.style.display= '';
+            }
+        })
+
+}
+
+const clearInputBtn = document.getElementById('clearInputBtn');
+
+function clearSearch(){
+    clearInputBtn.addEventListener('click', e =>{
+        e.preventDefault();
+        clearSearchPrototype();
+    })
+}
+clearSearch();
+
+function clearSearchPrototype(){
+        inputLocation.value = '';
+        inputImeProizvoda.value = '';
+        inputKolicina.value = '';
+        console.log('true')
+}
 
 const applyStyles = (elements, styles) =>{
     for(let i = 0; i < elements.length; i++){
@@ -307,7 +359,8 @@ function displayText(pageElements,arrayOfPosts,start,end,numPerPage){
         }
     }
 }
-
+    // writes current page element numbers and total number of elements
+    //check the length of the array of elements called with SelectorAll(2 containers have page numbers) and then check their children length.
 function changePageNum(){
     const numPerPage = 9;
     let arrayOfitems = Array.from(containerWrap.children);
@@ -320,8 +373,6 @@ function changePageNum(){
     const end = start + numPerPage;
     const pageElements = arrayOfPosts.slice(start,end);
     displayText(pageElements,arrayOfPosts,start,end,numPerPage);
-    // writes current page element numbers and total number of elements
-    //check the length of the array of elements called with SelectorAll(2 containers have page numbers) and then check their children length.
     for(let i = 0; i < numCont.length; i++){
         const currentNumPages = numCont[i].children.length;
 

@@ -63,47 +63,24 @@
     <div class="main__form">
         <form class="main__inputContainer">
           <div class="main__inputForm">
-            <label for ="lokacija">Lokacija:</label>
+            <label for="lokacija">Lokacija:</label>
         <input name="lokacija" id="lokacija" class="main__input" type="text" list="cities" placeholder="Lokacija">
-            <datalist id="cities">
-              <option value="Banatsko Višnjićevo"></option>
-              <option value="Novi Sad"></option>
-              <option value="Zrenjanin"></option>
-              <option value="Beograd"></option>
-              <option value="Subotica"></option>
-              <option value="Niš"></option>
-              <option value="Kragujevac"></option>
-            </datalist>
           </div>
             <div class="main__inputForm">
-          <label for ="vrstaOpservacije">Ime proizvoda:</label>
-        <input name="vrsta-opservacije" id="vrstaOpservacije" class="main__input" type="text" placeholder="Proizvod">
+          <label for="imeProizvoda">Ime proizvoda:</label>
+        <input name="imeProizvoda" id="imeProizvoda" class="main__input" type="text" placeholder="Proizvod">
             </div>
         <div class="main__inputForm">
-          <label for ="datumOd-opserv">Datum od:</label>
-        <input name="datumOd-opserv" id="datumOd-opserv" class="main__input" type="text" placeholder="Datum od" onfocus="(this.type='date')">
-      </div>
-        <div class="main__inputForm">
-          <label for ="datumDo-opserv">Datum do:</label>
-        <input name="datumDo-opserv" id="datumDo-opserv" class="main__input" type="text" placeholder="Datum do" onfocus="(this.type='date')">
-      </div>
-        <div class="main__inputForm">
-          <label for ="brojSlika">Količina:</label>
-        <input name="brojSlika" id="brojSlika" class="main__input" type="text" list="number-of-pictures" placeholder="Količina">
-        <datalist id="number-of-pictures">
-            <option value="1"></option>
-            <option value="2"></option>
-            <option value="3"></option>
-            <option value="4"></option>
-          </datalist>
+          <label for="kolicina">Količina:</label>
+        <input name="kolicina" id="kolicina" class="main__input" type="text" list="number-of-pictures" placeholder="Količina">
         </div>
           <div class="main__inputForm">
             <label for ="sortiraj">Sortiraj:</label>
         <input name="sortiraj" id="sortiraj" class="main__input" type="text" placeholder="Sortiraj po">
       </div>
       <div class="main__btnWrap main-inputForm">
-        <button class="main__btnSearch primaryBtn">PRETRAŽI</button>
-        <button class="main__btnDismiss">PONIŠTI</button>
+        <button id="searchBtn" class="main__btnSearch primaryBtn">PRETRAŽI</button>
+        <button id="clearInputBtn" class="main__btnDismiss">PONIŠTI</button>
       </div>
     </div>
   </form>
