@@ -1,5 +1,5 @@
 const container = document.querySelector('.cart__itemsContainer');
-
+// checks if there are items in the cart(localStorage) and displays accordingly
 function noItems(){
     const displayContainer = document.querySelector('.cart__selectedItemsCont');
     const noItem = document.querySelector('.cart__noItem-container');
@@ -13,7 +13,7 @@ function noItems(){
         }
     }
 noItems();
-
+// displays localstorage products that were selected previously, calculates price and tax and returns total amount
 function displayItems(){
     const items = JSON.parse(localStorage.getItem("products"));
     if(items != undefined){

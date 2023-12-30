@@ -32,7 +32,7 @@ async function createListItems(products){
                     </div>
                     <div class="main__info">
                     <form class ="main__comment-box">
-                        <label class="main__commentLabel">Comment:</label>
+                        <label class="main__commentLabel">Komentar:</label>
                         <input class="main__commentBox" name="comment" type="text" placeholder="Ostavi komentar">
                         <div class="main__commentBtnWrap">
                         <button class="primaryBtn main__commentButton" type="submit">Post</button>
@@ -67,7 +67,7 @@ async function createListItems(products){
                 </div>
                 <div class="main__info">
                 <form class ="main__comment-box">
-                    <label class="main__commentLabel">Comment:</label>
+                    <label class="main__commentLabel">Komentar:</label>
                     <input class="main__commentBox" name="comment" type="text" placeholder="Ostavi komentar">
                     <div class="main__commentBtnWrap">
                     <button class="primaryBtn main__commentButton" type="submit">Post</button>
@@ -111,29 +111,39 @@ getProducts().then(products => {
 const inputLocation = document.getElementById('lokacija');
 const inputImeProizvoda = document.getElementById('imeProizvoda');
 const inputKolicina = document.getElementById('kolicina');
+const inputPopust = document.getElementById('popustInput');
 
 const searchBtn = document.getElementById('searchBtn');
+
 // searches items based on input
 function searchItems(){
     searchBtn.addEventListener('click', e =>{
         e.preventDefault();
         filterItems();
+        checkIfEmptyList()
     })
 }
 searchItems();
+
 // compares Input(filter) and List(text) item values and that displays items accordingly
 function filterItems(){
         const filterLocation = inputLocation.value.toLowerCase();
         const filterImeProizvoda = inputImeProizvoda.value.toLowerCase();
         const filterKolicina = inputKolicina.value.toLowerCase();
+        const filterPopust = inputPopust.checked;
+        
 
         const listOfItems = document.querySelectorAll('.main__singleImgContainer');
         listOfItems.forEach((item)=>{
             let textLocation = item.querySelector('.main__text--location').textContent;
             let textImeProizvoda = item.querySelector('.main__text--productName').textContent;
             let textKolicina = item.querySelector('.main__text--amount').textContent;
+            let textPopust = item.querySelector('.main__sale') ? true : false;
 
-            if(!textLocation.toLowerCase().includes(filterLocation) || !textImeProizvoda.toLowerCase().includes(filterImeProizvoda.toLowerCase()) || (parseFloat(textKolicina) <= parseFloat(filterKolicina))){
+            if(!textLocation.toLowerCase().includes(filterLocation) || 
+               !textImeProizvoda.toLowerCase().includes(filterImeProizvoda.toLowerCase()) || 
+               (parseFloat(textKolicina) < parseFloat(filterKolicina)) ||
+               (filterPopust === true && textPopust === false)){
                item.style.cssText='display:none';
             }else{
                 item.style.display= '';
@@ -144,19 +154,34 @@ function filterItems(){
 
 const clearInputBtn = document.getElementById('clearInputBtn');
 
+// clears all search input
 function clearSearch(){
     clearInputBtn.addEventListener('click', e =>{
         e.preventDefault();
         clearSearchPrototype();
+        filterItems();
+        checkIfEmptyList()
     })
 }
 clearSearch();
 
+// resets input values
 function clearSearchPrototype(){
+        inputPopust.checked = false;
         inputLocation.value = '';
         inputImeProizvoda.value = '';
         inputKolicina.value = '';
-        console.log('true')
+}
+// checks for items that are visible with array.prototype.slice.call, if none are, displays noResultPopUp; https://stackoverflow.com/questions/13388616/firefox-query-selector-and-the-visible-pseudo-selector
+function checkIfEmptyList(){
+    const noResultPopUp = document.querySelector('.main__noResult-container');
+    const listOfItems = Array.prototype.slice.call(document.querySelectorAll('.main__singleImgContainer')).filter(function (item,index) { return item.style.display!="none" } );
+    console.log(listOfItems)
+    if((listOfItems.length === 0)){
+        noResultPopUp.style.display='flex'
+    }else{
+        noResultPopUp.style.display='none'
+    }
 }
 
 const applyStyles = (elements, styles) =>{
@@ -362,7 +387,7 @@ function displayText(pageElements,arrayOfPosts,start,end,numPerPage){
     // writes current page element numbers and total number of elements
     //check the length of the array of elements called with SelectorAll(2 containers have page numbers) and then check their children length.
 function changePageNum(){
-    const numPerPage = 9;
+    const numPerPage = 8;
     let arrayOfitems = Array.from(containerWrap.children);
     let arrayOfPosts = [...arrayOfitems].filter(item => item.classList.contains('main__singleImgContainer'));
     let numCont = document.querySelectorAll('.main__pagesNumCont');
@@ -385,9 +410,6 @@ function changePageNum(){
                 clonePageNum.textContent = j;
                 clonePageNum.classList.remove('current-slideNumber');
                 numCont[i].appendChild(clonePageNum);
-                if(totalPages > 3){
-                    console.log(currentNumPages[j])
-                }
             }
             // if theres more pages then number of elements need, removes last one = [1,2,3,4]
         }else if (currentNumPages > totalPages && totalPages >= 1){
@@ -628,16 +650,3 @@ function changingPage(){
  }
 changingPage();
 
-function returnPage(){
-            const numCount = document.querySelector('.main__pagesNumCont');
-            const numbers = Array.from(numCount.children);
-            const currentPage = document.querySelector('.current-slideNumber');
-            const prevPage = currentPage.previousElementSibling;
-            const prevIndex = numbers.findIndex(number => number === prevPage);
-
-            currentPageNum = currentPageNum - 1;
-
-            displayText();
-            pageNum(currentPage, prevPage);
-            disabledBtn(prevIndex, numCount);
-}

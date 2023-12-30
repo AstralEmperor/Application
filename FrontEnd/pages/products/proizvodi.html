@@ -62,21 +62,32 @@
  <div class="special-container2">
     <div class="main__form">
         <form class="main__inputContainer">
+         <div class="main__inputOptions">
           <div class="main__inputForm">
             <label for="lokacija">Lokacija:</label>
-        <input name="lokacija" id="lokacija" class="main__input" type="text" list="cities" placeholder="Lokacija">
+            <input name="lokacija" id="lokacija" pattern="[a-zA-z]*" oninvalid="setCustomValidity('Unesite tekst!')" class="main__input" type="text" list="cities" placeholder="Lokacija">
           </div>
-            <div class="main__inputForm">
-          <label for="imeProizvoda">Ime proizvoda:</label>
-        <input name="imeProizvoda" id="imeProizvoda" class="main__input" type="text" placeholder="Proizvod">
+           <div class="main__inputForm">
+            <label for="imeProizvoda">Ime proizvoda:</label>
+            <input name="imeProizvoda" id="imeProizvoda" pattern="[A-Za-z]*" oninvalid="setCustomValidity('Unesite tekst!')" class="main__input" type="text" placeholder="Proizvod">
             </div>
         <div class="main__inputForm">
           <label for="kolicina">Količina:</label>
-        <input name="kolicina" id="kolicina" class="main__input" type="text" list="number-of-pictures" placeholder="Količina">
+          <input name="kolicina" id="kolicina" pattern="[0-9]*" oninvalid="setCustomValidity('Unesite brojeve')" class="main__input" type="text" list="number-of-pictures" placeholder="Količina">
         </div>
-          <div class="main__inputForm">
-            <label for ="sortiraj">Sortiraj:</label>
-        <input name="sortiraj" id="sortiraj" class="main__input" type="text" placeholder="Sortiraj po">
+          <div class="main__inputForm--sort">
+            <label for="sortiraj">Sortiraj po:</label>
+              <select name="sortiraj" id="sortiraj" class="main__sort" placeholder="Sortiraj po">
+                  <option value="lokacija">Lokacija</option>
+                  <option value="Ime">Ime</option>
+                  <option value="Kolicina">Kolicina</option>
+                  <option value="Cena">Cena</option>
+              </select>
+        </div>
+          <div class="main__inputForm--sale">
+            <label for="popustInput">Popust:</label>
+            <input name="popustInput" id="popustInput" class="main__checkBox" type="checkbox" unchecked>
+        </div>
       </div>
       <div class="main__btnWrap main-inputForm">
         <button id="searchBtn" class="main__btnSearch primaryBtn">PRETRAŽI</button>
@@ -103,16 +114,23 @@
   </div>
     <!--description-->
    <div class="main__imagesContainer">
-    <!-- <button class="add-item">+</button> -->
     <div class="man__singleImgContainer--special">
       <ul class="main__description main__description--special">
        <li class="main__primaryText">Slika:</li>
        <li class="main__primaryText">Lokacija:</li>
        <li class="main__primaryText">Vrsta:</li>
        <li class="main__primaryText">Količina:</li>
-       <li class="main__primaryText ">Cena:</li>
+       <li class="main__primaryText">Cena:</li>
       </ul>
        <p class="main__primaryText main__textForBtns">Akcija:</p>
+    </div>
+    <div class="main__noResult-container">
+      <div class="main__noResult-imgWrap">
+        <img class="main__noResultImg" src="../../assets/SadFruitSmiley.png" alt="sadFruit.png">
+      </div>
+      <div class="main__noResult-text">
+        <p>Nema Rezultata!</p>
+      </div>
     </div>
   <div id="container" class="main__productsContainer">
     <!-- CONTENT LOADS HERE -->
