@@ -232,7 +232,8 @@ align-items:center;
     grid-gap:24px;
     width:100%;
     grid-template-columns: repeat(auto-fit, minmax(400px, calc(100%/4.17)));
-    justify-content: space-between;
+    flex:1;
+    justify-content: center;
 }
 #container{
     padding:0.5rem;
