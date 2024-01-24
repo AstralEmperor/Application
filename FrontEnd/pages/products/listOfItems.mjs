@@ -110,8 +110,10 @@ const inputImeProizvoda = document.getElementById('imeProizvoda');
 const inputKolicina = document.getElementById('kolicina');
 const inputPopust = document.getElementById('popustInput');
 const inputCena = document.getElementById('cena');
+const sortInput = document.querySelector('#sortiraj');
 
 const searchBtn = document.getElementById('searchBtn');
+
 
 // searches items based on input
 function searchItems(){
@@ -125,6 +127,49 @@ function searchItems(){
 }
 searchItems();
 
+// sorts items based on SELECT interface, according to chosen option (currently, sorting doesn't work properly)
+let isSorted = false;
+let sortedArray = [];
+function sortItems(array){
+    let chosenOption = sortInput.value; 
+        switch(chosenOption){
+            case 'Lokacija':
+                sortedArray = array.sort((a,b) => a.querySelector('.main__text--location').textContent > b.querySelector('.main__text--location').textContent ? 1 : -1 );
+                isSorted = true;
+            break;
+            
+            case 'Ime':
+              sortedArray = array.sort((a,b) => a.querySelector('.main__text--productName').textContent > b.querySelector('.main__text--productName').textContent ? -1 : -1 );
+              isSorted = true;
+            break;
+
+            case 'Kolicina':
+                sortedArray = array.sort((a,b) => a.querySelector('.main__text--amount').textContent > b.querySelector('.main__text--amount').textContent ? 1 : -1 );
+                isSorted = true;
+            break;
+
+            case 'Cena':
+                sortedArray = array.toSorted((a,b) => a.querySelector('.main__text--price').textContent > b.querySelector('.main__text--price').textContent ? 1 : -1 );
+                isSorted = true;
+            break;
+
+            default:
+                isSorted = false;
+            return;
+        }
+        return sortedArray;
+  
+}
+
+// checks whether items are sorted or flitered and returns and array of items
+function isSortedOrFilteredCheck(sortArray, filterArray){
+    if(isSorted){
+        return filteredList = Array.prototype.slice.call(sortArray).filter(function (item){ return item.style.display!="none"});
+    }else{
+        return filteredList = Array.prototype.slice.call(filterArray).filter(function (item){ return item.style.display!="none"});
+    }
+}
+
 let filterCount = 0;
 let isFiltered = false;
 let filteredList = [];
@@ -137,15 +182,15 @@ function filterItems(){
         const filterPopust = inputPopust.checked;
         
         const listOfItems = document.querySelectorAll('.main__singleImgContainer');
+        let arrayOfitems = Array.from(containerWrap.children);
+        let arrayOfPosts = [...arrayOfitems].filter(item => item.classList.contains('main__singleImgContainer'));
+
         listOfItems.forEach((item)=>{
             let textLocation = item.querySelector('.main__text--location').textContent;
             let textImeProizvoda = item.querySelector('.main__text--productName').textContent;
             let textKolicina = item.querySelector('.main__text--amount').textContent;
             let textCena = item.querySelector('.main__text--price').textContent;
             let textPopust = item.querySelector('.main__sale') ? true : false;
-
-            let arrayOfitems = Array.from(containerWrap.children);
-            let arrayOfPosts = [...arrayOfitems].filter(item => item.classList.contains('main__singleImgContainer'));
 
             if(!textLocation.toLowerCase().includes(filterLocation) || 
                !textImeProizvoda.toLowerCase().includes(filterImeProizvoda.toLowerCase()) || 
@@ -158,8 +203,9 @@ function filterItems(){
                 filterCount++;
             }
             isFiltered = true;
-            return filteredList = Array.prototype.slice.call(arrayOfPosts).filter(function (item,index){ return item.style.display!="none"});
         })
+        let sortedArray = sortItems(arrayOfPosts);
+        isSortedOrFilteredCheck(sortedArray, arrayOfPosts);
 
 }
 
@@ -173,46 +219,11 @@ function clearSearch(){
         filterItems();
         checkIfEmptyList();
         isFiltered = false;
+        isSorted = false;
         changePageNum();
     })
 }
 clearSearch();
-
-function sortItems(array){
-    const sortInput = document.querySelector('#sortiraj');
-
-    let textLocation = document.querySelectorAll('.main__text--location').textContent;
-    let textImeProizvoda = document.querySelectorAll('.main__text--productName').textContent;
-    let textKolicina = document.querySelectorAll('.main__text--amount').textContent;
-    let textCena = document.querySelectorAll('.main__text--price').textContent;
-    
-
-    sortInput.addEventListener('change', () => {
-        let chosenOption = sortInput.value; 
-        switch(chosenOption){
-            case 'lokacija':
-            array.toSorted(textLocation);
-            break;
-
-            case 'Ime':
-            array.toSorted(textImeProizvoda);
-            break;
-
-            case 'Kolicina':
-            array.toSorted(textKolicina);
-            break;
-
-            case 'Cena':
-            array.toSorted(textCena);
-            break;
-
-            default:
-            return;
-        }
-
-    })
-
-}
 
 // resets input values
 function clearSearchPrototype(){
@@ -221,6 +232,7 @@ function clearSearchPrototype(){
         inputImeProizvoda.value = '';
         inputKolicina.value = '';
         inputCena.value = '';
+        sortInput.value = 'default';
         filterCount = 0;
         checkCurrentList(); 
 }
@@ -471,7 +483,7 @@ function changePageNum(){
     let arrayOfitems = Array.from(containerWrap.children);
     let arrayOfPosts = [...arrayOfitems].filter(item => item.classList.contains('main__singleImgContainer'));
     let numCont = document.querySelectorAll('.main__pagesNumCont');
-
+    
     const pageNum = document.querySelector('.main__viewPageNum');
     for(let i = 0; i < numCont.length; i++){
         const currentNumPages = numCont[i].children.length;
@@ -481,7 +493,7 @@ function changePageNum(){
             const start = (currentPageNum - 1) * numPerPage;
             const end = start + numPerPage;
             const pageElements = filteredList.slice(start,end);
-            btnSupport(totalPages,currentNumPages)
+            btnSupport(totalPages,currentNumPages); // checks if theres more then 1 page
             displayText(pageElements,filteredList,start,end,numPerPage);
             
             if(currentNumPages < totalPages){
@@ -506,13 +518,12 @@ function changePageNum(){
          }
         }
         else{
-            console.log(sortItems(arrayOfPosts));
 
             const totalPages = Math.ceil(arrayOfPosts.length/numPerPage);
             const start = (currentPageNum - 1) * numPerPage;
             const end = start + numPerPage;
             const pageElements = arrayOfPosts.slice(start,end);
-            btnSupport(totalPages,currentNumPages);
+            btnSupport(totalPages,currentNumPages); // checks if theres more then 1 page
             displayText(pageElements,arrayOfPosts,start,end,numPerPage);
 
             if(currentNumPages < totalPages){
@@ -537,9 +548,8 @@ function changePageNum(){
         }
 
     }
+  }
 }
-   
- }
 changePageNum();
 
 //If there is only 1 page, disables button next & enables it if there is more elements then current page can fit (check changePageNum() function)

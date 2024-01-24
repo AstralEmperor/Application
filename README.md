@@ -32,7 +32,7 @@ Information about Users and their Requests are displayed in tables of content, w
     4. Login system
     5. 3 types of list Views
     6. Pagination
-    7. Sorting Tables
+    7. Sorting, Filtering based on Input
     8. Prototype of Roles (ADMIN,USER,EDITOR,GUEST) and their view permissions
     9. Tables displaying content from JSON for user/requests
     10. Toastr notifications on login(npm package): //Disabled(commented out) for easier commit

@@ -65,25 +65,25 @@
          <div class="main__inputOptions">
           <div class="main__inputForm">
             <label for="lokacija">Lokacija:</label>
-            <input name="lokacija" id="lokacija" pattern="[a-zA-z]*" oninvalid="setCustomValidity('Unesite tekst!')" class="main__input" type="text" placeholder="Lokacija">
+            <input name="lokacija" id="lokacija" pattern="[A-Za-z]{1,20}" oninvalid="setCustomValidity('Molimo vas unesite 1-20 slova ')" oninput="setCustomValidity('')" class="main__input" type="text" placeholder="Lokacija">
           </div>
            <div class="main__inputForm">
             <label for="imeProizvoda">Ime proizvoda:</label>
-            <input name="imeProizvoda" id="imeProizvoda" pattern="[A-Za-z]*" oninvalid="setCustomValidity('Unesite tekst!')" class="main__input" type="text" placeholder="Proizvod">
+            <input name="imeProizvoda" id="imeProizvoda" pattern="[A-Za-z]{1,20}" oninvalid="setCustomValidity('Molimo vas unesite 1-20 slova')" oninput="setCustomValidity('')" class="main__input" type="text" placeholder="Proizvod">
             </div>
         <div class="main__inputForm">
           <label for="kolicina">Količina:</label>
-          <input name="kolicina" id="kolicina" pattern="[0-9]*" oninvalid="setCustomValidity('Unesite brojeve')" class="main__input" type="text" placeholder="Količina">
+          <input name="kolicina" id="kolicina" pattern="[0-9]{1,6}" oninvalid="setCustomValidity('Molimo vas unesite 1-6 broja')" oninput="setCustomValidity('')" class="main__input" type="text" placeholder="Količina">
         </div>
         <div class="main__inputForm">
           <label for="cena">Cena:</label>
-          <input name="cena" id="cena" pattern="[0-9]*" oninvalid="setCustomValidity('Unesite brojeve')" class="main__input" type="text" list="number-of-pictures" placeholder="Cena">
+          <input name="cena" id="cena" pattern="[0-9]{1,6}" oninvalid="setCustomValidity('Molimo vas unesite 1-6 broja')" oninput="setCustomValidity('')" class="main__input" type="text" list="number-of-pictures" placeholder="Cena">
         </div>
           <div class="main__inputForm--sort">
             <label for="sortiraj">Sortiraj po:</label>
               <select name="sortiraj" id="sortiraj" class="main__sort" placeholder="Sortiraj po">
-                  <option value="">--Izaberi--</option>
-                  <option value="lokacija">Lokacija</option>
+                  <option value="default">--Izaberi--</option>
+                  <option value="Lokacija">Lokacija</option>
                   <option value="Ime">Ime</option>
                   <option value="Kolicina">Kolicina</option>
                   <option value="Cena">Cena</option>
