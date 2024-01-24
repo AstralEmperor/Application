@@ -19,9 +19,9 @@
      <img src="./FrontEnd/assets/F&G_logo.png" class="login__icon" alt="Bs-icon.png">
      <p class="login__label">Prijavi se!</p>
      <div>
-     <input name="loginName" class="login__name login__input" type="text" placeholder="Ime" required>
-     <input name="loginEmail" class="login__email login__input" type="email" placeholder="Elektronska pošta" required>
-     <input class="login__password login__input" type="password" placeholder="Šifra" required>
+     <input name="loginName" class="login__name login__input" type="text" pattern="[A-Za-z0-9]{1,20}" oninvalid="setCustomValidity('Molimo vas unesite validno ime')" oninput="setCustomValidity('')" placeholder="Ime" required>
+     <input name="loginEmail" class="login__email login__input" type="email" oninvalid="setCustomValidity('Molimo vas unesite validan email')" oninput="setCustomValidity('')"  placeholder="Elektronska pošta" required>
+     <input class="login__password login__input" type="password" pattern="[A-Za-z0-9]{1,20}" oninvalid="setCustomValidity('Molimo vas unesite validnu šifru(1-20 karaktera)')" oninput="setCustomValidity('')" placeholder="Šifra" required>
      <p class="login__nonExistent">Ovaj nalog ne postoji!</p>
      <p class="login__wrong">Pogrešno unešeni detalji!</p>
      <div class="login__rememberMe">
@@ -38,4 +38,3 @@
     <script src="./FrontEnd/pages/login/login.js" type="module"></script>
 </body>
 </html>
-<!-- action="./opservations.html" -->

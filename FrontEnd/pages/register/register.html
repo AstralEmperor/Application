@@ -14,12 +14,12 @@
 </head>
 <body>
  <form name="register" class="register">
-     <img src="../../assets/F&G_logo.png" class="register__icon" alt="Bs-icon.png">
+     <img src="../../assets/F&G_logo.png" class="register__icon" alt="F&G-icon.png">
      <p class="register__label">Registruj se!</p>
      <div>
-     <input class="register__name login__input" type="text" placeholder="Ime" required>
-     <input class="register__email login__input" type="email" placeholder="Elektronska pošta" required>
-     <input class="register__password login__input" type="password" placeholder="Šifra" required>
+     <input class="register__name login__input" type="text" pattern="[A-Za-z0-9]{1,20}" oninvalid="setCustomValidity('Molimo vas unesite validno ime')" oninput="setCustomValidity('')" placeholder="Ime" required>
+     <input class="register__email login__input" type="email" oninvalid="setCustomValidity('Molimo vas unesite validan email')" oninput="setCustomValidity('')" placeholder="Elektronska pošta" required>
+     <input class="register__password login__input" type="password" pattern="[A-Za-z0-9]{1,20}" oninvalid="setCustomValidity('Molimo vas unesite validnu šifru(1-20 karaktera)')" placeholder="Šifra" required>
 </div>
      <button class="register__registerBtn primaryBtn" type="submit">Napravi nalog</button>
       <a class="register__link tertiaryBtn register__register" href="../../../index.html">Nazad</a>
@@ -27,5 +27,3 @@
  <script src="./register.js"></script>
 </body>
 </html>
-
-<!-- action="./login.html" -->
