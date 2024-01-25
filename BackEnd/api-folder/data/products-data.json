@@ -98,9 +98,51 @@
             "id":"12",
             "lokacija":"Novi Sad",
             "produkt":"Sljive",
-            "kolicina":"60 kom",
+            "kolicina":"52 kom",
             "cena":"5.6",
             "slika":"../../../FrontEnd/assets/plum.jpg"
+        },
+        {
+            "id":"13",
+            "lokacija":"Beograd",
+            "produkt":"Krastavci",
+            "kolicina":"86 kom",
+            "cena":"7",
+            "slika":"../../../FrontEnd/assets/cucumber.jpg"
+        },
+        {
+            "id":"14",
+            "lokacija":"Kikinda",
+            "produkt":"Limun",
+            "kolicina":"186 kom",
+            "cena":"4",
+            "slika":"../../../FrontEnd/assets/lemon.jpg",
+            "popust":"12"
+        },
+        {
+            "id":"15",
+            "lokacija":"Zrenjanin",
+            "produkt":"Mandarine",
+            "kolicina":"38 kom",
+            "cena":"5.6",
+            "slika":"../../../FrontEnd/assets/mandarins.jpg"
+        },
+        {
+            "id":"16",
+            "lokacija":"Novi Sad",
+            "produkt":"Luk",
+            "kolicina":"128 kom",
+            "cena":"5.6",
+            "slika":"../../../FrontEnd/assets/onions.jpg"
+        },
+        {
+            "id":"17",
+            "lokacija":"Bečej",
+            "produkt":"Nar",
+            "kolicina":"10 kom",
+            "cena":"10",
+            "slika":"../../../FrontEnd/assets/pomegranates.webp",
+            "popust":"8"
         }
 
 ]}

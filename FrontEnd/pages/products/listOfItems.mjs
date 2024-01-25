@@ -47,7 +47,7 @@ async function createListItems(products){
                     <dl class="main__description">
                     <dt class="main__text">Lokacija:</dt>
                         <dd class="main__text--location">${product.lokacija}</dd>
-                    <dt class="main__text">Vrsta:</dt>
+                    <dt class="main__text">Proizvod:</dt>
                         <dd class="main__text--productName">${product.produkt}</dd>
                     <dt class="main__text">Količina:</dt>
                         <dd class="main__text--amount">${product.kolicina}</dd>
@@ -82,7 +82,7 @@ async function createListItems(products){
                 <dl class="main__description">
                 <dt class="main__text">Lokacija:</dt>
                      <dd class="main__text--location">${product.lokacija}</dd>
-                    <dt class="main__text">Vrsta:</dt>
+                    <dt class="main__text">Proizvod:</dt>
                         <dd class="main__text--productName">${product.produkt}</dd>
                     <dt class="main__text">Količina:</dt>
                         <dd class="main__text--amount">${product.kolicina}</dd>
@@ -139,7 +139,7 @@ function sortItems(array){
             break;
             
             case 'Ime':
-              sortedArray = array.sort((a,b) => a.querySelector('.main__text--productName').textContent > b.querySelector('.main__text--productName').textContent ? -1 : -1 );
+              sortedArray = array.sort((a,b) => a.querySelector('.main__text--productName').textContent > b.querySelector('.main__text--productName').textContent ? 1 : -1 );
               isSorted = true;
             break;
 
@@ -466,20 +466,20 @@ function displayText(pageElements,arrayOfPosts,start,end,numPerPage){
     const totalElementsNum = document.querySelectorAll('.main__pageItemNum');
     for(let element of totalElementsNum){
         if(arrayOfPosts && arrayOfPosts.length - 1 < numPerPage && arrayOfPosts.length - 1 < end){
-            element.textContent = "Prikaz " + start + "-" + pageElements.length + " od " + arrayOfPosts.length + " proizvoda";
+            element.textContent = "Prikaz " + `${start + 1}` + "-" + pageElements.length + " od " + arrayOfPosts.length + " proizvoda";
         }
         else if(arrayOfPosts && arrayOfPosts.length - 1 >= numPerPage && arrayOfPosts.length - 1 >= end){
-            element.textContent = "Prikaz " + start + "-" + end + " od " + arrayOfPosts.length + " proizvoda";
+            element.textContent = "Prikaz " + `${start + 1}` + "-" + end + " od " + arrayOfPosts.length + " proizvoda";
         }
         else if(pageElements){
-            element.textContent = "Prikaz " + start + "-" + (start + pageElements.length) + " od " + arrayOfPosts.length + " proizvoda";
+            element.textContent = "Prikaz " + `${start + 1}` + "-" + (start + pageElements.length) + " od " + arrayOfPosts.length + " proizvoda";
         }
     }
 }
     // writes current page element numbers and total number of elements
     //check the length of the array of elements called with SelectorAll(2 containers have page numbers) and then check their children length.
 function changePageNum(){
-    const numPerPage = 8;
+    const numPerPage = 12;
     let arrayOfitems = Array.from(containerWrap.children);
     let arrayOfPosts = [...arrayOfitems].filter(item => item.classList.contains('main__singleImgContainer'));
     let numCont = document.querySelectorAll('.main__pagesNumCont');
