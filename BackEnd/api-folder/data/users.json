@@ -1,49 +1,39 @@
 [{
-  "id":1,
+  "id":"1",
   "name":"Marko",
   "email":"warriorpronb55@gmail.com",
+  "location":"Zrenjanin",
+  "status":"online",
   "ogranicenje":"Ne",
-  "status":"online"
+  "roles":"ADMIN"
 },
 {
-  "id":2,
-  "name":"Nikola",
-  "email":"dzoni007@yahoo.com",
-  "ogranicenje":"Da",
-  "status":"offline"
-},
-{
-  "id":3,
-  "name":"Maja",
-  "email":"avrakadabra22@yahoo.com",
-  "ogranicenje":"Ne",
-  "status":"online"
-},
-{
-  "id":4,
-  "name":"Abraham",
-  "email":"abrahara23@yahoo.com",
-  "ogranicenje":"Da",
-  "status":"offline"
-},
-{
-  "id":"5",
-  "name":"Milica",
-  "email":"trolejbus23@gmail.com",
-  "ogranicenje":"Ne",
-  "status":"online"
-},
-{
- "id":"6",
- "name":"Nikolina",
- "email":"aligatormoma1@gmail.com",
+ "id":"2",
+ "name":"Nikola",
+ "email":"dzoni007@yahoo.com",
+ "password":"234",
+ "location":"Kikinda",
+ "status":"offline",
  "ogranicenje":"Da",
- "status":"offline"
+ "roles":"USER"
 },
 {
-  "id":"7",
-  "name":"Filip",
+  "id":"3",
+  "name":"Mareti",
   "email":"spagetti22@gmail.com",
+  "password":"tomatto",
+  "location":"Novi Sad",
+  "status":"offline",
   "ogranicenje":"Da",
-  "status":"offline"
+  "roles":"EDITOR"
+},
+{
+  "id":"4",
+  "name":"Ana",
+  "email":"sample11@gmail.com",
+  "password":"023",
+  "location":"Zrenjanin",
+  "ogranicenje":"Da",
+  "status":"offline",
+  "roles":"EDITOR"
 }]
