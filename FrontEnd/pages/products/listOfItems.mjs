@@ -9,7 +9,7 @@ const pageNextBtn = document.querySelectorAll('.main__pageBtnNext');
 let permission = 'GUEST';
 const userData = JSON.parse(localStorage.getItem("currentUser"));
 if(userData != 'undefined'){
-const permission = userData.permission;
+ permission = userData.permission;
 }
 
 
