@@ -6,8 +6,12 @@ const container = document.querySelector('.main__imagesContainer');
 const pagePrevBtn = document.querySelectorAll('.main__pageBtnPrev');
 const pageNextBtn = document.querySelectorAll('.main__pageBtnNext');
 
+let permission = 'GUEST';
 const userData = JSON.parse(localStorage.getItem("currentUser"));
+if(userData != 'undefined'){
 const permission = userData.permission;
+}
+
 
 // creates list of items in db, if on sale it creates a special div, calculates new price if item is on sale
 async function createListItems(products){
